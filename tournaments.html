@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>European Lacrosse Calendar &#8212; Follow The Lacrosse</title>
+<meta name="description" content="From ELF championships to national cups and domestic league rounds &#8212; the European lacrosse calendar, curated by Follow The Lacrosse.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#0D2240;--marine:#1A3A6B;--mauve:#B088E8;--mauve-dk:#7A56C2;
+  --acier:#7A90A8;--ivoire:#F0EEE8;--blanc:#FFFFFF;--texte:#2D3748;
+  --bg:#F5F3EE;--border:#E2DDD6;--meta:#8A9BB0;
+  --shadow:0 2px 12px rgba(13,34,64,.08);--shadow-lg:0 8px 32px rgba(13,34,64,.14);
+  --r:10px;--r-lg:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);line-height:1.65;font-size:15px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+.site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-logo img{height:34px;width:auto;flex-shrink:0}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.main-nav > a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.main-nav > a:hover,.main-nav > a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 12px;transition:border-color .2s}
+.nav-search-wrap:focus-within{border-color:rgba(176,136,232,.5)}
+.nav-search-wrap input{background:none;border:none;outline:none;color:#fff;font-size:12px;font-family:'DM Sans',sans-serif;width:130px}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.25)}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:8px 16px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s;text-decoration:none;display:inline-block}
+.nav-btn:hover{opacity:.88}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:1px}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:72px 0}
+.s-sm{padding:48px 0}
+.bg-white{background:var(--blanc)}
+.bg-ivoire{background:var(--ivoire)}
+.bg-dark{background:var(--nuit)}
+
+/* ── SECTION HEAD ── */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:20px;flex-wrap:wrap}
+.sh-left{display:flex;flex-direction:column}
+.sh-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.sh-label b{font-size:17px;font-weight:900;color:var(--mauve)}
+.sh-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);line-height:1;margin:0}
+.sh-intro{font-size:13px;color:var(--acier);margin-top:6px;max-width:480px}
+.bg-dark .sh-title{color:#fff}
+.bg-dark .sh-label{color:rgba(255,255,255,.38)}
+.bg-dark .sh-intro{color:rgba(255,255,255,.38)}
+.see-all{font-size:11px;font-weight:500;color:var(--mauve);text-transform:uppercase;letter-spacing:.06em;transition:opacity .15s;white-space:nowrap;align-self:flex-end}
+.see-all:hover{opacity:.7}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
+.btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
+.btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(176,136,232,.35)}
+.btn-out{background:transparent;color:var(--mauve);border-color:var(--mauve)}
+.btn-out:hover{background:var(--mauve);color:var(--nuit)}
+.btn-sm{padding:8px 18px;font-size:12px}
+
+/* ── HERO PAGE ── */
+.hero-page{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 60%,var(--mauve-dk) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.hero-page::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;border-radius:50%;border:60px solid var(--mauve);opacity:.07;pointer-events:none}
+.hero-page::after{content:'';position:absolute;left:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(255,255,255,.05);pointer-events:none}
+.hero-page-inner{position:relative;z-index:1}
+.hero-page-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve);margin-bottom:14px}
+.hero-page h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(44px,6vw,72px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:16px}
+.hero-page h1 em{color:var(--mauve);font-style:normal}
+.hero-page p{font-size:16px;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto;line-height:1.65}
+
+/* ── SUBNAV — section navigation ── */
+.subnav{background:var(--marine);border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:60px;z-index:900}
+.subnav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:40px;gap:2px;overflow-x:auto;scrollbar-width:none}
+.subnav-inner::-webkit-scrollbar{display:none}
+.subnav-inner a{font-size:11px;font-weight:500;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.08em;padding:5px 12px;border-radius:5px;white-space:nowrap;transition:color .15s,background .15s;text-decoration:none}
+.subnav-inner a:hover{color:rgba(255,255,255,.85)}
+.subnav-inner a.on{color:var(--mauve);background:rgba(176,136,232,.12)}
+.subnav-sep{width:1px;height:16px;background:rgba(255,255,255,.1);margin:0 6px;flex-shrink:0}
+
+/* ── CONTINENTAL CARDS — dark premium ── */
+.cont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cont-card{background:rgba(255,255,255,.05);border:1px solid rgba(176,136,232,.2);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s,background .2s;position:relative;overflow:hidden}
+.cont-card::before{content:'';position:absolute;right:-20px;top:-20px;width:100px;height:100px;border-radius:50%;border:20px solid var(--mauve);opacity:.06;pointer-events:none}
+.cont-card:hover{border-color:var(--mauve);transform:translateY(-3px);background:rgba(255,255,255,.08)}
+.cont-tier{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mauve);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.cont-tier::before{content:'';width:16px;height:1.5px;background:var(--mauve)}
+.cont-badges{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.cont-fmt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:4px;display:inline-block}
+.cont-fmt-fi{background:var(--mauve);color:var(--nuit)}
+.cont-fmt-si{background:var(--mauve-dk);color:#fff}
+.cont-fmt-bo{background:var(--marine);color:rgba(255,255,255,.85);border:1px solid rgba(176,136,232,.3)}
+.cont-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;text-transform:uppercase;color:#fff;line-height:1.05;margin-bottom:18px}
+.cont-row{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--acier);margin-bottom:8px}
+.cont-icon{color:var(--mauve);flex-shrink:0;font-size:12px}
+.cont-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.07)}
+.cont-card:hover .cont-cta{color:#fff}
+.cont-placeholder{font-size:10px;color:rgba(255,255,255,.22);margin-top:4px;margin-bottom:8px;font-style:italic}
+
+/* ── NATIONAL TOURNAMENT CARDS ── */
+.tc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tc-new{background:#fff;border-radius:var(--r-lg);overflow:hidden;border:2px solid var(--border);transition:border-color .2s,box-shadow .2s,transform .2s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.tc-new:hover{border-color:var(--mauve);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.tc-new-header{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 100%);height:100px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.tc-new-header::after{content:'';position:absolute;inset:0;background:var(--mauve);opacity:.08;transition:opacity .2s}
+.tc-new:hover .tc-new-header::after{opacity:.18}
+.tc-new-emoji{font-size:34px;position:relative;z-index:1}
+.tc-new-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.tc-new-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:12px}
+.tc-new-badge-si{background:var(--mauve-dk);color:#fff}
+.tc-new-badge-bo{background:var(--marine);color:#fff}
+.tc-new-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;text-transform:uppercase;color:var(--nuit);line-height:1.05;margin-bottom:12px;transition:color .2s}
+.tc-new:hover .tc-new-name{color:var(--mauve-dk)}
+.tc-new-info{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;flex:1}
+.tc-new-row{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--acier)}
+.tc-new-icon{color:var(--mauve);font-size:12px;flex-shrink:0;margin-top:1px}
+.tc-new-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+
+/* ── MATCH CARDS — League & Match Watch ── */
+.match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.match-card{background:var(--blanc);border:1px solid var(--border);border-left:3px solid var(--mauve);border-radius:var(--r);padding:20px 22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;transition:border-color .2s,transform .15s,box-shadow .15s}
+.match-card:hover{border-left-color:var(--mauve-dk);transform:translateY(-2px);box-shadow:var(--shadow)}
+.match-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.match-country{font-size:20px}
+.match-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:4px}
+.match-badge-fi{background:rgba(176,136,232,.15);color:var(--mauve-dk)}
+.match-badge-bo{background:rgba(26,58,107,.12);color:var(--marine)}
+.match-fixture{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);line-height:1.15;display:flex;flex-direction:column;gap:2px}
+.match-vs{font-size:10px;font-weight:700;color:var(--acier);letter-spacing:.06em}
+.match-comp{font-size:11px;color:var(--acier)}
+.match-meta{font-size:11px;color:var(--meta)}
+.match-signal{font-size:10px;font-weight:500;color:var(--mauve-dk);padding:4px 10px;background:rgba(176,136,232,.08);border-radius:999px;border:.5px solid rgba(176,136,232,.2);display:inline-block;align-self:flex-start}
+.match-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);border-top:1px solid var(--border);padding-top:10px}
+.match-card:hover .match-cta{color:var(--mauve-dk)}
+
+/* ── COUNTRY GATEWAYS ── */
+.gw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gw-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;transition:border-color .2s,transform .15s}
+.gw-card:hover{border-color:var(--mauve);transform:translateY(-2px)}
+.gw-flag{font-size:24px;flex-shrink:0}
+.gw-info{min-width:0}
+.gw-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;color:var(--nuit)}
+.gw-sub{font-size:11px;color:var(--acier);margin-top:1px}
+
+/* ── PAST RESULTS ── */
+.past-list{display:flex;flex-direction:column;gap:10px}
+.past-item{display:flex;align-items:center;gap:16px;padding:16px 20px;background:#fff;border-radius:var(--r);border:1px solid var(--border);transition:border-color .15s}
+.past-item:hover{border-color:var(--mauve)}
+.past-flag{font-size:22px;flex-shrink:0}
+.past-info{flex:1;min-width:0}
+.past-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit)}
+.past-sub{font-size:12px;color:var(--acier);margin-top:2px}
+.past-right{text-align:right;flex-shrink:0}
+.past-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:var(--mauve);text-transform:uppercase}
+.past-status{font-size:11px;color:var(--acier);margin-top:2px}
+.past-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);margin-top:4px;display:block}
+
+/* ── ORGANISER CTA ── */
+.org-cta{background:var(--nuit);border-radius:var(--r-lg);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;margin-top:48px}
+.org-cta::before{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:36px solid var(--mauve);opacity:.07;pointer-events:none}
+.org-cta-copy{position:relative;z-index:1}
+.org-cta-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.org-cta-sub{font-size:13px;color:var(--acier)}
+.org-cta .btn{position:relative;z-index:1}
+
+/* ── SECTION CTA — below grids ── */
+.section-cta{text-align:center;margin-top:32px}
+
+/* ── SECTION NOTE — sources / framing ── */
+.section-note{font-size:12px;color:var(--acier);margin-bottom:24px;font-style:italic}
+
+/* ── DIVIDER ── */
+.m-div{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.m-div-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--acier);white-space:nowrap}
+.m-div-line{flex:1;height:1px;background:var(--border)}
+.m-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:4px;background:var(--nuit);color:var(--mauve)}
+
+/* ── NEWSLETTER ── */
+.nl-dark{background:var(--marine);padding:24px 0}
+.nl-dark-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.nl-dark-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:3px}
+.nl-dark-sub{font-size:13px;color:var(--acier)}
+.nl-form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-form input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 16px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;width:220px;outline:none}
+.nl-form input::placeholder{color:rgba(255,255,255,.3)}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--nuit);padding:64px 0 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.foot-logo em{color:var(--mauve);font-style:normal}
+.foot-tag{font-size:13px;color:var(--acier);line-height:1.6;max-width:240px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--acier);font-size:15px;transition:background .15s,color .15s;text-decoration:none}
+.foot-social a:hover{background:var(--mauve);color:var(--nuit)}
+.foot-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;text-decoration:none;transition:color .15s,padding-left .15s}
+.foot-col a:hover{color:var(--mauve);padding-left:4px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25)}
+.foot-links{display:flex;gap:16px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--mauve)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .cont-grid,.tc-grid,.match-grid,.gw-grid,.foot-grid{grid-template-columns:1fr 1fr}
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .container{padding:0 20px}
+  .org-cta{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  .cont-grid,.tc-grid,.match-grid{grid-template-columns:1fr}
+  .gw-grid{grid-template-columns:1fr 1fr}
+  .nl-form{flex-direction:column}
+  .nl-form input{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header"><div class="header-inner">
+  <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Follow The Lacrosse"></a>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="articles.html">Articles</a>
+    <a href="tournaments.html" class="active">Tournaments</a>
+    <a href="interviews.html">Interviews</a>
+    <a href="countries.html">Countries</a>
+    <a href="whats-lacrosse.html">What&#8217;s Lacrosse?</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="nav-right">
+    <div class="nav-search-wrap"><span style="color:rgba(255,255,255,.25);">&#128269;</span><input type="text" placeholder="Search..."></div>
+    <a href="index.html#newsletter" class="nav-btn">Newsletter</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<!-- HERO -->
+<section class="hero-page">
+  <div class="container hero-page-inner">
+    <div class="hero-page-kicker">Follow The Lacrosse &#8212; 2026 Calendar</div>
+    <h1>European <em>Calendar</em></h1>
+    <p>From ELF championships to national cups and domestic league rounds &#8212; the full European lacrosse schedule, curated by FTL.</p>
+  </div>
+</section>
+
+<!-- SUBNAV — section navigation, not a filter -->
+<div class="subnav"><div class="subnav-inner">
+  <a href="#continental" class="on">Continental</a>
+  <a href="#national">National Events</a>
+  <a href="#league-watch">League Watch</a>
+  <div class="subnav-sep"></div>
+  <a href="#country-gateways">Countries</a>
+  <a href="#archives">Archives</a>
+</div></div>
+
+<!-- ═══════════════════════════════════════════════════
+     S01 — CONTINENTAL CALENDAR
+════════════════════════════════════════════════════ -->
+<section id="continental" class="s bg-dark">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-left">
+        <div class="sh-label"><b>01</b>&nbsp; Continental</div>
+        <h2 class="sh-title">Continental Calendar</h2>
+        <p class="sh-intro">ELF events and pan-European competitions that structure the season.</p>
+      </div>
+      <a href="#archives" class="see-all">Past editions &#8594;</a>
+    </div>
+
+    <div class="cont-grid">
+
+      <!-- C1 — ELF Spring Championship (confirmed event) -->
+      <a href="tournament-detail.html" class="cont-card">
+        <div class="cont-tier">ELF &#183; Continental</div>
+        <div class="cont-badges"><span class="cont-fmt cont-fmt-fi">Field</span></div>
+        <p class="cont-name">ELF Spring Championship 2026</p>
+        <div class="cont-row"><span class="cont-icon">&#128205;</span><span>London, United Kingdom</span></div>
+        <div class="cont-row"><span class="cont-icon">&#128197;</span><span>April 5&#8211;6, 2026</span></div>
+        <div class="cont-row"><span class="cont-icon">&#128101;</span><span>Men &amp; Women</span></div>
+        <p class="cont-cta">Event details &#8594;</p>
+      </a>
+
+      <!-- C2 — Placeholder continental Sixes -->
+      <a href="tournament-detail.html" class="cont-card">
+        <div class="cont-tier">Continental</div>
+        <div class="cont-badges"><span class="cont-fmt cont-fmt-si">Sixes</span></div>
+        <p class="cont-name">European Sixes Invitational 2026</p>
+        <div class="cont-row"><span class="cont-icon">&#128205;</span><span>TBC</span></div>
+        <div class="cont-row"><span class="cont-icon">&#128197;</span><span>Summer 2026 &#183; Dates TBC</span></div>
+        <p class="cont-placeholder">Placeholder &#183; Details to be confirmed</p>
+        <p class="cont-cta">Follow updates &#8594;</p>
+      </a>
+
+      <!-- C3 — Placeholder continental Box -->
+      <a href="tournament-detail.html" class="cont-card">
+        <div class="cont-tier">Continental</div>
+        <div class="cont-badges"><span class="cont-fmt cont-fmt-bo">Box</span></div>
+        <p class="cont-name">European Box Cup 2026</p>
+        <div class="cont-row"><span class="cont-icon">&#128205;</span><span>TBC</span></div>
+        <div class="cont-row"><span class="cont-icon">&#128197;</span><span>Autumn 2026 &#183; Dates TBC</span></div>
+        <p class="cont-placeholder">Placeholder &#183; Details to be confirmed</p>
+        <p class="cont-cta">Follow updates &#8594;</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S02 — NATIONAL EVENT WATCH
+════════════════════════════════════════════════════ -->
+<section id="national" class="s bg-white">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-left">
+        <div class="sh-label"><b>02</b>&nbsp; National Events</div>
+        <h2 class="sh-title">National Event Watch</h2>
+        <p class="sh-intro">Upcoming championships, cups and major weekends across seven countries.</p>
+      </div>
+    </div>
+
+    <div class="tc-grid">
+
+      <!-- N1 — Amsterdam Sixes Open -->
+      <a href="tournament-detail.html" class="tc-new">
+        <div class="tc-new-header"><span class="tc-new-emoji">&#127475;&#127473;</span></div>
+        <div class="tc-new-body">
+          <span class="tc-new-badge tc-new-badge-si">Sixes</span>
+          <h3 class="tc-new-name">Amsterdam Sixes Open</h3>
+          <div class="tc-new-info">
+            <div class="tc-new-row"><span class="tc-new-icon">&#128205;</span><span>Amsterdam, Netherlands</span></div>
+            <div class="tc-new-row"><span class="tc-new-icon">&#128197;</span><span>April 19, 2026</span></div>
+          </div>
+          <div class="tc-new-cta">Event details &#8594;</div>
+        </div>
+      </a>
+
+      <!-- N2 — French Nationals -->
+      <a href="tournament-detail.html" class="tc-new">
+        <div class="tc-new-header"><span class="tc-new-emoji">&#127467;&#127479;</span></div>
+        <div class="tc-new-body">
+          <span class="tc-new-badge">Field</span>
+          <h3 class="tc-new-name">French Nationals &#8212; Div 1</h3>
+          <div class="tc-new-info">
+            <div class="tc-new-row"><span class="tc-new-icon">&#128205;</span><span>Paris, France</span></div>
+            <div class="tc-new-row"><span class="tc-new-icon">&#128197;</span><span>April 26&#8211;27, 2026</span></div>
+          </div>
+          <div class="tc-new-cta">Event details &#8594;</div>
+        </div>
+      </a>
+
+      <!-- N3 — Berlin Box Invitational -->
+      <a href="tournament-detail.html" class="tc-new">
+        <div class="tc-new-header"><span class="tc-new-emoji">&#127465;&#127466;</span></div>
+        <div class="tc-new-body">
+          <span class="tc-new-badge tc-new-badge-bo">Box</span>
+          <h3 class="tc-new-name">Berlin Box Invitational</h3>
+          <div class="tc-new-info">
+            <div class="tc-new-row"><span class="tc-new-icon">&#128205;</span><span>Berlin, Germany</span></div>
+            <div class="tc-new-row"><span class="tc-new-icon">&#128197;</span><span>May 3, 2026</span></div>
+          </div>
+          <div class="tc-new-cta">Event details &#8594;</div>
+        </div>
+      </a>
+
+      <!-- N4 — Prague Sixes Classic -->
+      <a href="tournament-detail.html" class="tc-new">
+        <div class="tc-new-header"><span class="tc-new-emoji">&#127464;&#127487;</span></div>
+        <div class="tc-new-body">
+          <span class="tc-new-badge tc-new-badge-si">Sixes</span>
+          <h3 class="tc-new-name">Prague Sixes Classic</h3>
+          <div class="tc-new-info">
+            <div class="tc-new-row"><span class="tc-new-icon">&#128205;</span><span>Prague, Czech Republic</span></div>
+            <div class="tc-new-row"><span class="tc-new-icon">&#128197;</span><span>May 17, 2026</span></div>
+          </div>
+          <div class="tc-new-cta">Event details &#8594;</div>
+        </div>
+      </a>
+
+      <!-- N5 — Italian Cup -->
+      <a href="tournament-detail.html" class="tc-new">
+        <div class="tc-new-header"><span class="tc-new-emoji">&#127470;&#127481;</span></div>
+        <div class="tc-new-body">
+          <span class="tc-new-badge">Field</span>
+          <h3 class="tc-new-name">Italian Cup &#8212; Round 2</h3>
+          <div class="tc-new-info">
+            <div class="tc-new-row"><span class="tc-new-icon">&#128205;</span><span>Milan, Italy</span></div>
+            <div class="tc-new-row"><span class="tc-new-icon">&#128197;</span><span>May 24, 2026</span></div>
+          </div>
+          <div class="tc-new-cta">Event details &#8594;</div>
+        </div>
+      </a>
+
+    </div>
+    <div class="section-cta">
+      <a href="countries.html" class="btn btn-out btn-sm">Explore by country &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S03 — LEAGUE & MATCH WATCH
+════════════════════════════════════════════════════ -->
+<section id="league-watch" class="s">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-left">
+        <div class="sh-label"><b>03</b>&nbsp; Domestic</div>
+        <h2 class="sh-title">League &amp; Match Watch</h2>
+        <p class="sh-intro">Domestic leagues and rounds FTL is tracking this season.</p>
+      </div>
+    </div>
+
+    <div class="match-grid">
+
+      <!-- M1 — England Box League watchlist -->
+      <a href="country-england.html" class="match-card">
+        <div class="match-head">
+          <span class="match-country">&#127468;&#127463;</span>
+          <span class="match-badge match-badge-bo">Box</span>
+        </div>
+        <div class="match-fixture">
+          <span>England Box League</span>
+          <span class="match-vs">Weekend Watch</span>
+        </div>
+        <p class="match-comp">Domestic rounds &#183; Spring 2026 &#183; Men</p>
+        <span class="match-signal">FTL Watchlist</span>
+        <p class="match-cta">England scene &#8594;</p>
+      </a>
+
+      <!-- M2 — Ligue Nationale France watchlist -->
+      <a href="country-france.html" class="match-card">
+        <div class="match-head">
+          <span class="match-country">&#127467;&#127479;</span>
+          <span class="match-badge match-badge-fi">Field</span>
+        </div>
+        <div class="match-fixture">
+          <span>Ligue Nationale Field</span>
+          <span class="match-vs">Domestic Watch</span>
+        </div>
+        <p class="match-comp">Domestic rounds &#183; Spring 2026 &#183; Men</p>
+        <span class="match-signal">FTL Watchlist</span>
+        <p class="match-cta">France scene &#8594;</p>
+      </a>
+
+      <!-- M3 — Bundesliga Field Germany watchlist -->
+      <a href="country-germany.html" class="match-card">
+        <div class="match-head">
+          <span class="match-country">&#127465;&#127466;</span>
+          <span class="match-badge match-badge-fi">Field</span>
+        </div>
+        <div class="match-fixture">
+          <span>Bundesliga Field</span>
+          <span class="match-vs">Matchday Watch</span>
+        </div>
+        <p class="match-comp">Domestic rounds &#183; Spring 2026 &#183; Men</p>
+        <span class="match-signal">FTL Watchlist</span>
+        <p class="match-cta">Germany scene &#8594;</p>
+      </a>
+
+    </div>
+    <div class="section-cta">
+      <a href="countries.html" class="btn btn-out btn-sm">Explore all scenes &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S04 — COUNTRY GATEWAYS
+════════════════════════════════════════════════════ -->
+<section id="country-gateways" class="s-sm bg-ivoire">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-left">
+        <div class="sh-label"><b>04</b>&nbsp; Scenes</div>
+        <h2 class="sh-title">Country Gateways</h2>
+        <p class="sh-intro">Events are the surface. Go deeper into each national scene.</p>
+      </div>
+    </div>
+
+    <div class="gw-grid">
+      <a href="country-england.html" class="gw-card">
+        <span class="gw-flag">&#127468;&#127463;</span>
+        <div class="gw-info"><p class="gw-name">England</p><p class="gw-sub">Box &#183; Field &#183; Sixes</p></div>
+      </a>
+      <a href="country-france.html" class="gw-card">
+        <span class="gw-flag">&#127467;&#127479;</span>
+        <div class="gw-info"><p class="gw-name">France</p><p class="gw-sub">Field &#183; Sixes</p></div>
+      </a>
+      <a href="country-germany.html" class="gw-card">
+        <span class="gw-flag">&#127465;&#127466;</span>
+        <div class="gw-info"><p class="gw-name">Germany</p><p class="gw-sub">Field &#183; Box</p></div>
+      </a>
+      <a href="country-netherlands.html" class="gw-card">
+        <span class="gw-flag">&#127475;&#127473;</span>
+        <div class="gw-info"><p class="gw-name">Netherlands</p><p class="gw-sub">Sixes &#183; Field</p></div>
+      </a>
+      <a href="country-italy.html" class="gw-card">
+        <span class="gw-flag">&#127470;&#127481;</span>
+        <div class="gw-info"><p class="gw-name">Italy</p><p class="gw-sub">Sixes &#183; Field</p></div>
+      </a>
+      <a href="country-czech-republic.html" class="gw-card">
+        <span class="gw-flag">&#127464;&#127487;</span>
+        <div class="gw-info"><p class="gw-name">Czech Republic</p><p class="gw-sub">Field &#183; Sixes</p></div>
+      </a>
+    </div>
+
+    <div class="section-cta">
+      <a href="countries.html" class="btn btn-out btn-sm">All countries &amp; scenes &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     PREVIOUSLY IN EUROPE
+════════════════════════════════════════════════════ -->
+<section id="archives" class="s-sm bg-white">
+  <div class="container">
+
+    <div class="m-div">
+      <span class="m-div-label">Previously in Europe</span>
+      <div class="m-div-line"></div>
+      <span class="m-badge">2025</span>
+    </div>
+
+    <p class="section-note">Results and resources sourced from external references &#8212; federation sites, results platforms and verified third-party sources. Not internal FTL coverage.</p>
+
+    <div class="past-list">
+
+      <div class="past-item">
+        <span class="past-flag">&#127464;&#127487;</span>
+        <div class="past-info">
+          <p class="past-name">European Championship Qualifiers</p>
+          <p class="past-sub">&#128205; Prague, Czechia &nbsp;&#183;&nbsp; Field &nbsp;&#183;&nbsp; Continental</p>
+        </div>
+        <div class="past-right">
+          <p class="past-date">Sep 5&#8211;10, 2025</p>
+          <p class="past-status">External source TBC</p>
+          <a href="country-czech-republic.html" class="past-link">Country scene &#8594;</a>
+        </div>
+      </div>
+
+      <div class="past-item">
+        <span class="past-flag">&#127467;&#127479;</span>
+        <div class="past-info">
+          <p class="past-name">Paris Sixes Invitational</p>
+          <p class="past-sub">&#128205; Paris, France &nbsp;&#183;&nbsp; Sixes &nbsp;&#183;&nbsp; National</p>
+        </div>
+        <div class="past-right">
+          <p class="past-date">Oct 2&#8211;4, 2025</p>
+          <p class="past-status">External source TBC</p>
+          <a href="country-france.html" class="past-link">Country scene &#8594;</a>
+        </div>
+      </div>
+
+      <div class="past-item">
+        <span class="past-flag">&#127470;&#127481;</span>
+        <div class="past-info">
+          <p class="past-name">Milan Indoor Classic</p>
+          <p class="past-sub">&#128205; Milan, Italy &nbsp;&#183;&nbsp; Box &nbsp;&#183;&nbsp; National</p>
+        </div>
+        <div class="past-right">
+          <p class="past-date">Nov 8, 2025</p>
+          <p class="past-status">External source TBC</p>
+          <a href="country-italy.html" class="past-link">Country scene &#8594;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ORGANISER CTA -->
+    <div class="org-cta">
+      <div class="org-cta-copy">
+        <h3 class="org-cta-title">Organising an event?</h3>
+        <p class="org-cta-sub">Submit your tournament or league round and we&#8217;ll add it to the FTL calendar.</p>
+      </div>
+      <a href="about.html#contact" class="btn btn-pri">Submit your event &#8594;</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nl-dark">
+  <div class="container nl-dark-inner">
+    <div>
+      <p class="nl-dark-title">The European Lacrosse Briefing</p>
+      <p class="nl-dark-sub">Continental events. National scenes. League rounds. Delivered weekly.</p>
+    </div>
+    <div class="nl-form">
+      <input type="email" placeholder="your@email.com">
+      <button class="btn btn-pri btn-sm">Subscribe &#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer"><div class="container">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">Follow The <em>Lacrosse</em></div>
+      <p class="foot-tag">The central hub for everything related to lacrosse in Europe. News, results, tournaments and analysis.</p>
+      <div class="foot-social"><a href="#">&#128247;</a><a href="#">&#120143;</a><a href="#">&#9654;</a><a href="#">&#9835;</a></div>
+    </div>
+    <div>
+      <p class="foot-col-title">Content</p>
+      <div class="foot-col">
+        <a href="articles.html">Articles</a>
+        <a href="tournaments.html">Tournaments</a>
+        <a href="interviews.html">Interviews</a>
+        <a href="whats-lacrosse.html">What&#8217;s Lacrosse?</a>
+      </div>
+    </div>
+    <div>
+      <p class="foot-col-title">Countries</p>
+      <div class="foot-col">
+        <a href="countries.html">All Countries</a>
+        <a href="country-england.html">England</a>
+        <a href="country-france.html">France</a>
+        <a href="country-germany.html">Germany</a>
+      </div>
+      <p class="foot-col-title" style="margin-top:20px;">Formats</p>
+      <div class="foot-col">
+        <a href="articles.html">Field</a>
+        <a href="articles.html">Sixes</a>
+        <a href="articles.html">Box</a>
+      </div>
+    </div>
+    <div>
+      <p class="foot-col-title">FTL</p>
+      <div class="foot-col">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="about.html#contact">Contact</a>
+        <a href="follow.html">Follow Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">&#169; 2026 Follow The Lacrosse. All rights reserved.</span>
+    <div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</div></footer>
+
+<script>
+// Subnav — active state on section link click
+document.querySelectorAll('.subnav-inner a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.querySelectorAll('.subnav-inner a').forEach(function(x){x.classList.remove('on')});
+    this.classList.add('on');
+  });
+});
+// Newsletter
+document.querySelectorAll('.nl-form').forEach(function(f){
+  var b=f.querySelector('button'),i=f.querySelector('input[type=email]');
+  if(!b||!i)return;
+  b.addEventListener('click',function(){
+    if(i.value&&i.value.includes('@')){
+      var t=b.textContent;b.textContent='&#x2713; Subscribed!';
+      b.style.background='#3B6D11';b.style.color='#fff';i.value='';
+      setTimeout(function(){b.textContent=t;b.style.background='';b.style.color=''},3000);
+    }else{
+      i.style.borderColor='#A32D2D';i.focus();
+      setTimeout(function(){i.style.borderColor=''},2000);
+    }
+  });
+});
+// Mobile menu
+var mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');
+if(mt&&mn){mt.addEventListener('click',function(){
+  var open=mn.style.display==='flex';
+  mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto';
+});}
+</script>
+</body>
+</html>

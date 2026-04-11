@@ -1,0 +1,17 @@
+section,element,type,current_value,destination,status
+S01 Continental,ELF Spring Championship 2026,confirmed_event,"London · April 5-6 2026 · Field · Men & Women (unverified)",tournament-detail.html,Event confirmed — Men/Women data unverified
+S01 Continental,European Sixes Invitational 2026,placeholder_structurel,"TBC · Summer 2026 · Sixes",tournament-detail.html,Event name + dates non vérifiés ELF
+S01 Continental,European Box Cup 2026,placeholder_structurel,"TBC · Autumn 2026 · Box",tournament-detail.html,Event name + dates non vérifiés
+S02 National,Amsterdam Sixes Open,placeholder_destination,"Amsterdam · April 19 2026 · Sixes",tournament-detail.html,Event plausible — page destination placeholder
+S02 National,French Nationals Div 1,placeholder_destination,"Paris · April 26-27 2026 · Field",tournament-detail.html,Event plausible — page destination placeholder
+S02 National,Berlin Box Invitational,placeholder_destination,"Berlin · May 3 2026 · Box",tournament-detail.html,Event plausible — page destination placeholder
+S02 National,Prague Sixes Classic,placeholder_destination,"Prague · May 17 2026 · Sixes",tournament-detail.html,Event plausible — page destination placeholder
+S02 National,Italian Cup Round 2,placeholder_destination,"Milan · May 24 2026 · Field",tournament-detail.html,Event plausible — page destination placeholder
+S03 League Watch,England Box League,watchlist_editorial,"Weekend Watch · Domestic rounds · Spring 2026 · Men",country-england.html,Ligue réelle — données fixture retirées intentionnellement
+S03 League Watch,Ligue Nationale Field,watchlist_editorial,"Domestic Watch · Domestic rounds · Spring 2026 · Men",country-france.html,Ligue réelle — données fixture retirées intentionnellement
+S03 League Watch,Bundesliga Field,watchlist_editorial,"Matchday Watch · Domestic rounds · Spring 2026 · Men",country-germany.html,Ligue réelle — données fixture retirées intentionnellement
+S04 Gateways,Formats par pays,donnee_non_verifiee,"England: Box/Field/Sixes · France: Field/Sixes · etc.",country-*.html,Estimés — à vérifier avec les pages country-*.html
+Previously in Europe,European Championship Qualifiers,archive_source_tbc,"Prague · Sep 5-10 2025 · Field · Continental",country-czech-republic.html (repli),Source externe TBC — lien repli vers scène pays
+Previously in Europe,Paris Sixes Invitational,archive_source_tbc,"Paris · Oct 2-4 2025 · Sixes · National",country-france.html (repli),Source externe TBC — lien repli vers scène pays
+Previously in Europe,Milan Indoor Classic,archive_source_tbc,"Milan · Nov 8 2025 · Box · National",country-italy.html (repli),Source externe TBC — lien repli vers scène pays
+All,England flag,simplification_assumee,"UK flag (GB) — pas le drapeau England spécifique",country-england.html,Assumé — cohérence globale à décider

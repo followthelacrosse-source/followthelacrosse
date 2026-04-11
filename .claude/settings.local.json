@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:de.wikipedia.org)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:laxallstars.com)",
+      "WebFetch(domain:www.dlaxn.de)",
+      "WebFetch(domain:www.spainlacrosse.org)",
+      "WebFetch(domain:www.goettingen-lacrosse.de)",
+      "WebFetch(domain:dlaxv.de)",
+      "WebFetch(domain:worldlacrosse.sport)",
+      "WebFetch(domain:lacrosse.cz)",
+      "WebFetch(domain:nederlandlacrosse.nl)",
+      "WebFetch(domain:lacrosse.nl)",
+      "WebFetch(domain:junioreurolax.com)",
+      "WebFetch(domain:www.sbslf.se)",
+      "WebFetch(domain:www.lacrosseitalia.it)",
+      "WebFetch(domain:ahmemorial.cz)",
+      "WebFetch(domain:europeanlacrosse.org)",
+      "WebFetch(domain:lacrosse.se)",
+      "WebFetch(domain:ec23lacrosse.com)",
+      "WebFetch(domain:www.lacrosse.cz)",
+      "Bash(cp article-detail.html articles/article-detail.html)",
+      "Bash(cp article-berlin-clubs-transition.html articles/article-berlin-clubs-transition.html)",
+      "Bash(cp article-elf-spring-2026-preview.html articles/article-elf-spring-2026-preview.html)",
+      "Bash(cp article-england-box-goalie-duel.html articles/article-england-box-goalie-duel.html)",
+      "Bash(cp article-olympic-lacrosse-2028-europe.html articles/article-olympic-lacrosse-2028-europe.html)",
+      "Bash(grep:*)",
+      "Bash(sed:*)"
+    ]
+  }
+}

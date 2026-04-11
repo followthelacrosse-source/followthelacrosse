@@ -1,0 +1,24 @@
+file,element,type,value,status,priority
+articles.html,F1 card-feat,href,articles/article-detail.html,placeholder fictif,couche-3
+articles.html,F2 card-stack,href,articles/article-england-box-goalie-duel.html,article réel,ok
+articles.html,F3 card-stack,href,articles/article-sixes-rome-italy.html,article réel,ok
+articles.html,G1,href,articles/article-olympic-lacrosse-2028-europe.html,article réel,ok
+articles.html,G2,href,articles/article-elf-spring-2026-preview.html,article réel,ok
+articles.html,G3,href,articles/article-berlin-clubs-transition.html,article réel,ok
+articles.html,G4,href,articles/article-sixes-rome-italy.html,placeholder (titre ≠ article),couche-3
+articles.html,G5,href,articles/article-elf-spring-2026-preview.html,placeholder (titre ≠ article),couche-3
+articles.html,G6,href,interview-sophie-laurent-france.html,lien fictif,lot-interviews
+articles.html,F1 image,src,https://images.unsplash.com/...,image Unsplash placeholder,éditorial
+articles.html,auteur F1,text,Alex Dupont,nom fictif,éditorial
+articles.html,auteur F3,text,Giulia Rossi,nom fictif,éditorial
+article-detail.html,contenu entier,html,article générique France 9-8 England,placeholder structurel,couche-3
+article-detail.html,fts step 5,href,../interview-detail.html,lien fictif,lot-interviews
+article-detail.html,fts step 6,href,../tournament-detail.html,lien fictif,lot-tournaments
+article-england-box-goalie-duel.html,fts step 1,href,article-england-box-goalie-duel.html,self-link valide,ok
+article-england-box-goalie-duel.html,fts step 2,href,../country-england.html,lien réel,ok
+article-england-box-goalie-duel.html,fts step 3,href,../whats-lacrosse.html,lien réel,ok
+article-england-box-goalie-duel.html,fts step 4,href,../countries.html,lien réel,ok
+article-sixes-rome-italy.html,fts step 2,href,../country-italy.html,lien réel,ok
+article-berlin-clubs-transition.html,fts step 2,href,../country-germany.html,lien réel,ok
+article-elf-spring-2026-preview.html,fts step 2,href,../country-england.html,lien réel,ok
+article-olympic-lacrosse-2028-europe.html,fts step 2,href,../whats-lacrosse.html,lien réel,ok

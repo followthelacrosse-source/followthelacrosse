@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Lacrosse? &#8212; Follow The Lacrosse</title>
+<meta name="description" content="Discover the history of lacrosse, how it came to Europe, and the three main formats: Field, Sixes and Box.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --nuit:     #0D2240;
+  --marine:   #1A3A6B;
+  --mauve:    #B088E8;
+  --mauve-dk: #7A56C2;
+  --acier:    #7A90A8;
+  --ivoire:   #F0EEE8;
+  --blanc:    #FFFFFF;
+  --texte:    #2D3748;
+  --bg:       #F5F3EE;
+  --border:   #E2DDD6;
+  --meta:     #8A9BB0;
+  --shadow:   0 2px 12px rgba(13,34,64,.08);
+  --shadow-lg:0 8px 32px rgba(13,34,64,.14);
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);line-height:1.65;font-size:15px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── SPONSOR BAR ── */
+.sponsor-bar{background:var(--mauve-dk);text-align:center;padding:7px;font-size:11px;font-weight:500;color:rgba(255,255,255,.8);letter-spacing:.02em}
+.sponsor-bar a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
+
+/* ── HEADER — sombre, simple, épuré ── */
+.site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-logo img{height:34px;width:auto;flex-shrink:0}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.main-nav > a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.main-nav > a:hover,.main-nav > a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-item{position:relative}
+.nav-item > button{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:6px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;transition:color .15s,background .15s}
+.nav-item > button:hover,.nav-item:hover > button{color:#fff;background:rgba(255,255,255,.07)}
+.nav-chev{font-size:8px;opacity:.5;transition:transform .2s;pointer-events:none}
+.nav-item:hover .nav-chev{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + 8px);left:0;background:var(--nuit);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:6px;min-width:170px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .15s,visibility .15s,transform .15s;box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:200}
+.nav-item:hover .nav-drop{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-drop a{display:block;padding:8px 12px;font-size:12px;font-weight:500;color:rgba(255,255,255,.55);border-radius:6px;transition:color .1s,background .1s}
+.nav-drop a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 12px;transition:border-color .2s}
+.nav-search-wrap:focus-within{border-color:rgba(176,136,232,.5)}
+.nav-search-wrap input{background:none;border:none;outline:none;color:#fff;font-size:12px;font-family:'DM Sans',sans-serif;width:130px}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.25)}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:8px 16px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.nav-btn:hover{opacity:.88}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:1px}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:72px 0}
+.s-sm{padding:48px 0}
+.bg-white{background:var(--blanc)}
+.bg-ivoire{background:var(--ivoire)}
+.bg-dark{background:var(--nuit)}
+
+/* ── SECTION HEAD ── */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:20px;flex-wrap:wrap}
+.sh-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.sh-label b{font-size:17px;font-weight:900;color:var(--mauve)}
+.sh-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);line-height:1;margin:0}
+.see-all{font-size:11px;font-weight:500;color:var(--mauve);text-transform:uppercase;letter-spacing:.06em;transition:opacity .15s}
+.see-all:hover{opacity:.7}
+
+/* ── HERO ── */
+.hero{background:var(--nuit);padding:88px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-100px;top:-100px;width:440px;height:440px;border-radius:50%;border:70px solid var(--mauve);opacity:.04;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:680px}
+.hero-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.hero-kicker::before{content:'';width:28px;height:2px;background:var(--mauve);border-radius:1px}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,7vw,76px);text-transform:uppercase;color:#fff;line-height:.88;margin-bottom:22px}
+.hero-title em{color:var(--mauve);font-style:normal;display:block}
+.hero-sub{font-size:16px;color:var(--acier);line-height:1.65;max-width:540px;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
+.btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
+.btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(176,136,232,.35)}
+.btn-out{background:transparent;color:var(--mauve);border-color:var(--mauve)}
+.btn-out:hover{background:var(--mauve);color:var(--nuit)}
+.btn-out-white{background:transparent;color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25)}
+.btn-out-white:hover{border-color:var(--mauve);color:var(--mauve)}
+.btn-dk{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+.btn-dk:hover{background:var(--marine);border-color:var(--marine)}
+.btn-sm{padding:8px 18px;font-size:12px}
+.btn-lg{padding:16px 36px;font-size:15px}
+
+/* ── PILL FILTERS ── */
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.pill{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:7px 18px;border-radius:999px;border:1.5px solid var(--border);background:var(--blanc);color:var(--acier);cursor:pointer;transition:all .15s}
+.pill:hover{border-color:var(--mauve);color:var(--mauve-dk)}
+.pill.on{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+
+/* ── FILTER BAR ── */
+.fbar{background:var(--blanc);border-bottom:1px solid var(--border);padding:14px 0}
+.fbar-inner{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fsearch{display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:9px 14px;flex:1;min-width:180px;max-width:280px;transition:border-color .2s}
+.fsearch:focus-within{border-color:var(--mauve)}
+.fsearch input{background:none;border:none;outline:none;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);width:100%}
+.fsearch input::placeholder{color:var(--acier)}
+.fsel{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:9px 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);outline:none;cursor:pointer;transition:border-color .2s}
+.fsel:focus{border-color:var(--mauve)}
+
+/* ── ARTICLE CARDS — photos visibles, aérées ── */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.grid-2-1{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+
+.card{background:var(--blanc);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;cursor:pointer;text-decoration:none;color:inherit}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card-photo{position:relative;height:220px;overflow:hidden;background:#C8D4E0}
+.card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.card:hover .card-photo img{transform:scale(1.05)}
+.card-photo-badge{position:absolute;top:14px;left:14px;z-index:2}
+.cat{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:3px 10px;border-radius:4px;display:inline-block}
+.cat-dk{background:var(--mauve-dk);color:#fff}
+.cat-box{background:var(--marine);color:#fff}
+.card-body{padding:20px 22px;flex:1;display:flex;flex-direction:column;gap:0}
+.ctags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tc{font-size:10px;font-weight:500;padding:3px 9px;border-radius:999px;background:rgba(13,34,64,.06);color:var(--nuit);border:.5px solid var(--border)}
+.tf{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.tf-fi{background:rgba(176,136,232,.15);color:var(--mauve-dk)}
+.tf-si{background:rgba(122,86,194,.15);color:var(--mauve-dk)}
+.tf-bo{background:rgba(26,58,107,.12);color:var(--marine)}
+.card-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:21px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:10px}
+.card-exc{font-size:13px;color:var(--acier);line-height:1.55;margin-bottom:14px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border)}
+.card-meta{font-size:11px;color:var(--meta)}
+.card-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve)}
+.card:hover .card-cta{color:var(--mauve-dk)}
+
+/* Card featured */
+.card-feat .card-photo{height:320px}
+.card-feat .card-title{font-size:27px}
+
+/* Card small */
+.card-sm .card-photo{height:140px}
+.card-sm .card-title{font-size:14px}
+.card-sm .card-body{padding:12px 14px}
+.card-sm .card-exc{display:none}
+
+/* LIST ITEMS */
+.list-item{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:padding-left .15s}
+.list-item:last-child{border-bottom:none}
+.list-item:hover{padding-left:8px}
+.li-thumb{width:100px;height:68px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#C8D4E0}
+.li-thumb img{width:100%;height:100%;object-fit:cover}
+.li-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);line-height:1;margin-bottom:5px}
+.li-exc{font-size:12px;color:var(--acier);line-height:1.5}
+.li-meta{font-size:10px;color:var(--meta);margin-top:5px}
+
+/* ── PAGE HEADER ── */
+.ph{background:var(--nuit);padding:56px 0 48px;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;right:-70px;top:-70px;width:300px;height:300px;border-radius:50%;border:55px solid var(--mauve);opacity:.04}
+.ph-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:10px}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(38px,5vw,58px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:12px}
+.ph-title em{color:var(--mauve);font-style:normal}
+.ph-desc{font-size:14px;color:var(--acier);max-width:520px;line-height:1.6}
+
+/* ── TOURNAMENT CARDS ── */
+.tourn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc-card{background:var(--nuit);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden;transition:transform .2s}
+.tc-card:hover{transform:translateY(-3px)}
+.tc-card::before{content:'';position:absolute;right:-28px;top:-28px;width:120px;height:120px;border-radius:50%;border:22px solid var(--mauve);opacity:.07}
+.tc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.tc-flag{font-size:24px}
+.tc-fmt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
+.tc-fmt-fi{background:var(--mauve);color:var(--nuit)}
+.tc-fmt-si{background:var(--mauve-dk);color:#fff}
+.tc-fmt-bo{background:var(--marine);color:#fff}
+.tc-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:21px;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:12px}
+.tc-det{font-size:12px;color:var(--acier);margin-bottom:4px}
+.tc-hr{border:none;border-top:1px solid rgba(255,255,255,.07);margin:14px 0}
+.tc-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--mauve)}
+.tc-btn{display:inline-block;margin-top:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);border:1px solid rgba(176,136,232,.3);padding:8px 16px;border-radius:6px;transition:background .15s,color .15s}
+.tc-btn:hover{background:var(--mauve);color:var(--nuit)}
+
+/* ── TOURNAMENT ACCORDION ── */
+.acc-list{display:flex;flex-direction:column;gap:10px}
+.acc-item{background:var(--blanc);border-radius:var(--r);border:1px solid var(--border);overflow:hidden}
+.acc-hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;transition:background .15s}
+.acc-hd:hover{background:rgba(176,136,232,.04)}
+.acc-left{display:flex;align-items:center;gap:16px;flex:1}
+.acc-flag{font-size:24px;flex-shrink:0}
+.acc-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:var(--nuit)}
+.acc-sub{font-size:12px;color:var(--acier);margin-top:3px}
+.acc-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.acc-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--mauve);text-transform:uppercase}
+.acc-chev{color:var(--acier);font-size:11px;transition:transform .2s}
+.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-bd{border-top:1px solid var(--border);padding:22px 24px;display:none}
+.acc-item.open .acc-bd{display:block}
+.acc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.acc-lbl{font-size:10px;color:var(--acier);text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin-bottom:4px}
+.acc-val{font-size:14px;font-weight:500;color:var(--nuit)}
+.chip{display:inline-block;font-size:10px;background:var(--bg);color:var(--acier);padding:2px 8px;border-radius:999px;border:1px solid var(--border);margin:2px 2px 0 0}
+
+.m-div{display:flex;align-items:center;gap:16px;margin:32px 0 18px}
+.m-div-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--acier);white-space:nowrap}
+.m-div-line{flex:1;height:1px;background:var(--border)}
+.m-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:4px;background:var(--mauve);color:var(--nuit)}
+
+.cal-strip{background:var(--blanc);border-radius:var(--r);padding:16px 20px;border:1px solid var(--border);margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cal-months{display:flex;gap:4px;flex-wrap:wrap}
+.cal-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:6px;border:1px solid transparent;background:none;color:var(--acier);cursor:pointer;transition:all .15s}
+.cal-btn:hover{color:var(--nuit);border-color:var(--border)}
+.cal-btn.on{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+
+/* ── NEWSLETTER ── */
+.nl-dark{background:var(--marine);padding:24px 0}
+.nl-dark-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.nl-dark-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:3px}
+.nl-dark-sub{font-size:13px;color:var(--acier)}
+.nl-form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-form input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 16px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;width:220px;outline:none}
+.nl-form input::placeholder{color:rgba(255,255,255,.3)}
+
+.nl-strip{background:var(--mauve);border-radius:var(--r-lg);padding:32px 36px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px}
+.nl-strip-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin-bottom:4px}
+.nl-strip-sub{font-size:13px;color:var(--mauve-dk)}
+.nl-strip input{background:rgba(255,255,255,.9);border:none;border-radius:6px;padding:11px 16px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);width:220px;outline:none}
+.nl-strip input::placeholder{color:var(--acier)}
+
+/* ── SERVICES ── */
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.srv-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.srv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--mauve);transform:scaleX(0);transition:transform .2s;transform-origin:left}
+.srv-card:hover::after{transform:scaleX(1)}
+.srv-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.srv-icon{width:50px;height:50px;border-radius:var(--r);background:rgba(176,136,232,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
+.srv-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;color:var(--nuit);margin-bottom:8px}
+.srv-desc{font-size:14px;color:var(--acier);line-height:1.65}
+
+/* ── ABOUT ── */
+.about-2col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-visual{background:var(--nuit);border-radius:var(--r-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-visual::before{content:'';position:absolute;inset:0;border:2px solid rgba(176,136,232,.25);border-radius:var(--r-lg)}
+.about-visual img{width:55%;opacity:.9}
+.about-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:20px}
+.about-title em{color:var(--mauve);font-style:normal}
+.about-p{font-size:14px;color:var(--texte);line-height:1.75;margin-bottom:14px}
+
+/* ── CONTACT ── */
+.contact-2col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.ci-icon{width:38px;height:38px;background:rgba(176,136,232,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ci-label{font-size:10px;color:var(--acier);text-transform:uppercase;letter-spacing:.06em;font-weight:500;margin-bottom:3px}
+.ci-text{font-size:13px;color:var(--texte);line-height:1.5}
+.form-box{background:var(--blanc);border-radius:var(--r-lg);padding:32px;border:1px solid var(--border)}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--nuit);margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;font-family:'DM Sans',sans-serif;font-size:13px;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--blanc);color:var(--nuit);outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--mauve)}
+.fg textarea{min-height:120px;resize:vertical}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* ── SPONSOR SLOTS ── */
+.sponsor-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.s-slot{height:80px;display:flex;align-items:center;justify-content:center;background:var(--blanc);border-radius:10px;border:1.5px dashed var(--border);color:var(--acier);font-size:12px;transition:border-color .2s}
+.s-slot:hover{border-color:var(--mauve)}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--nuit);padding:64px 0 28px;margin-top:80px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.foot-logo em{color:var(--mauve);font-style:normal}
+.foot-tag{font-size:13px;color:var(--acier);line-height:1.6;max-width:240px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--acier);font-size:15px;transition:background .15s,color .15s;text-decoration:none}
+.foot-social a:hover{background:var(--mauve);color:var(--nuit)}
+.foot-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;text-decoration:none;transition:color .15s,padding-left .15s}
+.foot-col a:hover{color:var(--mauve);padding-left:4px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25)}
+.foot-links{display:flex;gap:16px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--mauve)}
+
+/* ── INLINE SPONSOR ── */
+.inline-sp{background:var(--ivoire);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;margin:32px 0;text-align:center}
+.inline-sp-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--acier);margin-bottom:8px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .grid-3,.grid-4,.grid-2-1,.tourn-grid,.about-2col,.contact-2col,.foot-grid{grid-template-columns:1fr}
+  .nl-strip{grid-template-columns:1fr}
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .acc-grid{grid-template-columns:1fr 1fr}
+  .hero-title{font-size:clamp(40px,8vw,56px)}
+  .container{padding:0 20px}
+}
+@media(max-width:600px){
+  .grid-6{grid-template-columns:repeat(2,1fr)}
+  .acc-grid{grid-template-columns:1fr}
+  .nl-form{flex-direction:column}
+  .nl-form input,.nl-strip input{width:100%}
+  .sponsor-row{grid-template-columns:1fr 1fr}
+}
+
+/* ── HERO PAGE standard ── */
+.hero-page{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 60%,var(--mauve-dk) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.hero-page::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;border-radius:50%;border:60px solid var(--mauve);opacity:.07;pointer-events:none}
+.hero-page::after{content:'';position:absolute;left:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(255,255,255,.05);pointer-events:none}
+.hero-page-inner{position:relative;z-index:1}
+.hero-page-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve);margin-bottom:14px}
+.hero-page h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(44px,6vw,72px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:16px}
+.hero-page h1 em{color:var(--mauve);font-style:normal}
+.hero-page p{font-size:16px;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto;line-height:1.65}
+
+/* ── WHAT'S LACROSSE SPECIFIC ── */
+
+/* Timeline */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--mauve),var(--mauve-dk))}
+.tl-item{position:relative;margin-bottom:36px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-39px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--mauve);border:3px solid var(--blanc);box-shadow:0 0 0 2px var(--mauve)}
+.tl-year{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;color:var(--mauve);letter-spacing:.08em;margin-bottom:4px}
+.tl-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;color:var(--nuit);margin-bottom:6px}
+.tl-desc{font-size:14px;color:var(--acier);line-height:1.65}
+
+/* Stat blocks */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:0}
+.stat-block{background:var(--nuit);border-radius:var(--r-lg);padding:28px 20px;text-align:center;position:relative;overflow:hidden}
+.stat-block::before{content:'';position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;border:16px solid var(--mauve);opacity:.1}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:44px;color:var(--mauve);line-height:1;margin-bottom:4px}
+.stat-label{font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+
+/* Format cards */
+.fmt-tabs{display:flex;gap:8px;margin-bottom:32px}
+.fmt-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;padding:10px 24px;border-radius:var(--r);border:2px solid var(--border);background:#fff;color:var(--acier);cursor:pointer;transition:all .2s}
+.fmt-tab:hover{border-color:var(--mauve);color:var(--mauve-dk)}
+.fmt-tab.on{border-color:var(--nuit);background:var(--nuit);color:#fff}
+
+.fmt-panel{display:none}
+.fmt-panel.on{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+
+.fmt-visual{border-radius:var(--r-lg);overflow:hidden;position:relative}
+.fmt-visual-inner{background:linear-gradient(135deg,var(--nuit),var(--marine));aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative}
+.fmt-visual-inner::before{content:'';position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;border:28px solid var(--mauve);opacity:.1}
+.fmt-badge{position:absolute;top:16px;left:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:4px;z-index:1}
+.fmt-badge-field{background:var(--mauve);color:var(--nuit)}
+.fmt-badge-sixes{background:var(--mauve-dk);color:#fff}
+.fmt-badge-box{background:var(--marine);color:#fff}
+
+.fmt-text h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:16px}
+.fmt-text h3 em{color:var(--mauve);font-style:normal}
+.fmt-text p{font-size:14px;color:var(--texte);line-height:1.75;margin-bottom:16px}
+.fmt-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.fmt-spec{background:var(--ivoire);border-radius:var(--r);padding:12px 16px;border-left:3px solid var(--mauve)}
+.fmt-spec-label{font-size:10px;color:var(--acier);text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin-bottom:3px}
+.fmt-spec-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--nuit)}
+
+/* Europe section */
+.europe-2col{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.europe-map{background:linear-gradient(135deg,var(--nuit),var(--marine));border-radius:var(--r-lg);padding:40px;text-align:center;font-size:72px;position:relative;overflow:hidden;aspect-ratio:1}
+.europe-map::before{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:36px solid var(--mauve);opacity:.08}
+.country-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.country-chip{background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center;transition:border-color .15s}
+.country-chip:hover{border-color:var(--mauve)}
+.country-chip-flag{font-size:20px;margin-bottom:4px}
+.country-chip-name{font-size:10px;font-weight:500;color:var(--nuit);text-transform:uppercase;letter-spacing:.04em}
+
+/* Section head */
+.wl-sh{margin-bottom:40px}
+.wl-sh-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.wl-sh-kicker b{font-size:17px;color:var(--mauve)}
+.wl-sh h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;text-transform:uppercase;color:var(--nuit);margin:0}
+
+@media(max-width:900px){
+  .stat-row{grid-template-columns:1fr 1fr}
+  .fmt-panel.on{grid-template-columns:1fr}
+  .europe-2col{grid-template-columns:1fr}
+  .fmt-tabs{flex-wrap:wrap}
+  .country-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){.stat-row{grid-template-columns:1fr 1fr}.fmt-specs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="sponsor-bar">Presented by <a href="services.html">Your Brand Here</a> &#8212; <a href="services.html">Become a Sponsor</a></div>
+<header class="site-header"><div class="header-inner">
+  <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Follow The Lacrosse"></a>
+  <nav class="main-nav"><a href="index.html">Home</a><a href="articles.html">Articles</a><a href="tournaments.html">Tournaments</a><a href="interviews.html">Interviews</a><a href="whats-lacrosse.html" class="active">What&#8217;s Lacrosse?</a><a href="about.html">About</a><a href="follow.html">Follow Us</a></nav>
+  <div class="nav-right">
+    <div class="nav-search-wrap"><span style="color:rgba(255,255,255,.25);">&#128269;</span><input type="text" placeholder="Search posts..."></div>
+    <a href="index.html#newsletter" class="nav-btn">Newsletter</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<!-- HERO -->
+<section class="hero-page">
+  <div class="container hero-page-inner">
+    <div class="hero-page-kicker">The Sport Explained</div>
+    <h1>What&#8217;s <em>Lacrosse?</em></h1>
+    <p>The oldest team sport in North America, now one of the fastest growing in Europe. Here&#8217;s everything you need to know.</p>
+  </div>
+</section>
+
+<!-- QUICK STATS -->
+<div style="background:var(--nuit);padding:36px 0;">
+  <div class="container">
+    <div class="stat-row">
+      <div class="stat-block"><p class="stat-num">800+</p><p class="stat-label">Years of history</p></div>
+      <div class="stat-block"><p class="stat-num">60+</p><p class="stat-label">Countries playing</p></div>
+      <div class="stat-block"><p class="stat-num">30+</p><p class="stat-label">European nations</p></div>
+      <div class="stat-block"><p class="stat-num">3</p><p class="stat-label">Game formats</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- HISTORY OF LACROSSE -->
+<section class="s bg-white" id="history">
+  <div class="container">
+    <div class="wl-sh">
+      <div class="wl-sh-kicker"><b>01</b> Origins</div>
+      <h2 class="wl-sh h2">A Brief History of Lacrosse</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;">
+      <div>
+        <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">Lacrosse is one of the oldest team sports in the world. Long before European settlers arrived in North America, Indigenous peoples &#8212; including the Haudenosaunee (Iroquois), Ojibwe, and Cherokee &#8212; were playing a form of the game they called <em>Tewaarathon</em>, meaning &#8220;little brother of war.&#8221;</p>
+        <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">The game was deeply spiritual, played to resolve conflicts, train warriors, and honour the Creator. Matches could last days, involve hundreds of players, and span miles of terrain. The stick, with its distinctive netted head, remains largely unchanged in concept today.</p>
+        <p style="font-size:15px;color:var(--texte);line-height:1.8;">French missionaries and colonists encountered the game in the 17th century. They named it &#8220;la crosse&#8221; &#8212; the cross &#8212; after the resemblance of the stick to a bishop&#8217;s staff. The sport was codified in the 19th century and became an Olympic event in 1904 and 1908.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-year">Pre-1600s</p>
+          <p class="tl-title">Indigenous Origins</p>
+          <p class="tl-desc">Tewaarathon is played by dozens of Indigenous nations across North America as a spiritual and warrior practice.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-year">1630s</p>
+          <p class="tl-title">European Encounter</p>
+          <p class="tl-desc">French Jesuit missionaries document the game and name it &#8220;la crosse&#8221; after the shape of the stick.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-year">1856</p>
+          <p class="tl-title">First Club Founded</p>
+          <p class="tl-desc">The Montreal Lacrosse Club becomes the first formal lacrosse club in the world, beginning codification of the rules.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-year">1904 &amp; 1908</p>
+          <p class="tl-title">Olympic Recognition</p>
+          <p class="tl-desc">Lacrosse features at the Summer Olympics in St. Louis and London, won by Canada both times.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-year">1974</p>
+          <p class="tl-title">World Championship</p>
+          <p class="tl-desc">The first World Lacrosse Championship is held in Melbourne, marking the start of international competition.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-year">2028</p>
+          <p class="tl-title">Olympic Return</p>
+          <p class="tl-desc">Lacrosse (Sixes format) returns to the Olympic Games in Los Angeles after a 116-year absence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LACROSSE IN EUROPE -->
+<section class="s" id="europe">
+  <div class="container">
+    <div class="wl-sh">
+      <div class="wl-sh-kicker"><b>02</b> Europe</div>
+      <h2 class="wl-sh h2">Lacrosse in Europe</h2>
+    </div>
+    <div class="europe-2col">
+      <div>
+        <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">Lacrosse arrived in Europe in the late 19th century, brought by British students who had encountered the game in Canada. England became the first European nation to play organised lacrosse, with the English Lacrosse Association founded in 1892.</p>
+        <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">For much of the 20th century, lacrosse remained a niche sport in Europe &#8212; primarily played in the United Kingdom, Ireland, and a handful of universities across the continent. The turning point came in the 1990s and 2000s, as American students studying abroad brought equipment and enthusiasm to new countries.</p>
+        <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:24px;">Today, the European Lacrosse Federation (ELF) represents over 30 nations. Germany, France, the Netherlands, Italy, and the Czech Republic have all developed competitive club structures, youth academies, and national leagues. The 2028 Olympics &#8212; which will feature Sixes lacrosse &#8212; has given the sport a significant boost in visibility and investment across the continent.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:16px;border-top:3px solid var(--mauve);">
+            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--mauve);margin-bottom:2px;">1892</p>
+            <p style="font-size:12px;color:var(--acier);">English Lacrosse Association founded &#8212; the first in Europe</p>
+          </div>
+          <div style="background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:16px;border-top:3px solid var(--mauve-dk);">
+            <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--mauve-dk);margin-bottom:2px;">30+</p>
+            <p style="font-size:12px;color:var(--acier);">Nations represented in the European Lacrosse Federation</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="europe-map">
+          <span style="font-size:80px;position:relative;z-index:1;">&#127757;</span>
+        </div>
+        <div class="country-grid" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;">
+          <a href="country-england.html" class="country-chip"><div class="country-chip-flag">&#127988;</div><div class="country-chip-name">England</div><div class="country-chip-status">Full profile</div></a>
+          <a href="country-france.html" class="country-chip"><div class="country-chip-flag">&#127467;&#127479;</div><div class="country-chip-name">France</div><div class="country-chip-status">Full profile</div></a>
+          <a href="country-germany.html" class="country-chip"><div class="country-chip-flag">&#127465;&#127466;</div><div class="country-chip-name">Germany</div><div class="country-chip-status">Coming soon</div></a>
+          <a href="country-italy.html" class="country-chip"><div class="country-chip-flag">&#127470;&#127481;</div><div class="country-chip-name">Italy</div><div class="country-chip-status">Coming soon</div></a>
+          <a href="country-netherlands.html" class="country-chip"><div class="country-chip-flag">&#127475;&#127473;</div><div class="country-chip-name">Netherlands</div><div class="country-chip-status">Coming soon</div></a>
+          <a href="country-spain.html" class="country-chip"><div class="country-chip-flag">&#127466;&#127480;</div><div class="country-chip-name">Spain</div><div class="country-chip-status">Coming soon</div></a>
+          <a href="country-czech-republic.html" class="country-chip"><div class="country-chip-flag">&#127464;&#127487;</div><div class="country-chip-name">Czechia</div><div class="country-chip-status">Coming soon</div></a>
+          <a href="country-sweden.html" class="country-chip"><div class="country-chip-flag">&#127480;&#127466;</div><div class="country-chip-name">Sweden</div><div class="country-chip-status">Coming soon</div></a>
+          <a href="about.html#contact" class="country-chip" style="border-style:dashed;"><div class="country-chip-flag">&#43;</div><div class="country-chip-name">Your country</div><div class="country-chip-status">Submit info</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE FORMATS -->
+<section class="s bg-white" id="formats">
+  <div class="container">
+    <div class="wl-sh">
+      <div class="wl-sh-kicker"><b>03</b> Formats</div>
+      <h2 class="wl-sh h2">Three Ways to Play</h2>
+      <p style="font-size:15px;color:var(--acier);margin-top:8px;max-width:560px;">Lacrosse is played in three distinct formats, each with its own pace, rules, and appeal. Click to explore each one.</p>
+    </div>
+
+    <div class="fmt-tabs">
+      <button class="fmt-tab on" data-fmt="field">&#127919; Field Lacrosse</button>
+      <button class="fmt-tab" data-fmt="sixes">&#9196; Sixes Lacrosse</button>
+      <button class="fmt-tab" data-fmt="box">&#127968; Box Lacrosse</button>
+    </div>
+
+    <!-- FIELD -->
+    <div class="fmt-panel on" id="fmt-field">
+      <div class="fmt-visual">
+        <div class="fmt-visual-inner">
+          <span class="fmt-badge fmt-badge-field">Field</span>
+          <span style="font-size:80px;position:relative;z-index:1;">&#127919;</span>
+        </div>
+      </div>
+      <div class="fmt-text">
+        <h3>Field <em>Lacrosse</em></h3>
+        <p>Field lacrosse is the traditional outdoor form of the game and the most widely played internationally. Contested on a grass or turf pitch roughly the size of a football field, it&#8217;s a full-contact sport combining the speed of hockey, the physicality of rugby, and the precision of basketball.</p>
+        <p>Each team fields 10 players including a goalkeeper. The objective is to shoot a small rubber ball into the opposing team&#8217;s goal using a long-handled stick with a netted head. Games are fast, physical, and require exceptional athleticism and hand-eye coordination.</p>
+        <p>Field lacrosse is the format most commonly played at club and national level across Europe, and the primary discipline at the World Lacrosse Championship.</p>
+        <div class="fmt-specs">
+          <div class="fmt-spec"><p class="fmt-spec-label">Players per side</p><p class="fmt-spec-val">10</p></div>
+          <div class="fmt-spec"><p class="fmt-spec-label">Game length</p><p class="fmt-spec-val">4 x 15 min</p></div>
+          <div class="fmt-spec"><p class="fmt-spec-label">Surface</p><p class="fmt-spec-val">Grass / Turf</p></div>
+          <div class="fmt-spec"><p class="fmt-spec-label">Setting</p><p class="fmt-spec-val">Outdoor</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIXES -->
+    <div class="fmt-panel" id="fmt-sixes">
+      <div class="fmt-visual">
+        <div class="fmt-visual-inner" style="background:linear-gradient(135deg,var(--mauve-dk),var(--nuit));">
+          <span class="fmt-badge fmt-badge-sixes">Sixes</span>
+          <span style="font-size:80px;position:relative;z-index:1;">&#9196;</span>
+        </div>
+      </div>
+      <div class="fmt-text">
+        <h3>Sixes <em>Lacrosse</em></h3>
+        <p>Sixes is the newest and most dynamic format of lacrosse, purpose-built for modern audiences and compact venues. Developed by World Lacrosse and adopted as the Olympic format for the 2028 Los Angeles Games, Sixes plays fast &#8212; very fast.</p>
+        <p>With only six players per side on a smaller field, the game is relentless. A 30-second shot clock keeps teams under constant pressure. There are fewer stoppages, more goals, and a pace of play closer to basketball or hockey than traditional field lacrosse.</p>
+        <p>Sixes is rapidly growing in Europe, particularly attracting younger players and new fans who discover the sport through Olympic coverage. It&#8217;s also proving to be an excellent development format for youth players.</p>
+        <div class="fmt-specs">
+          <div class="fmt-spec" style="border-left-color:var(--mauve-dk);"><p class="fmt-spec-label">Players per side</p><p class="fmt-spec-val">6</p></div>
+          <div class="fmt-spec" style="border-left-color:var(--mauve-dk);"><p class="fmt-spec-label">Shot clock</p><p class="fmt-spec-val">30 seconds</p></div>
+          <div class="fmt-spec" style="border-left-color:var(--mauve-dk);"><p class="fmt-spec-label">Surface</p><p class="fmt-spec-val">Turf</p></div>
+          <div class="fmt-spec" style="border-left-color:var(--mauve-dk);"><p class="fmt-spec-label">Olympic format</p><p class="fmt-spec-val">Since 2028</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOX -->
+    <div class="fmt-panel" id="fmt-box">
+      <div class="fmt-visual">
+        <div class="fmt-visual-inner" style="background:linear-gradient(135deg,var(--marine),var(--nuit));">
+          <span class="fmt-badge fmt-badge-box">Box</span>
+          <span style="font-size:80px;position:relative;z-index:1;">&#127968;</span>
+        </div>
+      </div>
+      <div class="fmt-text">
+        <h3>Box <em>Lacrosse</em></h3>
+        <p>Box lacrosse &#8212; also called indoor lacrosse &#8212; was born in Canada in the 1930s when ice hockey rinks were converted during summer months. Today it&#8217;s a sport in its own right, played in enclosed arenas on a small turf surface surrounded by dasher boards.</p>
+        <p>The enclosed space creates a completely different dynamic: faster transitions, more physical contact, higher-scoring games, and a unique set of technical skills. Players use shorter sticks with deeper pockets, and goalkeepers wear heavy padding that covers most of the net.</p>
+        <p>Box lacrosse is particularly popular in Canada and the Haudenosaunee nations, but is growing steadily in Europe &#8212; especially in countries like Germany, Austria, and Switzerland where indoor facilities are abundant during winter months.</p>
+        <div class="fmt-specs">
+          <div class="fmt-spec" style="border-left-color:var(--marine);"><p class="fmt-spec-label">Players per side</p><p class="fmt-spec-val">6</p></div>
+          <div class="fmt-spec" style="border-left-color:var(--marine);"><p class="fmt-spec-label">Shot clock</p><p class="fmt-spec-val">30 seconds</p></div>
+          <div class="fmt-spec" style="border-left-color:var(--marine);"><p class="fmt-spec-label">Surface</p><p class="fmt-spec-val">Turf / Concrete</p></div>
+          <div class="fmt-spec" style="border-left-color:var(--marine);"><p class="fmt-spec-label">Setting</p><p class="fmt-spec-val">Indoor</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="s-sm">
+  <div class="container">
+    <div style="background:var(--nuit);border-radius:var(--r-lg);padding:52px 40px;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;border:40px solid var(--mauve);opacity:.07;"></div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;text-transform:uppercase;color:#fff;margin-bottom:10px;position:relative;z-index:1;">Ready to Follow the Game?</h2>
+      <p style="font-size:15px;color:var(--acier);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;position:relative;z-index:1;">Browse the latest news, tournament calendar, and exclusive interviews from European lacrosse.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
+        <a href="articles.html" class="btn btn-pri btn-lg">Read the Latest &#8594;</a>
+        <a href="tournaments.html" class="btn btn-out-white btn-lg">Find a Tournament</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container">
+  <div class="foot-grid">
+    <div><div class="foot-logo">Follow The <em>Lacrosse</em></div><p class="foot-tag">The central hub for everything related to lacrosse in Europe. News, results, tournaments and analysis.</p><div class="foot-social"><a href="#">&#128247;</a><a href="#">&#120143;</a><a href="#">&#9654;</a><a href="#">&#9835;</a></div></div>
+    <div><p class="foot-col-title">Content</p><div class="foot-col"><a href="articles.html">Articles</a><a href="tournaments.html">Tournaments</a><a href="interviews.html">Interviews</a><a href="whats-lacrosse.html">What&#8217;s Lacrosse?</a><a href="follow.html">Follow Us</a></div></div>
+    <div><p class="foot-col-title">Countries</p><div class="foot-col"><a href="countries.html">All Countries</a></div>
+    <p class="foot-col-title" style="margin-top:20px;">Leagues</p><div class="foot-col"><a href="articles.html">Field</a><a href="articles.html">Sixes</a><a href="articles.html">Box</a></div></div>
+    <div><p class="foot-col-title">FTL</p><div class="foot-col"><a href="about.html">About</a><a href="services.html">Services</a><a href="about.html#contact">Contact</a><a href="services.html">Partner with us</a></div></div>
+  </div>
+  <div class="foot-bottom"><span class="foot-copy">&#169; 2026 Follow The Lacrosse. All rights reserved.</span><div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+</div></footer>
+<script>
+// Format tabs
+document.querySelectorAll('.fmt-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.fmt-tab').forEach(t => t.classList.remove('on'));
+    document.querySelectorAll('.fmt-panel').forEach(p => p.classList.remove('on'));
+    this.classList.add('on');
+    document.getElementById('fmt-' + this.dataset.fmt).classList.add('on');
+  });
+});
+
+// Smooth scroll from URL hash
+const hash = window.location.hash;
+if (hash) {
+  setTimeout(() => {
+    const el = document.querySelector(hash);
+    if (el) el.scrollIntoView({behavior:'smooth'});
+    // Auto-activate format tab if hash matches
+    const fmtMap = {'#field':'field','#sixes':'sixes','#box':'box'};
+    if (fmtMap[hash]) {
+      document.querySelectorAll('.fmt-tab').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.fmt-panel').forEach(p => p.classList.remove('on'));
+      const btn = document.querySelector('[data-fmt="'+fmtMap[hash]+'"]');
+      if (btn) btn.classList.add('on');
+      const panel = document.getElementById('fmt-'+fmtMap[hash]);
+      if (panel) panel.classList.add('on');
+    }
+  }, 100);
+}
+// Accordion
+document.querySelectorAll('.acc-hd').forEach(h=>{h.addEventListener('click',function(){const i=this.closest('.acc-item'),o=i.classList.contains('open');document.querySelectorAll('.acc-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')})});
+// Pills
+document.querySelectorAll('.pills .pill').forEach(b=>{b.addEventListener('click',function(){this.closest('.pills').querySelectorAll('.pill').forEach(x=>x.classList.remove('on'));this.classList.add('on')})});
+// Cal months
+document.querySelectorAll('.cal-btn').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.cal-btn').forEach(x=>x.classList.remove('on'));this.classList.add('on')})});
+// Newsletter
+document.querySelectorAll('.nl-form').forEach(f=>{const b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',()=>{if(i.value&&i.value.includes('@')){const t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(()=>{b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(()=>i.style.borderColor='',2000)}})});
+// Contact form
+const cf=document.getElementById('cform');if(cf){cf.addEventListener('submit',e=>{e.preventDefault();const b=cf.querySelector('[type=submit]');b.textContent='✓ Message sent!';b.style.background='#3B6D11';setTimeout(()=>{b.textContent='Send message →';b.style.background='';cf.reset()},3000)})}
+// Mobile menu
+const mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',()=>{const open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
+</script>
+</body>
+</html>
