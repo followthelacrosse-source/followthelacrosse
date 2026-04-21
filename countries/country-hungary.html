@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lacrosse in Hungary &#8212; Follow The Lacrosse</title>
+<link rel="stylesheet" href="../countries.css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --nuit:     #0D2240;
+  --marine:   #1A3A6B;
+  --mauve:    #B088E8;
+  --mauve-dk: #7A56C2;
+  --acier:    #7A90A8;
+  --ivoire:   #F0EEE8;
+  --blanc:    #FFFFFF;
+  --texte:    #2D3748;
+  --bg:       #F5F3EE;
+  --border:   #E2DDD6;
+  --meta:     #8A9BB0;
+  --shadow:   0 2px 12px rgba(13,34,64,.08);
+  --shadow-lg:0 8px 32px rgba(13,34,64,.14);
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);line-height:1.65;font-size:15px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+.site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-logo img{height:34px;width:auto;flex-shrink:0}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.main-nav > a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.main-nav > a:hover,.main-nav > a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 12px;transition:border-color .2s}
+.nav-search-wrap:focus-within{border-color:rgba(176,136,232,.5)}
+.nav-search-wrap input{background:none;border:none;outline:none;color:#fff;font-size:12px;font-family:'DM Sans',sans-serif;width:130px}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.25)}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:8px 16px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.nav-btn:hover{opacity:.88}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:1px}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:72px 0}
+.s-sm{padding:48px 0}
+.bg-white{background:var(--blanc)}
+.bg-ivoire{background:var(--ivoire)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
+.btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
+.btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(176,136,232,.35)}
+.btn-dk{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+.btn-dk:hover{background:var(--marine);border-color:var(--marine)}
+.btn-sm{padding:8px 18px;font-size:12px}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--nuit);padding:64px 0 28px;margin-top:80px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.foot-logo em{color:var(--mauve);font-style:normal}
+.foot-tag{font-size:13px;color:var(--acier);line-height:1.6;max-width:240px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--acier);font-size:15px;transition:background .15s,color .15s;text-decoration:none}
+.foot-social a:hover{background:var(--mauve);color:var(--nuit)}
+.foot-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;text-decoration:none;transition:color .15s,padding-left .15s}
+.foot-col a:hover{color:var(--mauve);padding-left:4px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25)}
+.foot-links{display:flex;gap:16px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--mauve)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .container{padding:0 20px}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){.nl-form{flex-direction:column}.nl-form input{width:100%}}
+</style>
+</head>
+<body>
+
+<header class="site-header"><div class="header-inner">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="Follow The Lacrosse"></a>
+  <nav class="main-nav"><a href="../index.html">Home</a><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../countries.html" class="active">Countries</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a><a href="../about.html">About</a><a href="../follow.html">Follow Us</a></nav>
+  <div class="nav-right">
+    <div class="nav-search-wrap"><span style="color:rgba(255,255,255,.25);">&#128269;</span><input type="text" placeholder="Search posts..."></div>
+    <a href="../index.html#newsletter" class="nav-btn">Newsletter</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<section class="country-hero">
+  <div class="container"><div class="country-hero-inner">
+    <span class="country-hero-flag">&#127469;&#127482;</span>
+    <div class="country-hero-text">
+      <p class="country-hero-kicker">Country Profile &#8226; Central Europe</p>
+      <h1>Lacrosse in <em>Hungary</em></h1>
+      <p>Hungary&#8217;s lacrosse story begins with NLL broadcasts on television in 2008 &#8212; inspiring the founding of Budapest Blax Lacrosse &#8212; and culminates in hosting the 2016 European Championships in G&#246;d&#246;ll&#337; with 24+ nations competing.</p>
+      <div class="country-hero-meta"><div class="country-fed-badge"><span>HLA</span></div></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="dna-strip">
+  <div class="container">
+    <div class="dna-strip-inner">
+      <div class="dna-brand"><div class="dna-brand-line"></div><span class="dna-brand-label">Country DNA</span></div>
+      <div class="dna-col">
+        <span class="dna-col-key">Stage</span>
+        <span class="dna-col-val"><span class="dna-stage-pip" style="background:#4CAF50;box-shadow:0 0 6px #4CAF5060;"></span>Competitive</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Formats</span>
+        <div class="dna-fmt-tags"><span class="dna-fmt-tag">Field</span><span class="dna-fmt-tag">Box</span></div>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Identity</span>
+        <span class="dna-col-val" style="font-size:13px;font-weight:700;white-space:normal;line-height:1.2;">Remarkable origin story &#8226; EC 2016 host &#8226; Central European hub</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Why it matters</span>
+        <p class="dna-why-text">From NLL TV broadcasts to a founding club, and then to hosting the European Championships &#8212; Hungary&#8217;s lacrosse trajectory is one of the sport&#8217;s great grassroots stories.</p>
+      </div>
+      <div class="dna-fed">
+        <div><span class="dna-fed-abbr">HLA</span><span class="dna-fed-name">Tier 2 &#8212; Growth Nations / Competitive Powers</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="country-stats">
+  <div class="cstat"><p class="cstat-num">2008</p><p class="cstat-label">First club founded</p></div>
+  <div class="cstat"><p class="cstat-num">2016</p><p class="cstat-label">EC host (G&#246;d&#246;ll&#337;)</p></div>
+  <div class="cstat"><p class="cstat-num">Donau League</p><p class="cstat-label">Regional competition</p></div>
+  <div class="cstat"><p class="cstat-num">Field &#183; Box</p><p class="cstat-label">Active formats</p></div>
+</div>
+
+<section class="s bg-white">
+  <div class="container">
+    <div style="margin-bottom:32px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">01</b> Overview</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">The Hungary Lacrosse Scene</h2>
+    </div>
+    <div class="overview-grid">
+      <div class="overview-body">
+        <p>Hungary&#8217;s lacrosse origin is one of the most distinctive in European lacrosse. Budapest Blax Lacrosse was founded in March 2008 &#8212; directly inspired by National Lacrosse League games being broadcast on Hungarian television. What began as curiosity around a North American broadcast became the foundation of an ELF member federation, joining the European Lacrosse Federation in 2011.</p>
+        <p>The growth was rapid. In 2009, Hungarian clubs entered the Austrian Lacrosse League &#8212; their first taste of international competition. By 2016, Hungary was hosting the European Championships in G&#246;d&#246;ll&#337;, welcoming 24+ nations in what remains one of the largest European Championship events in the sport&#8217;s continental history. The Hungarian national team also participates in the Donau Lacrosse League, a regional competition connecting Austria, Hungary and surrounding nations.</p>
+        <p>Hungary continues to compete at the European level through the Donau Lacrosse League and wider ELF fixtures. The Heritage Cup 2025 men&#8217;s open saw Hungarian participation in a 32-team field (finishing 20th), reflecting continued engagement with international competition across both field and box formats.</p>
+        <a href="../articles.html" class="btn btn-pri" style="margin-top:8px;">Read Hungary coverage &#8594;</a>
+      </div>
+      <div class="key-facts-box">
+        <p class="kf-title">Key Facts</p>
+        <ul class="kf-list">
+          <li><span class="kf-check">&#10003;</span> Budapest Blax Lacrosse founded 2008</li>
+          <li><span class="kf-check">&#10003;</span> ELF member since 2011</li>
+          <li><span class="kf-check">&#10003;</span> EC 2016 host (G&#246;d&#246;ll&#337;, 24+ nations)</li>
+          <li><span class="kf-check">&#10003;</span> Donau Lacrosse League participant</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="container">
+    <div style="margin-bottom:32px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">02</b> Structure</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Clubs &amp; Organisation</h2>
+    </div>
+    <div class="club-grid">
+      <div class="club-card"><p class="club-name">Budapest Blax Lacrosse</p><p class="club-city">Budapest &#183; Founded March 2008</p><span class="club-fmt">Field &#183; Box</span></div>
+      <div class="club-card"><p class="club-name">Donau League teams</p><p class="club-city">Regional circuit &#183; AT, HU &amp; surrounds</p><span class="club-fmt">Field</span></div>
+      <div class="club-card"><p class="club-name">National network</p><p class="club-city">HLA-affiliated clubs</p><span class="club-fmt">Field &#183; Box</span></div>
+      <div class="club-card"><p class="club-name">HLA developing structure</p><p class="club-city">Hungarian Lacrosse Association</p><span class="club-fmt">Field &#183; Box</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="s bg-white">
+  <div class="container">
+    <div style="margin-bottom:32px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">03</b> National Teams</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">International Representation</h2>
+    </div>
+    <div class="teams-grid">
+      <div class="team-card team-card-dk">
+        <p class="tc-label">Men&#8217;s Programme</p>
+        <p class="tc-title">Hungary Men&#8217;s National Team</p>
+        <p class="tc-desc">Active in the Donau Lacrosse League and European Championship circuit. Heritage Cup 2025 participant (Men&#8217;s Open, 32-team field). EC 2016 host nation.</p>
+      </div>
+      <div class="team-card team-card-dk">
+        <p class="tc-label">Women&#8217;s Programme</p>
+        <p class="tc-title">Hungary Women&#8217;s National Team</p>
+        <p class="tc-desc">Developing women&#8217;s programme within the Hungarian Lacrosse Association, active in the broader ELF competition calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="container">
+    <div style="margin-bottom:32px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">04</b> Why Follow</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Why Hungary Lacrosse Is Worth Following</h2>
+    </div>
+    <div class="wf-grid">
+      <div class="wf-card"><p class="wf-icon">&#128250;</p><p class="wf-title">Remarkable origin story</p><p class="wf-desc">NLL TV broadcasts in 2008 directly inspired the founding of Budapest Blax Lacrosse &#8212; one of European lacrosse&#8217;s most unusual and compelling origin stories.</p></div>
+      <div class="wf-card"><p class="wf-icon">&#127942;</p><p class="wf-title">EC 2016 host</p><p class="wf-desc">Hungary hosted the European Championships in G&#246;d&#246;ll&#337; with 24+ nations &#8212; demonstrating organisational ambition rarely matched by nations so recently founded.</p></div>
+      <div class="wf-card"><p class="wf-icon">&#127758;</p><p class="wf-title">Central European regional hub</p><p class="wf-desc">Through the Donau Lacrosse League, Hungary sits at the centre of a regional circuit connecting Austria and surrounding nations, giving the scene consistent competitive depth.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s bg-white">
+  <div class="container">
+    <div class="sh-block">
+      <p class="sh-kicker"><b>05</b> Coverage</p>
+      <h2 class="sh-h2">Latest Hungary Coverage</h2>
+    </div>
+    <div class="coverage-grid"><a href="../articles.html" class="coverage-card"><span class="cov-flag">&#127469;&#127482;</span><p class="cov-type">Article &#183; Hungary</p><p class="cov-title">Hungary: From NLL TV Broadcasts in 2008 to EC Host in 2016</p><p class="cov-meta">FTL &#183; 2025</p><span class="cov-arrow">Open &#8594;</span></a><a href="../tournaments.html" class="coverage-card"><span class="cov-flag">&#127469;&#127482;</span><p class="cov-type">Tournament Radar &#183; Hungary</p><p class="cov-title">Donau Lacrosse League &#8212; Central European Regional Circuit</p><p class="cov-meta">2025</p><span class="cov-arrow">Open &#8594;</span></a></div>
+  </div>
+</section>
+
+<section class="s bg-white">
+  <div class="container">
+    <div class="sh-block"><p class="sh-kicker"><b>06</b> Related</p><h2 class="sh-h2">Explore Related Scenes</h2><p class="sh-sub">Other national scenes connected to Hungary lacrosse by format, geography or history.</p></div>
+    <div class="related-grid"><a href="country-slovakia.html" class="related-card"><p class="rc-type">Central Europe &#183; Slovakia</p><p class="rc-title">Slovakia: Bratislava Tricksters and a Canadian League partnership</p><p class="rc-meta">Field &#183; Box</p></a><a href="country-slovenia.html" class="related-card"><p class="rc-type">Donau League partner &#183; Slovenia</p><p class="rc-title">Slovenia: LK Ljubljana and the Donau regional circuit</p><p class="rc-meta">Field</p></a><a href="country-croatia.html" class="related-card"><p class="rc-type">Regional &#183; Croatia</p><p class="rc-title">Croatia: From Zagreb 2011 to the 2027 World Championship</p><p class="rc-meta">Field</p></a></div>
+    <div style="text-align:center;margin-top:28px;"><a href="../countries.html" class="btn btn-dk">All Countries &#8594;</a></div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="container">
+    <div class="sh-block">
+      <p class="sh-kicker"><b>07</b> Community</p>
+      <h2 class="sh-h2">Help Us Cover Hungary</h2>
+    </div>
+    <div class="community-grid"><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#128200;</span><p class="comm-title">Send a story tip</p><p class="comm-desc">Hungary results, club news, anything happening in the Hungarian scene.</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127942;</span><p class="comm-title">Suggest a tournament</p><p class="comm-desc">A Hungary event that should be on the FTL calendar?</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127908;</span><p class="comm-title">Recommend an interview</p><p class="comm-desc">Who should FTL speak to in Hungary lacrosse?</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#9999;&#65039;</span><p class="comm-title">Correct this page</p><p class="comm-desc">Have more accurate info about Hungary lacrosse? We review everything.</p><span class="comm-cta">Send &#8594;</span></a></div>
+  </div>
+</section>
+
+<section class="s-sm"><div class="container">
+  <div class="nl-editorial">
+  <p class="nl-ed-kicker">&#128140; FTL Weekly</p>
+  <h3 class="nl-ed-title">Follow Hungary.<br>Follow European Lacrosse.</h3>
+  <p class="nl-ed-sub">Results, scene updates and analysis from Hungary and across European lacrosse &#8212; curated weekly.</p>
+  <div class="nl-ed-form nl-form"><input type="email" placeholder="your@email.com"><button class="btn btn-pri">Subscribe &#8594;</button></div>
+  <p class="nl-ed-promise">One email per week. European lacrosse only. Always free.</p>
+</div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="foot-grid">
+    <div><div class="foot-logo">Follow The <em>Lacrosse</em></div><p class="foot-tag">The central hub for European lacrosse.</p><div class="foot-social"><a href="#">&#128247;</a><a href="#">&#120143;</a><a href="#">&#9654;</a><a href="#">&#9835;</a></div></div>
+    <div><p class="foot-col-title">Content</p><div class="foot-col"><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a></div></div>
+    <div><p class="foot-col-title">Countries</p><div class="foot-col"><a href="../countries.html">All Countries</a></div></div>
+    <div><p class="foot-col-title">FTL</p><div class="foot-col"><a href="../about.html">About</a><a href="../about.html#contact">Contact</a></div></div>
+  </div>
+  <div class="foot-bottom"><span class="foot-copy">&#169; 2026 Follow The Lacrosse.</span><div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('.nl-form').forEach(f=>{const b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',()=>{if(i.value&&i.value.includes('@')){const t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(()=>{b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(()=>i.style.borderColor='',2000)}})});
+const mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',()=>{const open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
+</script>
+</body>
+</html>

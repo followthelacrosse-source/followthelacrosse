@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lacrosse in Portugal &#8212; Follow The Lacrosse</title>
+<meta name="description" content="Portugal joined the ELF in 2016 and has become a significant Sixes tournament destination, hosting the EuroLax Sixes Cup in the Algarve.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="countries.css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --nuit:     #0D2240;
+  --marine:   #1A3A6B;
+  --mauve:    #B088E8;
+  --mauve-dk: #7A56C2;
+  --acier:    #7A90A8;
+  --ivoire:   #F0EEE8;
+  --blanc:    #FFFFFF;
+  --texte:    #2D3748;
+  --bg:       #F5F3EE;
+  --border:   #E2DDD6;
+  --meta:     #8A9BB0;
+  --shadow:   0 2px 12px rgba(13,34,64,.08);
+  --shadow-lg:0 8px 32px rgba(13,34,64,.14);
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);line-height:1.65;font-size:15px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+.site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-logo img{height:34px;width:auto;flex-shrink:0}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.main-nav > a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.main-nav > a:hover,.main-nav > a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 12px;transition:border-color .2s}
+.nav-search-wrap:focus-within{border-color:rgba(176,136,232,.5)}
+.nav-search-wrap input{background:none;border:none;outline:none;color:#fff;font-size:12px;font-family:'DM Sans',sans-serif;width:130px}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.25)}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:8px 16px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.nav-btn:hover{opacity:.88}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:1px}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:72px 0}
+.s-sm{padding:48px 0}
+.bg-white{background:var(--blanc)}
+.bg-ivoire{background:var(--ivoire)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
+.btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
+.btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(176,136,232,.35)}
+.btn-dk{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+.btn-dk:hover{background:var(--marine);border-color:var(--marine)}
+.btn-sm{padding:8px 18px;font-size:12px}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--nuit);padding:64px 0 28px;margin-top:80px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.foot-logo em{color:var(--mauve);font-style:normal}
+.foot-tag{font-size:13px;color:var(--acier);line-height:1.6;max-width:240px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--acier);font-size:15px;transition:background .15s,color .15s;text-decoration:none}
+.foot-social a:hover{background:var(--mauve);color:var(--nuit)}
+.foot-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;text-decoration:none;transition:color .15s,padding-left .15s}
+.foot-col a:hover{color:var(--mauve);padding-left:4px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25)}
+.foot-links{display:flex;gap:16px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--mauve)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .container{padding:0 20px}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){.nl-form{flex-direction:column}.nl-form input{width:100%}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="Follow The Lacrosse"></a>
+  <nav class="main-nav"><a href="../index.html">Home</a><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../countries.html" class="active">Countries</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a><a href="../about.html">About</a><a href="../follow.html">Follow Us</a></nav>
+  <div class="nav-right">
+    <div class="nav-search-wrap"><span style="color:rgba(255,255,255,.25);">&#128269;</span><input type="text" placeholder="Search posts..."></div>
+    <a href="../index.html#newsletter" class="nav-btn">Newsletter</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<section class="country-hero">
+  <div class="container"><div class="country-hero-inner">
+    <span class="country-hero-flag">&#127477;&#127481;</span>
+    <div class="country-hero-text">
+      <p class="country-hero-kicker">Country Profile &#8226; Western Europe &#8226; Atlantic</p>
+      <h1>Lacrosse in <em>Portugal</em></h1>
+      <p>Portugal joined the ELF in 2016 and has become a significant Sixes tournament destination &#8212; hosting the EuroLax Sixes Cup in the Algarve and the Lisboa Lacrosse Cup.</p>
+      <div class="country-hero-meta"><div class="country-fed-badge"><span>Portugal Lacrosse Board</span></div></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="dna-strip">
+  <div class="container">
+    <div class="dna-strip-inner">
+      <div class="dna-brand"><div class="dna-brand-line"></div><span class="dna-brand-label">Country DNA</span></div>
+      <div class="dna-col">
+        <span class="dna-col-key">Stage</span>
+        <span class="dna-col-val"><span class="dna-stage-pip" style="background:#F0A030;box-shadow:0 0 6px #F0A03060;"></span>Emerging</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Formats</span>
+        <div class="dna-fmt-tags"><span class="dna-fmt-tag">Field</span><span class="dna-fmt-tag">Sixes</span></div>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Identity</span>
+        <span class="dna-col-val" style="font-size:13px;font-weight:700;white-space:normal;line-height:1.2;">EuroLax Sixes Cup host &#183; Lisboa Cup</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Why it matters</span>
+        <p class="dna-why-text">EuroLax Sixes Cup in Monte Gordo (Algarve) draws 350+ players annually &#8212; one of Europe&#8217;s most-attended Sixes events.</p>
+      </div>
+      <div class="dna-fed">
+        <div><span class="dna-fed-abbr">PLB</span><span class="dna-fed-name">Tier 3 &#8212; Emerging Nations</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="country-stats">
+  <div class="cstat"><p class="cstat-num">2016</p><p class="cstat-label">ELF member since</p></div>
+  <div class="cstat"><p class="cstat-num">350+</p><p class="cstat-label">EuroLax Sixes Cup players</p></div>
+  <div class="cstat"><p class="cstat-num">Sixes</p><p class="cstat-label">Active format</p></div>
+  <div class="cstat"><p class="cstat-num">ELF</p><p class="cstat-label">Member</p></div>
+</div>
+
+<section class="s bg-white"><div class="container">
+  <div style="margin-bottom:32px;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">01</b> Overview</div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">The Portugal Lacrosse Scene</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">Portugal joined the ELF in 2016. The Lisboa Gladiators were the first club (September 2015) and remain the driving force behind the national scene, which has grown steadily around a strong Sixes identity.</p>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:24px;">Portugal has become a significant Sixes tournament destination. The EuroLax Sixes Cup in Monte Gordo (Algarve) draws 350+ players annually, while the Lisboa Lacrosse Cup reached its 9th edition in 2025 with 16 teams from 6+ countries. The Women&#8217;s national team made their debut in 2024, and Portugal hosted 12 teams at the 2025 Women&#8217;s Sixes Qualifier for World Games qualification.</p>
+      <a href="http://portugallacrosse.com" target="_blank" rel="noopener" class="btn btn-pri btn-sm">PLB &#8594;</a>
+    </div>
+    <div style="background:rgba(176,136,232,.05);border:1px solid rgba(176,136,232,.15);border-radius:var(--r-lg);padding:24px;">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:14px;">&#128202; Key facts</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">ELF member since 2016</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">EuroLax Sixes Cup host (Monte Gordo, Algarve &#8212; 350+ players annually)</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">Lisboa Lacrosse Cup &#8212; 9th edition 2025 (16 teams, 6+ countries)</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div style="margin-bottom:32px;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">02</b> Structure</div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Clubs &amp; Structure</h2>
+  </div>
+  <p style="font-size:14px;color:var(--acier);margin-bottom:20px;max-width:640px;line-height:1.65;">Portugal&#8217;s scene is anchored by the Lisboa Gladiators, the country&#8217;s first club, with the federation building out from Lisboa.</p>
+  <div class="club-grid">
+    <div class="club-card"><p class="club-name">Lisboa Gladiators</p><p class="club-city">Lisboa &#183; Founded September 2015</p><span class="club-fmt">Field &#183; Sixes</span></div>
+    <div class="club-card"><p class="club-name">National clubs</p><p class="club-city">PLB developing structure</p><span class="club-fmt">Emerging</span></div>
+  </div>
+</div></section>
+
+<section class="s bg-white"><div class="container">
+  <div style="margin-bottom:32px;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">03</b> National Teams</div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Portugal on the World Stage</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+    <div style="background:var(--nuit);border-radius:var(--r-lg);padding:24px;position:relative;overflow:hidden;"><div style="position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;border:16px solid var(--mauve);opacity:.1;"></div><p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:8px;">Men&#8217;s &#183; National programme</p><p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:6px;">Men&#8217;s National Team</p><p style="font-size:13px;color:var(--acier);">Men&#8217;s programme active since ELF membership in 2016. Competes in the European Sixes circuit including the EuroLax Sixes Cup in the Algarve.</p></div>
+    <div style="background:var(--nuit);border-radius:var(--r-lg);padding:24px;position:relative;overflow:hidden;"><div style="position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;border:16px solid var(--mauve);opacity:.1;"></div><p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:8px;">Women &#183; Debut 2024</p><p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:6px;">Women&#8217;s Programme</p><p style="font-size:13px;color:var(--acier);">Women&#8217;s national team made their debut in 2024. Portugal hosted the 2025 Women&#8217;s Sixes Qualifier (March 4&#8211;9) with 12 teams competing for World Games qualification.</p></div>
+  </div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div style="margin-bottom:32px;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">04</b> Why Follow</div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Why Follow Portugal?</h2>
+  </div>
+  <div class="why-follow-grid">
+    <div class="wf-card"><p class="wf-icon">&#127964;</p><p class="wf-title">EuroLax Sixes Cup host (Algarve destination)</p><p class="wf-desc">The EuroLax Sixes Cup in Monte Gordo is one of European lacrosse&#8217;s most-attended Sixes events, drawing 350+ players annually to the Algarve.</p></div>
+    <div class="wf-card"><p class="wf-icon">&#127919;</p><p class="wf-title">Rapid expansion &#8212; Lisboa Cup 9th edition</p><p class="wf-desc">The Lisboa Lacrosse Cup reached its 9th edition in 2025 with 16 teams from 6+ countries, reflecting Portugal&#8217;s rapid growth as an international tournament hub.</p></div>
+  </div>
+</div></section>
+
+<section class="s bg-white"><div class="container">
+  <div class="sh-block"><p class="sh-kicker"><b>05</b> Coverage</p><h2 class="sh-h2">Latest Portugal Coverage</h2></div>
+  <div class="coverage-grid">
+    <a href="../articles.html" class="coverage-card"><span class="cov-flag">&#127477;&#127481;</span><p class="cov-type">Article &#183; Portugal</p><p class="cov-title">Portugal Lacrosse: The Algarve&#8217;s Sixes Story</p><p class="cov-meta">FTL &#183; 2025</p><span class="cov-arrow">Open &#8594;</span></a>
+    <a href="../tournaments.html" class="coverage-card"><span class="cov-flag">&#127477;&#127481;</span><p class="cov-type">Tournament Radar &#183; Portugal</p><p class="cov-title">EuroLax Sixes Cup &#8212; Monte Gordo, Algarve</p><p class="cov-meta">2025 &#183; 350+ players</p><span class="cov-arrow">Open &#8594;</span></a>
+  </div>
+</div></section>
+
+<section class="s bg-white"><div class="container">
+  <div class="sh-block"><p class="sh-kicker"><b>06</b> Related</p><h2 class="sh-h2">Explore Related Scenes</h2><p class="sh-sub">Other national scenes connected to Portugal lacrosse by format, geography or history.</p></div>
+  <div class="related-grid">
+    <a href="country-spain.html" class="related-card"><p class="rc-type">Iberian Peninsula &#183; Spain</p><p class="rc-title">Spain: Iberian lacrosse neighbour with a growing field scene</p><p class="rc-meta">Field &#183; Sixes</p></a>
+    <a href="country-france.html" class="related-card"><p class="rc-type">Atlantic &#183; France</p><p class="rc-title">France: established programme and Atlantic neighbour</p><p class="rc-meta">Field &#183; Box &#183; Sixes</p></a>
+    <a href="country-netherlands.html" class="related-card"><p class="rc-type">Sixes circuit &#183; Netherlands</p><p class="rc-title">Netherlands: Sixes innovation and European tournament scene</p><p class="rc-meta">Field &#183; Sixes</p></a>
+  </div>
+  <div style="text-align:center;margin-top:28px;"><a href="../countries.html" class="btn btn-dk">All Countries &#8594;</a></div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div class="sh-block"><p class="sh-kicker"><b>07</b> Community</p><h2 class="sh-h2">Help Us Cover Portugal</h2></div>
+  <div class="community-grid">
+    <a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#128200;</span><p class="comm-title">Send a story tip</p><p class="comm-desc">Portugal Lacrosse results, club news, anything happening in the Portuguese scene.</p><span class="comm-cta">Send &#8594;</span></a>
+    <a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127942;</span><p class="comm-title">Suggest a tournament</p><p class="comm-desc">A Portuguese event that should be on the FTL calendar?</p><span class="comm-cta">Send &#8594;</span></a>
+    <a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127908;</span><p class="comm-title">Recommend an interview</p><p class="comm-desc">Who should FTL speak to inside Portuguese lacrosse?</p><span class="comm-cta">Send &#8594;</span></a>
+    <a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#9999;&#65039;</span><p class="comm-title">Correct this page</p><p class="comm-desc">Have more accurate info about Portuguese lacrosse? We review everything.</p><span class="comm-cta">Send &#8594;</span></a>
+  </div>
+</div></section>
+
+<section class="s-sm"><div class="container">
+  <div class="nl-editorial">
+  <p class="nl-ed-kicker">&#128140; FTL Weekly</p>
+  <h3 class="nl-ed-title">Follow Portugal.<br>Follow European Lacrosse.</h3>
+  <p class="nl-ed-sub">Results, scene updates and analysis from Portugal and across European lacrosse &#8212; curated weekly.</p>
+  <div class="nl-ed-form nl-form"><input type="email" placeholder="your@email.com"><button class="btn btn-pri">Subscribe &#8594;</button></div>
+  <p class="nl-ed-promise">One email per week. European lacrosse only. Always free.</p>
+</div>
+</div></section>
+
+<footer class="site-footer"><div class="container"><div class="foot-grid"><div><div class="foot-logo">Follow The <em>Lacrosse</em></div><p class="foot-tag">The central hub for European lacrosse.</p><div class="foot-social"><a href="#">&#128247;</a><a href="#">&#120143;</a><a href="#">&#9654;</a><a href="#">&#9835;</a></div></div><div><p class="foot-col-title">Content</p><div class="foot-col"><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a></div></div><div><p class="foot-col-title">Countries</p><div class="foot-col"><a href="../countries.html">All Countries</a></div></div><div><p class="foot-col-title">FTL</p><div class="foot-col"><a href="../about.html">About</a><a href="../about.html#contact">Contact</a></div></div></div><div class="foot-bottom"><span class="foot-copy">&#169; 2026 Follow The Lacrosse.</span><div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div></footer>
+<script>
+document.querySelectorAll('.nl-form').forEach(f=>{const b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',()=>{if(i.value&&i.value.includes('@')){const t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(()=>{b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(()=>i.style.borderColor='',2000)}})});
+const mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',()=>{const open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
+</script>
+</body>
+</html>
