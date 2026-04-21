@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lacrosse in Switzerland &#8212; Follow The Lacrosse</title>
+<meta name="description" content="Switzerland is one of European lacrosse's quiet multi-format powers. Swisslax has governed the sport since 2006, World Lacrosse full member since 2008, with 13 clubs across field, box and sixes and national TV coverage emerging in 2025.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="countries.css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --nuit:     #0D2240;
+  --marine:   #1A3A6B;
+  --mauve:    #B088E8;
+  --mauve-dk: #7A56C2;
+  --acier:    #7A90A8;
+  --ivoire:   #F0EEE8;
+  --blanc:    #FFFFFF;
+  --texte:    #2D3748;
+  --bg:       #F5F3EE;
+  --border:   #E2DDD6;
+  --meta:     #8A9BB0;
+  --shadow:   0 2px 12px rgba(13,34,64,.08);
+  --shadow-lg:0 8px 32px rgba(13,34,64,.14);
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);line-height:1.65;font-size:15px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+.site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-logo img{height:34px;width:auto;flex-shrink:0}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.main-nav > a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.main-nav > a:hover,.main-nav > a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 12px;transition:border-color .2s}
+.nav-search-wrap:focus-within{border-color:rgba(176,136,232,.5)}
+.nav-search-wrap input{background:none;border:none;outline:none;color:#fff;font-size:12px;font-family:'DM Sans',sans-serif;width:130px}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.25)}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:8px 16px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.nav-btn:hover{opacity:.88}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:1px}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:72px 0}
+.s-sm{padding:48px 0}
+.bg-white{background:var(--blanc)}
+.bg-ivoire{background:var(--ivoire)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
+.btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
+.btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(176,136,232,.35)}
+.btn-dk{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+.btn-dk:hover{background:var(--marine);border-color:var(--marine)}
+.btn-sm{padding:8px 18px;font-size:12px}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--nuit);padding:64px 0 28px;margin-top:80px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.foot-logo em{color:var(--mauve);font-style:normal}
+.foot-tag{font-size:13px;color:var(--acier);line-height:1.6;max-width:240px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--acier);font-size:15px;transition:background .15s,color .15s;text-decoration:none}
+.foot-social a:hover{background:var(--mauve);color:var(--nuit)}
+.foot-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;text-decoration:none;transition:color .15s,padding-left .15s}
+.foot-col a:hover{color:var(--mauve);padding-left:4px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25)}
+.foot-links{display:flex;gap:16px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--mauve)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .container{padding:0 20px}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){.nl-form{flex-direction:column}.nl-form input{width:100%}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="Follow The Lacrosse"></a>
+  <nav class="main-nav"><a href="../index.html">Home</a><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../countries.html" class="active">Countries</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a><a href="../about.html">About</a><a href="../follow.html">Follow Us</a></nav>
+  <div class="nav-right">
+    <div class="nav-search-wrap"><span style="color:rgba(255,255,255,.25);">&#128269;</span><input type="text" placeholder="Search posts..."></div>
+    <a href="../index.html#newsletter" class="nav-btn">Newsletter</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<section class="country-hero">
+  <div class="container"><div class="country-hero-inner">
+    <span class="country-hero-flag">&#127464;&#127469;</span>
+    <div class="country-hero-text">
+      <p class="country-hero-kicker">Country Profile &#8226; Central Europe &#8226; Alpine</p>
+      <h1>Lacrosse in <em>Switzerland</em></h1>
+      <p>One of European lacrosse's quiet multi-format powers. Swisslax has governed the sport since 2006, World Lacrosse full member since 2008, with 13 member clubs across field, box and sixes and a Sixes championship final televised on national TV in 2025.</p>
+      <div class="country-hero-meta"><div class="country-fed-badge"><img src="../country-pictures/switzerland.png" alt="Swisslax — Swiss Lacrosse Federation"><span>Swisslax</span></div></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="dna-strip">
+  <div class="container">
+    <div class="dna-strip-inner">
+      <div class="dna-brand"><div class="dna-brand-line"></div><span class="dna-brand-label">Country DNA</span></div>
+      <div class="dna-col">
+        <span class="dna-col-key">Stage</span>
+        <span class="dna-col-val"><span class="dna-stage-pip" style="background:#4CAF50;box-shadow:0 0 6px #4CAF5060;"></span>Established</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Formats</span>
+        <div class="dna-fmt-tags"><span class="dna-fmt-tag">Field</span><span class="dna-fmt-tag">Box</span><span class="dna-fmt-tag">Sixes</span></div>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Identity</span>
+        <span class="dna-col-val" style="font-size:13px;font-weight:700;white-space:normal;line-height:1.2;">Multi-format pioneer &#183; Swisslax 2006 &#183; WL 2008</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Why it matters</span>
+        <p class="dna-why-text">Quiet consistency. Three formats run in parallel, a new Ticino club in 2025-26, and lacrosse crossing into Swiss national TV while the federation pursues Olympic Committee recognition.</p>
+      </div>
+      <div class="dna-fed">
+        <div class="dna-fed-logo"><img src="../country-pictures/switzerland.png" alt="Swisslax"></div>
+        <div><span class="dna-fed-abbr">Swisslax</span><span class="dna-fed-name">Tier 1 &#8212; Elite / Founding Nations</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="country-stats">
+  <div class="cstat"><p class="cstat-num">2006</p><p class="cstat-label">Swisslax founded</p></div><div class="cstat"><p class="cstat-num">2008</p><p class="cstat-label">World Lacrosse full member</p></div><div class="cstat"><p class="cstat-num">13</p><p class="cstat-label">Member clubs (2025&#8211;26)</p></div><div class="cstat"><p class="cstat-num">3</p><p class="cstat-label">Active formats</p></div>
+</div>
+
+<section class="s bg-white"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">01</b> Overview</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">The Swiss Lacrosse Scene</h2>
+</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">Switzerland occupies a distinctive position in European lacrosse. Where many nations built around a single format, Swisslax has run field, box and sixes side by side since its first years &#8212; a multi-format approach that still feels rare on the continent.</p>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">The federation, Swiss Lacrosse Federation (Swisslax), was founded in 2006 and admitted as a full member of World Lacrosse in 2008. Twenty years on, the network has grown to 13 member clubs for the 2025&#8211;26 season, including new entrant Lugano Falcons, which extends the Swisslax footprint into Italian-speaking Ticino for the first time.</p>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">The 2025&#8211;26 cycle has been a visibility year. The Swiss Sixes championship final took place in Chur on 8 November 2025, and Radiotelevisione svizzera (RSI) featured lacrosse as an emerging Swiss sport in September 2025 &#8212; a first-time exposure on national public broadcasting.</p>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:24px;">In parallel, Swisslax is working toward recognition by the Swiss Olympic Committee. That track matters: combined with Sixes being the LA28 lacrosse format, it positions Switzerland as a federation moving from sport association to institutional actor.</p>
+      <a href="https://swisslax.ch" target="_blank" rel="noopener" class="btn btn-pri btn-sm">Swisslax official site &#8594;</a>
+    </div>
+    <div style="background:rgba(176,136,232,.05);border:1px solid rgba(176,136,232,.15);border-radius:var(--r-lg);padding:24px;">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:14px;">&#128202; Key facts</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">Swisslax founded: 2006</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">World Lacrosse full member: 2008</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">13 member clubs (2025&#8211;26)</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">Formats: Field &#183; Box &#183; Sixes</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">National TV debut (RSI): Sep 2025</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--mauve);margin-top:2px;">&#10003;</span><span style="font-size:13px;color:var(--texte);line-height:1.6;">Sixes championship final: Chur, 8 Nov 2025</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">02</b> Structure</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Clubs &amp; Structure</h2>
+</div>
+  <p style="font-size:14px;color:var(--acier);margin-bottom:20px;max-width:640px;line-height:1.65;">Swisslax runs 13 member clubs in the 2025&#8211;26 season across field, box and sixes. The national championship structure is anchored by domestic leagues in all three formats, with Lugano Falcons extending the network into Ticino for the first time.</p>
+  <div class="club-grid">
+    <div class="club-card"><p class="club-name">Lugano Falcons</p><p class="club-city">Ticino &#183; New 2025&#8211;26</p><span class="club-fmt">Swisslax member</span></div>
+    <div class="club-card"><p class="club-name">Swisslax Network</p><p class="club-city">Nationwide &#183; 13 clubs</p><span class="club-fmt">Field &#183; Box &#183; Sixes</span></div>
+    <div class="club-card"><p class="club-name">Swiss Sixes Championship</p><p class="club-city">Final: Chur &#183; Nov 2025</p><span class="club-fmt">Sixes</span></div>
+    <div class="club-card"><p class="club-name">Swiss Field League</p><p class="club-city">National championship</p><span class="club-fmt">Field</span></div>
+    <div class="club-card"><p class="club-name">Swiss Box League</p><p class="club-city">National championship</p><span class="club-fmt">Box</span></div>
+    <div class="club-card"><p class="club-name">Swisslax (Federation)</p><p class="club-city">Est. 2006 &#183; WL 2008</p><span class="club-fmt">All formats</span></div>
+  </div>
+</div></section>
+
+<section class="s bg-white"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">03</b> National Teams</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Switzerland on the World Stage</h2>
+</div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+    <div style="background:var(--nuit);border-radius:var(--r-lg);padding:24px;position:relative;overflow:hidden;"><div style="position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;border:16px solid var(--mauve);opacity:.1;"></div><p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:8px;">Field &#183; Box &#183; Sixes</p><p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:6px;">Men's National Teams</p><p style="font-size:13px;color:var(--acier);">Swiss men's sides compete across all three World Lacrosse disciplines. The multi-format Swisslax pathway is rare in European lacrosse and remains one of the federation's defining strengths.</p></div>
+    <div style="background:var(--nuit);border-radius:var(--r-lg);padding:24px;position:relative;overflow:hidden;"><div style="position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;border:16px solid var(--mauve);opacity:.1;"></div><p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:8px;">Women &#183; Jan 2026</p><p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:6px;">Women's Programme</p><p style="font-size:13px;color:var(--acier);">Colleen Niklaus was appointed head coach of the Swiss women's programme in January 2026, opening a new cycle for the national team as Sixes development continues across Swisslax clubs.</p></div>
+  </div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">04</b> Why Follow</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Why Follow Switzerland?</h2>
+</div>
+  <div class="why-follow-grid">
+    <div class="wf-card"><p class="wf-icon">&#127959;&#65039;</p><p class="wf-title">Multi-format pioneer</p><p class="wf-desc">Field, box and sixes run in parallel inside the same federation. Few European nations operate all three disciplines at national-championship level &#8212; Switzerland does, and has done since its early years.</p></div>
+    <div class="wf-card"><p class="wf-icon">&#128241;</p><p class="wf-title">First national TV crossover</p><p class="wf-desc">Radiotelevisione svizzera (RSI) featured Swiss lacrosse as an emerging sport in September 2025. That kind of public-service exposure is a marker that lacrosse has crossed from closed circuit to visible Swiss sport.</p></div>
+    <div class="wf-card"><p class="wf-icon">&#127949;</p><p class="wf-title">Institutional trajectory</p><p class="wf-desc">Swisslax is actively pursuing Swiss Olympic Committee recognition. In an Olympic cycle where Sixes is the LA28 format, that institutional work is where long-term federation credibility is built.</p></div>
+    <div class="wf-card"><p class="wf-icon">&#127966;&#65039;</p><p class="wf-title">Ticino expansion</p><p class="wf-desc">Lugano Falcons joined Swisslax for 2025&#8211;26, extending the Swiss network into the Italian-speaking canton for the first time. A small move, but the kind that signals a federation still growing laterally.</p></div>
+  </div>
+</div></section>
+
+<section class="s bg-white"><div class="container">
+  <div class="sh-block">
+  <p class="sh-kicker"><b>05</b> Coverage</p>
+  <h2 class="sh-h2">Latest Switzerland Coverage</h2>
+</div>
+  <div class="coverage-grid"><a href="../articles.html" class="coverage-card"><span class="cov-flag">&#127464;&#127469;</span><p class="cov-type">Article &#183; Switzerland</p><p class="cov-title">Swisslax in 2025&#8211;26: Thirteen Clubs, Three Formats, One Federation</p><p class="cov-meta">FTL &#183; 2025&#8211;26</p><span class="cov-arrow">Open &#8594;</span></a><a href="../tournaments.html" class="coverage-card"><span class="cov-flag">&#127464;&#127469;</span><p class="cov-type">Tournament Radar &#183; Switzerland</p><p class="cov-title">Swiss Sixes Championship Final &#8212; Chur 2025</p><p class="cov-meta">Nov 8, 2025 &#183; Chur</p><span class="cov-arrow">Open &#8594;</span></a></div></div></section>
+
+<section class="s bg-white"><div class="container">
+  <div class="sh-block"><p class="sh-kicker"><b>06</b> Related</p><h2 class="sh-h2">Explore Related Scenes</h2><p class="sh-sub">Other national scenes connected to Switzerland lacrosse by format, geography or history.</p></div>
+    <div class="related-grid"><a href="country-germany.html" class="related-card"><p class="rc-type">Multi-format &#183; Germany</p><p class="rc-title">Germany: the nearby multi-format scene, with sixes now dominant</p><p class="rc-meta">Field &#183; Box &#183; Sixes</p></a><a href="country-france.html" class="related-card"><p class="rc-type">Multi-format &#183; France</p><p class="rc-title">France: western neighbour with box heritage and sixes outreach</p><p class="rc-meta">Field &#183; Box &#183; Sixes</p></a><a href="country-italy.html" class="related-card"><p class="rc-type">Southern Europe &#183; Italy</p><p class="rc-title">Italy: the 2025 European silver medallist across the Alps</p><p class="rc-meta">Field &#183; Sixes</p></a></div>
+  <div style="text-align:center;margin-top:28px;"><a href="../countries.html" class="btn btn-dk">All Countries &#8594;</a></div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div class="sh-block">
+  <p class="sh-kicker"><b>07</b> Community</p>
+  <h2 class="sh-h2">Help Us Cover Switzerland</h2>
+</div>
+  <div class="community-grid"><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#128200;</span><p class="comm-title">Send a story tip</p><p class="comm-desc">Swisslax results, club news, anything happening in the Swiss scene.</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127942;</span><p class="comm-title">Suggest a tournament</p><p class="comm-desc">A Swiss event that should be on the FTL calendar?</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127908;</span><p class="comm-title">Recommend an interview</p><p class="comm-desc">Who should FTL speak to inside Swiss lacrosse?</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#9999;&#65039;</span><p class="comm-title">Correct this page</p><p class="comm-desc">Have more accurate info about Swiss lacrosse? We review everything.</p><span class="comm-cta">Send &#8594;</span></a></div>
+</div></section>
+
+<section class="s-sm"><div class="container">
+  <div class="nl-editorial">
+  <p class="nl-ed-kicker">&#128140; FTL Weekly</p>
+  <h3 class="nl-ed-title">Follow Switzerland.<br>Follow European Lacrosse.</h3>
+  <p class="nl-ed-sub">Results, scene updates and analysis from Switzerland and across European lacrosse &#8212; curated weekly.</p>
+  <div class="nl-ed-form nl-form"><input type="email" placeholder="your@email.com"><button class="btn btn-pri">Subscribe &#8594;</button></div>
+  <p class="nl-ed-promise">One email per week. European lacrosse only. Always free.</p>
+</div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="foot-grid">
+    <div><div class="foot-logo">Follow The <em>Lacrosse</em></div><p class="foot-tag">The central hub for European lacrosse.</p><div class="foot-social"><a href="#">&#128247;</a><a href="#">&#120143;</a><a href="#">&#9654;</a><a href="#">&#9835;</a></div></div>
+    <div><p class="foot-col-title">Content</p><div class="foot-col"><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a></div></div>
+    <div><p class="foot-col-title">Countries</p><div class="foot-col"><a href="../countries.html">All Countries</a></div></div>
+    <div><p class="foot-col-title">FTL</p><div class="foot-col"><a href="../about.html">About</a><a href="../about.html#contact">Contact</a></div></div>
+  </div>
+  <div class="foot-bottom"><span class="foot-copy">&#169; 2026 Follow The Lacrosse.</span><div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+</div></footer>
+<script>
+document.querySelectorAll('.nl-form').forEach(f=>{const b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',()=>{if(i.value&&i.value.includes('@')){const t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(()=>{b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(()=>i.style.borderColor='',2000)}})});
+const mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',()=>{const open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
+</script>
+</body>
+</html>

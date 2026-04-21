@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lacrosse in {{COUNTRY_NAME}} &#8212; Follow The Lacrosse</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="countries.css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --nuit:     #0D2240;
+  --marine:   #1A3A6B;
+  --mauve:    #B088E8;
+  --mauve-dk: #7A56C2;
+  --acier:    #7A90A8;
+  --ivoire:   #F0EEE8;
+  --blanc:    #FFFFFF;
+  --texte:    #2D3748;
+  --bg:       #F5F3EE;
+  --border:   #E2DDD6;
+  --meta:     #8A9BB0;
+  --shadow:   0 2px 12px rgba(13,34,64,.08);
+  --shadow-lg:0 8px 32px rgba(13,34,64,.14);
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);line-height:1.65;font-size:15px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── SPONSOR BAR ── */
+
+/* ── HEADER ── */
+.site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-logo img{height:34px;width:auto;flex-shrink:0}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.main-nav > a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.main-nav > a:hover,.main-nav > a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 12px;transition:border-color .2s}
+.nav-search-wrap:focus-within{border-color:rgba(176,136,232,.5)}
+.nav-search-wrap input{background:none;border:none;outline:none;color:#fff;font-size:12px;font-family:'DM Sans',sans-serif;width:130px}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.25)}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:8px 16px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.nav-btn:hover{opacity:.88}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:1px}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:72px 0}
+.s-sm{padding:48px 0}
+.bg-white{background:var(--blanc)}
+.bg-ivoire{background:var(--ivoire)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
+.btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
+.btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff}
+.btn-dk{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+.btn-dk:hover{background:var(--marine);border-color:var(--marine)}
+.btn-sm{padding:8px 18px;font-size:12px}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--nuit);padding:64px 0 28px;margin-top:80px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.foot-logo em{color:var(--mauve);font-style:normal}
+.foot-tag{font-size:13px;color:var(--acier);line-height:1.6;max-width:240px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--acier);font-size:15px;transition:background .15s,color .15s;text-decoration:none}
+.foot-social a:hover{background:var(--mauve);color:var(--nuit)}
+.foot-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;text-decoration:none;transition:color .15s}
+.foot-col a:hover{color:var(--mauve)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25)}
+.foot-links{display:flex;gap:16px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--mauve)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .container{padding:0 20px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="Follow The Lacrosse"></a>
+  <nav class="main-nav"><a href="../index.html">Home</a><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../countries.html" class="active">Countries</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a><a href="../about.html">About</a><a href="../follow.html">Follow Us</a></nav>
+  <div class="nav-right">
+    <div class="nav-search-wrap"><span style="color:rgba(255,255,255,.25);">&#128269;</span><input type="text" placeholder="Search posts..."></div>
+    <a href="../index.html#newsletter" class="nav-btn">Newsletter</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<section class="country-hero">
+  <div class="container"><div class="country-hero-inner">
+    <span class="country-hero-flag">{{FLAG_EMOJI}}</span>
+    <div class="country-hero-text">
+      <p class="country-hero-kicker">Country Profile &#8226; {{REGION}}</p>
+      <h1>Lacrosse in <em>{{COUNTRY_NAME}}</em></h1>
+      <p>{{HERO_DESCRIPTION}}</p>
+      <div class="country-hero-meta"><div class="country-fed-badge"><img src="../country-pictures/{{COUNTRY_ID}}.png" alt="{{FED_ABBR}}"><span>{{FED_ABBR}}</span></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ── Country DNA Strip ── -->
+<div class="dna-strip">
+  <div class="container">
+    <div class="dna-strip-inner">
+      <div class="dna-brand"><span class="dna-brand-label">Country DNA</span><span class="dna-brand-line"></span></div>
+      <div class="dna-col"><span class="dna-col-key">Stage</span><span class="dna-col-val"><span class="dna-stage-pip" style="background:{{STAGE_COLOR}};"></span>{{STAGE_LABEL}}</span></div>
+      <div class="dna-col"><span class="dna-col-key">Formats</span><div class="dna-fmt-tags">{{FORMAT_TAGS}}</div></div>
+      <div class="dna-col"><span class="dna-col-key">Identity</span><span class="dna-col-val" style="font-size:12px;">{{IDENTITY}}</span></div>
+      <div class="dna-col"><span class="dna-col-key">Why it matters</span><span class="dna-why-text">{{WHY_IT_MATTERS}}</span></div>
+      <div class="dna-fed"><div class="dna-fed-logo"><img src="../country-pictures/{{COUNTRY_ID}}.png" alt="{{FED_ABBR}}"></div><div><span class="dna-fed-abbr">{{FED_ABBR}}</span><span class="dna-fed-name">{{TIER_LABEL}}</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="country-stats">
+  <div class="cstat"><p class="cstat-num">{{STAT_1_NUM}}</p><p class="cstat-label">{{STAT_1_LABEL}}</p></div>
+  <div class="cstat"><p class="cstat-num">{{STAT_2_NUM}}</p><p class="cstat-label">{{STAT_2_LABEL}}</p></div>
+  <div class="cstat"><p class="cstat-num">{{STAT_3_NUM}}</p><p class="cstat-label">{{STAT_3_LABEL}}</p></div>
+  <div class="cstat"><p class="cstat-num">{{STAT_4_NUM}}</p><p class="cstat-label">{{STAT_4_LABEL}}</p></div>
+</div>
+
+<!-- ── SECTIONS: Overview, Structure, National Teams, Why Follow, Coverage, Related, Community ── -->
+<!-- Sections follow the same pattern as existing country pages (EN, FR, DE, IT, CZ, NL, ES, SE) -->
+<!-- Each section uses .s / .s.bg-white alternation for visual rhythm -->
+<!-- Use sh-block pattern for section heads: .sh-kicker > b + label, .sh-h2, .sh-sub -->
+
+<!-- ── Newsletter ── -->
+<section class="s-sm bg-ivoire"><div class="container">
+  <div style="background:linear-gradient(135deg,var(--nuit),var(--marine));border-radius:var(--r-lg);padding:36px;position:relative;overflow:hidden;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--mauve);margin-bottom:8px;">&#128140; FTL Weekly</p>
+    <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;text-transform:uppercase;color:#fff;line-height:.95;margin-bottom:10px;">Follow {{COUNTRY_NAME}}.<br><em style="color:var(--mauve);font-style:normal;">Follow Europe.</em></h3>
+    <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:20px;max-width:400px;line-height:1.6;">Results, scene updates and analysis from {{COUNTRY_NAME}} and across European lacrosse &#8212; curated weekly.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;" class="nl-form">
+      <input type="email" placeholder="your@email.com" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 14px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;width:220px;outline:none;">
+      <button class="btn btn-pri">Subscribe &#8594;</button>
+    </div>
+    <p style="margin-top:10px;font-size:10px;color:rgba(255,255,255,.22);font-style:italic;">One email per week. Always free.</p>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="foot-grid">
+    <div><div class="foot-logo">Follow The <em>Lacrosse</em></div><p class="foot-tag">The central hub for European lacrosse.</p><div class="foot-social"><a href="#">&#128247;</a><a href="#">&#120143;</a><a href="#">&#9654;</a><a href="#">&#9835;</a></div></div>
+    <div><p class="foot-col-title">Content</p><div class="foot-col"><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a></div></div>
+    <div><p class="foot-col-title">Countries</p><div class="foot-col"><a href="../countries.html">All Countries</a></div></div>
+    <div><p class="foot-col-title">FTL</p><div class="foot-col"><a href="../about.html">About</a><a href="../about.html#contact">Contact</a></div></div>
+  </div>
+  <div class="foot-bottom"><span class="foot-copy">&#169; 2026 Follow The Lacrosse.</span><div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+</div></footer>
+<script>
+// Newsletter
+document.querySelectorAll('.nl-form').forEach(f=>{const b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',()=>{if(i.value&&i.value.includes('@')){const t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(()=>{b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(()=>i.style.borderColor='',2000)}})});
+// Mobile menu
+const mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',()=>{const open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
+</script>
+</body>
+</html>

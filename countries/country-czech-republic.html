@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lacrosse in Czech Republic &#8212; Follow The Lacrosse</title>
+<meta name="description" content="A founding ELF nation and the home of the Aleš Hřebeský Memorial — Europe's most prestigious Box lacrosse event. Prague is the undisputed capital of European Box lacrosse.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="countries.css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --nuit:     #0D2240;
+  --marine:   #1A3A6B;
+  --mauve:    #B088E8;
+  --mauve-dk: #7A56C2;
+  --acier:    #7A90A8;
+  --ivoire:   #F0EEE8;
+  --blanc:    #FFFFFF;
+  --texte:    #2D3748;
+  --bg:       #F5F3EE;
+  --border:   #E2DDD6;
+  --meta:     #8A9BB0;
+  --shadow:   0 2px 12px rgba(13,34,64,.08);
+  --shadow-lg:0 8px 32px rgba(13,34,64,.14);
+  --r:        10px;
+  --r-lg:     16px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);line-height:1.65;font-size:15px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── SPONSOR BAR ── */
+
+/* ── HEADER — sombre, simple, épuré ── */
+.site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-logo img{height:34px;width:auto;flex-shrink:0}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.main-nav > a{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+.main-nav > a:hover,.main-nav > a.active{color:#fff;background:rgba(255,255,255,.07)}
+.nav-item{position:relative}
+.nav-item > button{font-size:13px;font-weight:500;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:6px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;transition:color .15s,background .15s}
+.nav-item > button:hover,.nav-item:hover > button{color:#fff;background:rgba(255,255,255,.07)}
+.nav-chev{font-size:8px;opacity:.5;transition:transform .2s;pointer-events:none}
+.nav-item:hover .nav-chev{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + 8px);left:0;background:var(--nuit);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:6px;min-width:170px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .15s,visibility .15s,transform .15s;box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:200}
+.nav-item:hover .nav-drop{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-drop a{display:block;padding:8px 12px;font-size:12px;font-weight:500;color:rgba(255,255,255,.55);border-radius:6px;transition:color .1s,background .1s}
+.nav-drop a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.nav-search-wrap{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:6px 12px;transition:border-color .2s}
+.nav-search-wrap:focus-within{border-color:rgba(176,136,232,.5)}
+.nav-search-wrap input{background:none;border:none;outline:none;color:#fff;font-size:12px;font-family:'DM Sans',sans-serif;width:130px}
+.nav-search-wrap input::placeholder{color:rgba(255,255,255,.25)}
+.nav-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:8px 16px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.nav-btn:hover{opacity:.88}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:1px}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.s{padding:72px 0}
+.s-sm{padding:48px 0}
+.bg-white{background:var(--blanc)}
+.bg-ivoire{background:var(--ivoire)}
+.bg-dark{background:var(--nuit)}
+
+/* ── SECTION HEAD ── */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:20px;flex-wrap:wrap}
+.sh-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.sh-label b{font-size:17px;font-weight:900;color:var(--mauve)}
+.sh-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);line-height:1;margin:0}
+.see-all{font-size:11px;font-weight:500;color:var(--mauve);text-transform:uppercase;letter-spacing:.06em;transition:opacity .15s}
+.see-all:hover{opacity:.7}
+
+/* ── HERO ── */
+.hero{background:var(--nuit);padding:88px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-100px;top:-100px;width:440px;height:440px;border-radius:50%;border:70px solid var(--mauve);opacity:.04;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:680px}
+.hero-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.hero-kicker::before{content:'';width:28px;height:2px;background:var(--mauve);border-radius:1px}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,7vw,76px);text-transform:uppercase;color:#fff;line-height:.88;margin-bottom:22px}
+.hero-title em{color:var(--mauve);font-style:normal;display:block}
+.hero-sub{font-size:16px;color:var(--acier);line-height:1.65;max-width:540px;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
+.btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
+.btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(176,136,232,.35)}
+.btn-out{background:transparent;color:var(--mauve);border-color:var(--mauve)}
+.btn-out:hover{background:var(--mauve);color:var(--nuit)}
+.btn-out-white{background:transparent;color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25)}
+.btn-out-white:hover{border-color:var(--mauve);color:var(--mauve)}
+.btn-dk{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+.btn-dk:hover{background:var(--marine);border-color:var(--marine)}
+.btn-sm{padding:8px 18px;font-size:12px}
+.btn-lg{padding:16px 36px;font-size:15px}
+
+/* ── PILL FILTERS ── */
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.pill{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:7px 18px;border-radius:999px;border:1.5px solid var(--border);background:var(--blanc);color:var(--acier);cursor:pointer;transition:all .15s}
+.pill:hover{border-color:var(--mauve);color:var(--mauve-dk)}
+.pill.on{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+
+/* ── FILTER BAR ── */
+.fbar{background:var(--blanc);border-bottom:1px solid var(--border);padding:14px 0}
+.fbar-inner{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fsearch{display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:9px 14px;flex:1;min-width:180px;max-width:280px;transition:border-color .2s}
+.fsearch:focus-within{border-color:var(--mauve)}
+.fsearch input{background:none;border:none;outline:none;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);width:100%}
+.fsearch input::placeholder{color:var(--acier)}
+.fsel{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:9px 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);outline:none;cursor:pointer;transition:border-color .2s}
+.fsel:focus{border-color:var(--mauve)}
+
+/* ── ARTICLE CARDS — photos visibles, aérées ── */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.grid-2-1{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+
+.card{background:var(--blanc);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;cursor:pointer;text-decoration:none;color:inherit}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card-photo{position:relative;height:220px;overflow:hidden;background:#C8D4E0}
+.card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.card:hover .card-photo img{transform:scale(1.05)}
+.card-photo-badge{position:absolute;top:14px;left:14px;z-index:2}
+.cat{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:3px 10px;border-radius:4px;display:inline-block}
+.cat-dk{background:var(--mauve-dk);color:#fff}
+.cat-box{background:var(--marine);color:#fff}
+.card-body{padding:20px 22px;flex:1;display:flex;flex-direction:column;gap:0}
+.ctags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tc{font-size:10px;font-weight:500;padding:3px 9px;border-radius:999px;background:rgba(13,34,64,.06);color:var(--nuit);border:.5px solid var(--border)}
+.tf{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.tf-fi{background:rgba(176,136,232,.15);color:var(--mauve-dk)}
+.tf-si{background:rgba(122,86,194,.15);color:var(--mauve-dk)}
+.tf-bo{background:rgba(26,58,107,.12);color:var(--marine)}
+.card-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:21px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:10px}
+.card-exc{font-size:13px;color:var(--acier);line-height:1.55;margin-bottom:14px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border)}
+.card-meta{font-size:11px;color:var(--meta)}
+.card-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve)}
+.card:hover .card-cta{color:var(--mauve-dk)}
+
+/* Card featured */
+.card-feat .card-photo{height:320px}
+.card-feat .card-title{font-size:27px}
+
+/* Card small */
+.card-sm .card-photo{height:140px}
+.card-sm .card-title{font-size:14px}
+.card-sm .card-body{padding:12px 14px}
+.card-sm .card-exc{display:none}
+
+/* LIST ITEMS */
+.list-item{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:padding-left .15s}
+.list-item:last-child{border-bottom:none}
+.list-item:hover{padding-left:8px}
+.li-thumb{width:100px;height:68px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#C8D4E0}
+.li-thumb img{width:100%;height:100%;object-fit:cover}
+.li-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);line-height:1;margin-bottom:5px}
+.li-exc{font-size:12px;color:var(--acier);line-height:1.5}
+.li-meta{font-size:10px;color:var(--meta);margin-top:5px}
+
+/* ── PAGE HEADER ── */
+.ph{background:var(--nuit);padding:56px 0 48px;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;right:-70px;top:-70px;width:300px;height:300px;border-radius:50%;border:55px solid var(--mauve);opacity:.04}
+.ph-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:10px}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(38px,5vw,58px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:12px}
+.ph-title em{color:var(--mauve);font-style:normal}
+.ph-desc{font-size:14px;color:var(--acier);max-width:520px;line-height:1.6}
+
+/* ── TOURNAMENT CARDS ── */
+.tourn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc-card{background:var(--nuit);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden;transition:transform .2s}
+.tc-card:hover{transform:translateY(-3px)}
+.tc-card::before{content:'';position:absolute;right:-28px;top:-28px;width:120px;height:120px;border-radius:50%;border:22px solid var(--mauve);opacity:.07}
+.tc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.tc-flag{font-size:24px}
+.tc-fmt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
+.tc-fmt-fi{background:var(--mauve);color:var(--nuit)}
+.tc-fmt-si{background:var(--mauve-dk);color:#fff}
+.tc-fmt-bo{background:var(--marine);color:#fff}
+.tc-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:21px;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:12px}
+.tc-det{font-size:12px;color:var(--acier);margin-bottom:4px}
+.tc-hr{border:none;border-top:1px solid rgba(255,255,255,.07);margin:14px 0}
+.tc-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--mauve)}
+.tc-btn{display:inline-block;margin-top:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);border:1px solid rgba(176,136,232,.3);padding:8px 16px;border-radius:6px;transition:background .15s,color .15s}
+.tc-btn:hover{background:var(--mauve);color:var(--nuit)}
+
+/* ── TOURNAMENT ACCORDION ── */
+.acc-list{display:flex;flex-direction:column;gap:10px}
+.acc-item{background:var(--blanc);border-radius:var(--r);border:1px solid var(--border);overflow:hidden}
+.acc-hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;transition:background .15s}
+.acc-hd:hover{background:rgba(176,136,232,.04)}
+.acc-left{display:flex;align-items:center;gap:16px;flex:1}
+.acc-flag{font-size:24px;flex-shrink:0}
+.acc-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:var(--nuit)}
+.acc-sub{font-size:12px;color:var(--acier);margin-top:3px}
+.acc-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.acc-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--mauve);text-transform:uppercase}
+.acc-chev{color:var(--acier);font-size:11px;transition:transform .2s}
+.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-bd{border-top:1px solid var(--border);padding:22px 24px;display:none}
+.acc-item.open .acc-bd{display:block}
+.acc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.acc-lbl{font-size:10px;color:var(--acier);text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin-bottom:4px}
+.acc-val{font-size:14px;font-weight:500;color:var(--nuit)}
+.chip{display:inline-block;font-size:10px;background:var(--bg);color:var(--acier);padding:2px 8px;border-radius:999px;border:1px solid var(--border);margin:2px 2px 0 0}
+
+.m-div{display:flex;align-items:center;gap:16px;margin:32px 0 18px}
+.m-div-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--acier);white-space:nowrap}
+.m-div-line{flex:1;height:1px;background:var(--border)}
+.m-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:4px;background:var(--mauve);color:var(--nuit)}
+
+.cal-strip{background:var(--blanc);border-radius:var(--r);padding:16px 20px;border:1px solid var(--border);margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cal-months{display:flex;gap:4px;flex-wrap:wrap}
+.cal-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:6px;border:1px solid transparent;background:none;color:var(--acier);cursor:pointer;transition:all .15s}
+.cal-btn:hover{color:var(--nuit);border-color:var(--border)}
+.cal-btn.on{background:var(--nuit);color:#fff;border-color:var(--nuit)}
+
+/* ── NEWSLETTER ── */
+.nl-dark{background:var(--marine);padding:24px 0}
+.nl-dark-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.nl-dark-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:3px}
+.nl-dark-sub{font-size:13px;color:var(--acier)}
+.nl-form{display:flex;gap:8px;flex-wrap:wrap}
+.nl-form input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 16px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;width:220px;outline:none}
+.nl-form input::placeholder{color:rgba(255,255,255,.3)}
+
+.nl-strip{background:var(--mauve);border-radius:var(--r-lg);padding:32px 36px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px}
+.nl-strip-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin-bottom:4px}
+.nl-strip-sub{font-size:13px;color:var(--mauve-dk)}
+.nl-strip input{background:rgba(255,255,255,.9);border:none;border-radius:6px;padding:11px 16px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);width:220px;outline:none}
+.nl-strip input::placeholder{color:var(--acier)}
+
+/* ── SERVICES ── */
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.srv-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.srv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--mauve);transform:scaleX(0);transition:transform .2s;transform-origin:left}
+.srv-card:hover::after{transform:scaleX(1)}
+.srv-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.srv-icon{width:50px;height:50px;border-radius:var(--r);background:rgba(176,136,232,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
+.srv-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;color:var(--nuit);margin-bottom:8px}
+.srv-desc{font-size:14px;color:var(--acier);line-height:1.65}
+
+/* ── ABOUT ── */
+.about-2col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-visual{background:var(--nuit);border-radius:var(--r-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-visual::before{content:'';position:absolute;inset:0;border:2px solid rgba(176,136,232,.25);border-radius:var(--r-lg)}
+.about-visual img{width:55%;opacity:.9}
+.about-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:20px}
+.about-title em{color:var(--mauve);font-style:normal}
+.about-p{font-size:14px;color:var(--texte);line-height:1.75;margin-bottom:14px}
+
+/* ── CONTACT ── */
+.contact-2col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.ci-icon{width:38px;height:38px;background:rgba(176,136,232,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ci-label{font-size:10px;color:var(--acier);text-transform:uppercase;letter-spacing:.06em;font-weight:500;margin-bottom:3px}
+.ci-text{font-size:13px;color:var(--texte);line-height:1.5}
+.form-box{background:var(--blanc);border-radius:var(--r-lg);padding:32px;border:1px solid var(--border)}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--nuit);margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;font-family:'DM Sans',sans-serif;font-size:13px;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--blanc);color:var(--nuit);outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--mauve)}
+.fg textarea{min-height:120px;resize:vertical}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* ── SPONSOR SLOTS ── */
+.sponsor-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.s-slot{height:80px;display:flex;align-items:center;justify-content:center;background:var(--blanc);border-radius:10px;border:1.5px dashed var(--border);color:var(--acier);font-size:12px;transition:border-color .2s}
+.s-slot:hover{border-color:var(--mauve)}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--nuit);padding:64px 0 28px;margin-top:80px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.foot-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.foot-logo em{color:var(--mauve);font-style:normal}
+.foot-tag{font-size:13px;color:var(--acier);line-height:1.6;max-width:240px;margin-bottom:20px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--acier);font-size:15px;transition:background .15s,color .15s;text-decoration:none}
+.foot-social a:hover{background:var(--mauve);color:var(--nuit)}
+.foot-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;text-decoration:none;transition:color .15s,padding-left .15s}
+.foot-col a:hover{color:var(--mauve);padding-left:4px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25)}
+.foot-links{display:flex;gap:16px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--mauve)}
+
+/* ── INLINE SPONSOR ── */
+.inline-sp{background:var(--ivoire);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;margin:32px 0;text-align:center}
+.inline-sp-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--acier);margin-bottom:8px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .grid-3,.grid-4,.grid-2-1,.tourn-grid,.about-2col,.contact-2col,.foot-grid{grid-template-columns:1fr}
+  .nl-strip{grid-template-columns:1fr}
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .acc-grid{grid-template-columns:1fr 1fr}
+  .hero-title{font-size:clamp(40px,8vw,56px)}
+  .container{padding:0 20px}
+}
+@media(max-width:600px){
+  .grid-6{grid-template-columns:repeat(2,1fr)}
+  .acc-grid{grid-template-columns:1fr}
+  .nl-form{flex-direction:column}
+  .nl-form input,.nl-strip input{width:100%}
+  .sponsor-row{grid-template-columns:1fr 1fr}
+}
+
+.hero-page{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 60%,var(--mauve-dk) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.hero-page::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;border-radius:50%;border:60px solid var(--mauve);opacity:.07;pointer-events:none}
+.hero-page::after{content:'';position:absolute;left:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(255,255,255,.05);pointer-events:none}
+.hero-page-inner{position:relative;z-index:1}
+.hero-page-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve);margin-bottom:14px}
+.hero-page h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(44px,6vw,72px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:16px}
+.hero-page h1 em{color:var(--mauve);font-style:normal}
+.hero-page p{font-size:16px;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto;line-height:1.65}
+
+/* Country chips in whats-lacrosse */
+.country-chip{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:14px 10px;text-align:center;transition:border-color .2s,transform .15s,box-shadow .15s;display:block;text-decoration:none;color:inherit}
+.country-chip:hover{border-color:var(--mauve);transform:translateY(-2px);box-shadow:var(--shadow)}
+.country-chip-flag{font-size:22px;margin-bottom:5px}
+.country-chip-name{font-size:11px;font-weight:500;color:var(--nuit);text-transform:uppercase;letter-spacing:.04em}
+.country-chip-status{font-size:9px;color:var(--acier);margin-top:2px}
+
+/* Coming soon */
+.coming-soon-box{background:var(--ivoire);border:2px dashed var(--border);border-radius:var(--r-lg);padding:64px 40px;text-align:center}
+
+@media(max-width:600px){.country-chip-grid{grid-template-columns:repeat(2,1fr) !important}}
+
+/* ── DNA strip + shared country components: see countries.css ── */
+
+/* ── CZ-SPECIFIC: editorial note panel — uses .nl-editorial-note from countries.css ── */
+
+/* ── COVERAGE, RELATED, COMMUNITY: styles from countries.css ── */
+
+/* ── WHY FOLLOW CARDS ── */
+.why-follow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wf-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;transition:border-color .15s,transform .15s}
+.wf-card:hover{border-color:var(--mauve);transform:translateY(-3px)}
+.wf-icon{font-size:28px;margin-bottom:12px}
+.wf-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);margin-bottom:8px}
+.wf-desc{font-size:13px;color:var(--acier);line-height:1.65}
+
+@media(max-width:900px){.why-follow-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.why-follow-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="Follow The Lacrosse"></a>
+  <nav class="main-nav"><a href="../index.html">Home</a><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../countries.html" class="active">Countries</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a><a href="../about.html">About</a><a href="../follow.html">Follow Us</a></nav>
+  <div class="nav-right">
+    <div class="nav-search-wrap"><span style="color:rgba(255,255,255,.25);">&#128269;</span><input type="text" placeholder="Search posts..."></div>
+    <a href="../index.html#newsletter" class="nav-btn">Newsletter</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<section class="country-hero">
+  <div class="container"><div class="country-hero-inner">
+    <span class="country-hero-flag">&#127464;&#127487;</span>
+    <div>
+      <p class="country-hero-kicker">Country Profile · Central Europe</p>
+      <h1>Lacrosse in <em>Czech Republic</em></h1>
+      <p>A founding ELF nation and the home of the Aleš Hřebeský Memorial — Europe's most prestigious Box lacrosse event. Prague is the undisputed capital of European Box lacrosse.</p>
+      <div class="country-hero-meta"><div class="country-fed-badge"><img src="../country-pictures/czech-republic.jpeg" alt="CLU — Czech Lacrosse Union"><span>CLU</span></div></div>
+    </div>
+  </div></div>
+</section>
+
+<div class="dna-strip">
+  <div class="container">
+    <div class="dna-strip-inner">
+      <div class="dna-brand"><div class="dna-brand-line"></div><span class="dna-brand-label">Country DNA</span></div>
+      <div class="dna-col">
+        <span class="dna-col-key">Stage</span>
+        <span class="dna-col-val"><span class="dna-stage-pip" style="background:#FFD166;box-shadow:0 0 6px #FFD16660;"></span>Box Capital</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Formats</span>
+        <div class="dna-fmt-tags"><span class="dna-fmt-tag">Box</span><span class="dna-fmt-tag">Field</span></div>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Identity</span>
+        <span class="dna-col-val" style="font-size:13px;font-weight:700;white-space:normal;line-height:1.2;">Box-dominant · World-competitive · Institutional</span>
+      </div>
+      <div class="dna-col">
+        <span class="dna-col-key">Why it matters</span>
+        <p class="dna-why-text">Prague hosts the Aleš Hřebeský Memorial — the only European Box event that draws North American club teams.</p>
+      </div>
+      <div class="dna-fed">
+        <div class="dna-fed-logo"><img src="../country-pictures/czech-republic.jpeg" alt="CLU"></div>
+        <div><span class="dna-fed-abbr">CLU</span><span class="dna-fed-name">Tier 1 &#8212; Elite / Founding Nations</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="country-stats">
+  <div class="cstat"><p class="cstat-num">1986</p><p class="cstat-label">Lacrosse introduced</p></div><div class="cstat"><p class="cstat-num">1994</p><p class="cstat-label">First AHM edition</p></div><div class="cstat"><p class="cstat-num">2004</p><p class="cstat-label">CLU founded</p></div><div class="cstat"><p class="cstat-num">Box · Field</p><p class="cstat-label">Main formats</p></div>
+</div>
+
+<section class="s bg-white"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">01</b> Overview</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">The Czech Republic Lacrosse Scene</h2>
+</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">Lacrosse arrived in Czech Republic in 1986. By the time the ELF was founded in 1995, Czech Republic was already a credible national programme — not just a founding member on paper, but a competitive force. They hosted the inaugural ELF Championship in 1995 and finished as Silver medallist, then repeated that result in 1997.</p>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;margin-bottom:16px;">The Aleš Hřebeský Memorial, first held in 1994 in memory of a founding figure of Czech lacrosse, grew into the continent's defining Box lacrosse event — the only European tournament that draws North American club teams consistently. By its 32nd edition in 2025, the AHM hosted 24 teams from 19 countries.</p>
+      <p style="font-size:15px;color:var(--texte);line-height:1.8;">The Czech Lacrosse Union (CLU) was formally established on 12 May 2004, institutionalising a scene that had already been competing internationally for nearly two decades.</p>
+      <div style="margin-top:20px;">
+        <a href="https://lacrosse.cz" target="_blank" rel="noopener" class="btn btn-pri btn-sm">CLU official site &#8594;</a>
+      </div>
+    </div>
+    <div class="nl-editorial-note">
+      <p class="nl-editorial-title">&#128202; Scene at a glance</p>
+      <div class="nl-editorial-items">
+        <div class="nl-editorial-item"><span>&#10003;</span><span>Lacrosse introduced: 1986 (40th anniversary in 2025)</span></div>
+        <div class="nl-editorial-item"><span>&#10003;</span><span>ELF founding member: 1995</span></div>
+        <div class="nl-editorial-item"><span>&#10003;</span><span>ELF Championship Silver: 1995 (as host), 1997</span></div>
+        <div class="nl-editorial-item"><span>&#10003;</span><span>Aleš Hřebeský Memorial: first held 1994 — 32nd edition 2025</span></div>
+        <div class="nl-editorial-item"><span>&#10003;</span><span>CLU founded: 12 May 2004</span></div>
+        <div class="nl-editorial-item"><span>&#10003;</span><span>Main formats: Box · Field</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:48px;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:24px;display:flex;align-items:center;gap:8px;">&#8212; Key Milestones</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><p class="tl-year">1986</p><p class="tl-title">Lacrosse Introduced</p><p class="tl-desc">Lacrosse takes root in Czech Republic. By 1986 the game has an early competitive presence that will grow into one of Europe's strongest Box cultures.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="tl-year">1994</p><p class="tl-title">First Aleš Hřebeský Memorial</p><p class="tl-desc">The AHM is created in memory of Aleš Hřebeský, who died on 30 November 1993. The first edition is held in Prague the following year — the tournament that will become Europe's most internationally significant Box event.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="tl-year">1995 · 1997</p><p class="tl-title">ELF Founding &amp; Silver Medals</p><p class="tl-desc">Czech Republic co-founds the European Lacrosse Federation in 1995 and hosts the inaugural ELF Championship, finishing as Silver medallist. Silver again in 1997.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="tl-year">2004</p><p class="tl-title">CLU Formally Established</p><p class="tl-desc">The Czech Lacrosse Union is officially founded on 12 May 2004, providing the institutional structure for a scene that had been competing internationally for nearly 20 years.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">02</b> Clubs</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Clubs &amp; Structure</h2>
+</div>
+  <p style="font-size:14px;color:var(--acier);margin-bottom:20px;max-width:580px;line-height:1.65;">The Czech Lacrosse Union (CLU) oversees national competition. Prague is the Box capital and the home of the AHM, but the national structure has developed genuine depth at club level across the country.</p>
+  <div class="club-grid">
+    <div class="club-card">
+  <div class="club-name">Prague</div>
+  <div class="club-city">&#128205; Prague</div>
+  <div class="club-fmt">Box · Field</div>
+</div><div class="club-card">
+  <div class="club-name">Brno</div>
+  <div class="club-city">&#128205; Brno</div>
+  <div class="club-fmt">Field · Box</div>
+</div><div class="club-card">
+  <div class="club-name">Ostrava</div>
+  <div class="club-city">&#128205; Ostrava</div>
+  <div class="club-fmt">Field</div>
+</div><div class="club-card">
+  <div class="club-name">&#268;esk&#233; Bud&#283;jovice</div>
+  <div class="club-city">&#128205; &#268;esk&#233; Bud&#283;jovice</div>
+  <div class="club-fmt">Box</div>
+</div>
+  </div>
+</div></section>
+
+<section class="s bg-white"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">03</b> National Teams</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Czech Republic on the World Stage</h2>
+</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+    <div style="background:var(--nuit);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden;">
+      <div style="position:absolute;right:-20px;top:-20px;width:100px;height:100px;border-radius:50%;border:18px solid var(--mauve);opacity:.07;pointer-events:none;"></div>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mauve);margin-bottom:10px;">Field &amp; Box</p>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px;line-height:1;">Men's National Team</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">ELF Championship Silver 1995 (as host) and 1997. ELF founding member. Box programme among Europe's most established — built on 40 years of continuous competition.</p>
+    </div>
+    <div style="background:var(--nuit);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden;">
+      <div style="position:absolute;right:-20px;top:-20px;width:100px;height:100px;border-radius:50%;border:18px solid var(--mauve);opacity:.07;pointer-events:none;"></div>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mauve);margin-bottom:10px;">Field &amp; Box</p>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:12px;line-height:1;">Women's National Team</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;">Active programme within CLU structure. Box tradition increasingly translating into women's international competition.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div style="margin-bottom:32px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><b style="font-size:17px;color:var(--mauve);">04</b> Why Follow</div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0;">Why Follow Czech Republic?</h2>
+</div>
+  <div class="why-follow-grid">
+    <div class="wf-card">
+  <p class="wf-icon">🏆</p>
+  <p class="wf-title">The Aleš Hřebeský Memorial</p>
+  <p class="wf-desc">The Memorial is unlike any other lacrosse event in Europe. North American and European club teams in Prague — the event that makes you take Czech lacrosse seriously.</p>
+</div><div class="wf-card">
+  <p class="wf-icon">🏠</p>
+  <p class="wf-title">Box heritage</p>
+  <p class="wf-desc">30+ years of Box lacrosse culture means institutional knowledge and a playing style that other European nations are still trying to replicate.</p>
+</div><div class="wf-card">
+  <p class="wf-icon">🇨🇿</p>
+  <p class="wf-title">Founding credibility</p>
+  <p class="wf-desc">When the ELF was created in 1995, Czech Republic was at the table. That founding role gives the Czech scene a gravitas that newer scenes can't replicate.</p>
+</div>
+  </div>
+</div></section>
+
+<section class="s bg-white"><div class="container">
+  <div class="sh-block">
+  <p class="sh-kicker"><b>05</b> Coverage</p>
+  <h2 class="sh-h2">Latest Czech Republic Coverage</h2>
+</div>
+  <div class="coverage-grid"><a href="article-elf-spring-2026-preview.html" class="coverage-card"><span class="cov-flag">&#127464;&#127487;</span><p class="cov-type">Tournament Preview &#183; Czech Republic</p><p class="cov-title">ELF Spring Championship 2026: Preview and Teams to Watch</p><p class="cov-meta">Mar 15, 2026 &#183; Sam Turner</p><span class="cov-arrow">Open &#8594;</span></a><a href="../tournaments.html" class="coverage-card"><span class="cov-flag">&#127464;&#127487;</span><p class="cov-type">Tournament &#183; Czech Republic</p><p class="cov-title">Ale&#353; H&#345;ebesk&#253; Memorial — AHM</p><p class="cov-meta">Prague &#183; Annual Box lacrosse event</p><span class="cov-arrow">Open &#8594;</span></a></div></div></section>
+
+<section class="s bg-white"><div class="container">
+  <div class="sh-block"><p class="sh-kicker"><b>06</b> Related</p><h2 class="sh-h2">Explore Related Scenes</h2><p class="sh-sub">Other national scenes connected to Czech Republic lacrosse by format, geography or history.</p></div>
+    <div class="related-grid"><a href="country-england.html" class="related-card"><p class="rc-type">Field · England</p><p class="rc-title">England: Czech Republic's fiercest Box rival at ELF level</p><p class="rc-meta">Field Lacrosse</p></a><a href="country-germany.html" class="related-card"><p class="rc-type">Field · Box · Germany</p><p class="rc-title">Germany: Box-strong ELF founding nation, 2001 Champions</p><p class="rc-meta">Box Lacrosse</p></a><a href="country-sweden.html" class="related-card"><p class="rc-type">Field · Sweden</p><p class="rc-title">Sweden: a fellow ELF founding nation, lacrosse since 1988</p><p class="rc-meta">Field Lacrosse</p></a></div>
+  <div style="text-align:center;margin-top:28px;"><a href="../countries.html" class="btn btn-dk">All Countries &#8594;</a></div>
+</div></section>
+
+<section class="s"><div class="container">
+  <div class="sh-block">
+  <p class="sh-kicker"><b>07</b> Community</p>
+  <h2 class="sh-h2">Help Us Cover Czech Republic</h2>
+</div>
+  <div class="community-grid"><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#128200;</span><p class="comm-title">Send a story tip</p><p class="comm-desc">Results, club news, anything happening locally.</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127942;</span><p class="comm-title">Suggest a tournament</p><p class="comm-desc">An event that should be on the FTL calendar?</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#127908;</span><p class="comm-title">Recommend an interview</p><p class="comm-desc">Who should FTL speak to in this scene?</p><span class="comm-cta">Send &#8594;</span></a><a href="../about.html#contact" class="comm-card"><span class="comm-icon">&#9999;&#65039;</span><p class="comm-title">Correct this page</p><p class="comm-desc">Something wrong or missing? We review every submission.</p><span class="comm-cta">Send &#8594;</span></a></div>
+</div></section>
+
+<section class="s-sm"><div class="container">
+  <div class="nl-editorial">
+  <p class="nl-ed-kicker">&#128140; FTL Weekly</p>
+  <h3 class="nl-ed-title">Follow Czech Republic.<br>Follow European Lacrosse.</h3>
+  <p class="nl-ed-sub">Results, scene updates and analysis from Czech Republic and across European lacrosse — curated weekly.</p>
+  <div class="nl-ed-form nl-form"><input type="email" placeholder="your@email.com"><button class="btn btn-pri">Subscribe &#8594;</button></div>
+  <p class="nl-ed-promise">One email per week. European lacrosse only. Always free.</p>
+</div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="foot-grid">
+    <div><div class="foot-logo">Follow The <em>Lacrosse</em></div><p class="foot-tag">The central hub for European lacrosse.</p><div class="foot-social"><a href="#">&#128247;</a><a href="#">&#120143;</a><a href="#">&#9654;</a><a href="#">&#9835;</a></div></div>
+    <div><p class="foot-col-title">Content</p><div class="foot-col"><a href="../articles.html">Articles</a><a href="../tournaments.html">Tournaments</a><a href="../interviews.html">Interviews</a><a href="../whats-lacrosse.html">What&#8217;s Lacrosse?</a></div></div>
+    <div><p class="foot-col-title">Countries</p><div class="foot-col"><a href="../countries.html">All Countries</a></div>
+    <p class="foot-col-title" style="margin-top:20px;">Leagues</p><div class="foot-col"><a href="../articles.html">Field</a><a href="../articles.html">Sixes</a><a href="../articles.html">Box</a></div></div>
+    <div><p class="foot-col-title">FTL</p><div class="foot-col"><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../about.html#contact">Contact</a></div></div>
+  </div>
+  <div class="foot-bottom"><span class="foot-copy">&#169; 2026 Follow The Lacrosse.</span><div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+</div></footer>
+<script>// Accordion
+document.querySelectorAll('.acc-hd').forEach(h=>{h.addEventListener('click',function(){const i=this.closest('.acc-item'),o=i.classList.contains('open');document.querySelectorAll('.acc-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')})});
+// Pills
+document.querySelectorAll('.pills .pill').forEach(b=>{b.addEventListener('click',function(){this.closest('.pills').querySelectorAll('.pill').forEach(x=>x.classList.remove('on'));this.classList.add('on')})});
+// Cal months
+document.querySelectorAll('.cal-btn').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.cal-btn').forEach(x=>x.classList.remove('on'));this.classList.add('on')})});
+// Newsletter
+document.querySelectorAll('.nl-form').forEach(f=>{const b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',()=>{if(i.value&&i.value.includes('@')){const t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(()=>{b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(()=>i.style.borderColor='',2000)}})});
+// Contact form
+const cf=document.getElementById('cform');if(cf){cf.addEventListener('submit',e=>{e.preventDefault();const b=cf.querySelector('[type=submit]');b.textContent='✓ Message sent!';b.style.background='#3B6D11';setTimeout(()=>{b.textContent='Send message →';b.style.background='';cf.reset()},3000)})}
+// Mobile menu
+const mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',()=>{const open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
+</script>
+</body>
+</html>

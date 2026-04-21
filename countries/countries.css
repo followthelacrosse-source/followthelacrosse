@@ -1,0 +1,207 @@
+/* ═══════════════════════════════════════════════
+   FTL COUNTRIES — Shared Styles
+   Used by: countries.html + all country-*.html
+═══════════════════════════════════════════════ */
+
+/* ── TIER COLOR SYSTEM ── */
+:root{
+  --tier-elite:#1A3A6B;
+  --tier-growth:#7A56C2;
+  --tier-emerging:#B088E8;
+  --tier-undocumented:#E0DACC;
+}
+
+/* ── COUNTRY HERO ── */
+.country-hero{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 100%);padding:64px 0 52px;position:relative;overflow:hidden}
+.country-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;border-radius:50%;border:60px solid var(--mauve);opacity:.06;pointer-events:none}
+.country-hero-inner{position:relative;z-index:1;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.country-hero-flag{font-size:72px;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+.country-hero-text{}
+.country-hero-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:8px}
+.country-hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(40px,6vw,68px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:12px}
+.country-hero h1 em{color:var(--mauve);font-style:normal}
+.country-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:540px;line-height:1.6}
+.country-hero-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+
+/* ── FEDERATION BADGE ── */
+.country-fed-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:6px 12px}
+.country-fed-badge img{width:28px;height:28px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,.1)}
+.country-fed-badge span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* ── COUNTRY STATS ROW ── */
+.country-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--blanc);border-bottom:1px solid var(--border)}
+.cstat{padding:24px 20px;text-align:center;border-right:1px solid var(--border)}
+.cstat:last-child{border-right:none}
+.cstat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--mauve);line-height:1;margin-bottom:4px}
+.cstat-label{font-size:11px;color:var(--acier);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+
+/* ══ COUNTRY DNA STRIP — canonical component ══ */
+.dna-strip{padding:28px 0 24px;background:var(--nuit);border-bottom:1px solid rgba(176,136,232,.15)}
+.dna-strip-inner{display:grid;grid-template-columns:auto 1fr 1fr 1fr 2fr;gap:0;align-items:stretch}
+.dna-brand{display:flex;align-items:center;gap:10px;padding-right:28px;border-right:1px solid rgba(255,255,255,.08);margin-right:0}
+.dna-brand-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mauve);white-space:nowrap;writing-mode:vertical-lr;transform:rotate(180deg)}
+.dna-brand-line{width:2px;height:32px;background:var(--mauve);border-radius:1px}
+.dna-col{padding:0 24px;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;justify-content:center;gap:4px}
+.dna-col:last-child{border-right:none}
+.dna-col-key{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.dna-col-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;color:#fff;line-height:1;display:flex;align-items:center;gap:7px}
+.dna-stage-pip{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dna-fmt-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:2px}
+.dna-fmt-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6)}
+.dna-why-text{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;font-style:italic;max-width:360px}
+/* Fed logo slot in DNA strip */
+.dna-fed{display:flex;align-items:center;gap:10px;padding-left:24px;border-left:1px solid rgba(255,255,255,.07)}
+.dna-fed-logo{width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.dna-fed-logo img{width:100%;height:100%;object-fit:contain}
+.dna-fed-abbr{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:var(--mauve)}
+.dna-fed-name{font-size:10px;color:rgba(255,255,255,.3);margin-top:1px}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--mauve),var(--mauve-dk))}
+.tl-item{position:relative;margin-bottom:32px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-39px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--mauve);border:3px solid var(--blanc);box-shadow:0 0 0 2px var(--mauve)}
+.tl-year{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;color:var(--mauve);letter-spacing:.08em;margin-bottom:3px}
+.tl-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;text-transform:uppercase;color:var(--nuit);margin-bottom:5px}
+.tl-desc{font-size:13px;color:var(--acier);line-height:1.6}
+
+/* ── CLUB GRID ── */
+.club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.club-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px;transition:border-color .15s}
+.club-card:hover{border-color:var(--mauve)}
+.club-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;color:var(--nuit);margin-bottom:4px}
+.club-city{font-size:12px;color:var(--acier)}
+.club-fmt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;background:var(--mauve);color:var(--nuit);display:inline-block;margin-top:6px}
+
+/* ── COVERAGE CARDS (from country-test.html) ── */
+.coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.coverage-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:18px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s,box-shadow .15s;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow)}
+.coverage-card:hover{border-color:var(--mauve);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.coverage-card .cov-flag{font-size:22px;margin:0 0 2px 0}
+.coverage-card .cov-type{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:2px}
+.coverage-card .cov-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);line-height:1.05;margin-bottom:2px}
+.coverage-card .cov-meta{font-size:11px;color:var(--meta);margin-top:auto;padding-top:10px;border-top:1px solid var(--border)}
+.coverage-card .cov-arrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);margin-top:6px}
+
+/* ── RELATED CARDS (from country-test.html) ── */
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:18px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s;display:flex;flex-direction:column;gap:8px}
+.related-card:hover{border-color:var(--mauve);transform:translateY(-2px)}
+.rc-type{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve)}
+.rc-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;text-transform:uppercase;color:var(--nuit);line-height:1.05}
+.rc-meta{font-size:11px;color:var(--meta);margin-top:auto;padding-top:8px;border-top:1px solid var(--border)}
+
+/* ── COMMUNITY CARDS (from country-test.html) ── */
+.community-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.comm-card{background:var(--blanc);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:24px;transition:border-color .2s,box-shadow .15s,transform .15s;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px}
+.comm-card:hover{border-color:var(--mauve);box-shadow:var(--shadow);transform:translateY(-2px)}
+.comm-icon{font-size:24px}
+.comm-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit)}
+.comm-desc{font-size:13px;color:var(--acier);line-height:1.55;flex:1}
+.comm-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);margin-top:auto}
+
+/* ── WHY FOLLOW CARDS ── */
+.why-follow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wf-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;transition:border-color .15s,transform .15s}
+.wf-card:hover{border-color:var(--mauve);transform:translateY(-3px)}
+.wf-icon{font-size:28px;margin-bottom:12px}
+.wf-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);margin-bottom:8px}
+.wf-desc{font-size:13px;color:var(--acier);line-height:1.65}
+
+/* ── NEWSLETTER — canonical dark panel ── */
+.nl-editorial{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 100%);border-radius:var(--r-lg);padding:44px 40px;position:relative;overflow:hidden}
+.nl-editorial::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;border:40px solid var(--mauve);opacity:.07}
+.nl-ed-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--mauve);margin-bottom:10px}
+.nl-ed-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#fff;line-height:.95;margin-bottom:10px}
+.nl-ed-title em{color:var(--mauve);font-style:normal}
+.nl-ed-sub{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:24px;max-width:520px;line-height:1.65}
+.nl-ed-form{display:flex;gap:10px;flex-wrap:wrap}
+.nl-ed-form input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:12px 16px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;width:260px;outline:none}
+.nl-ed-form input::placeholder{color:rgba(255,255,255,.3)}
+.nl-ed-promise{margin-top:12px;font-size:11px;color:rgba(255,255,255,.25);font-style:italic}
+
+/* ── NL EDITORIAL NOTE (light, for in-page use) ── */
+.nl-editorial-note{background:rgba(176,136,232,.06);border:1px solid rgba(176,136,232,.15);border-radius:var(--r-lg);padding:24px;margin-top:24px}
+.nl-editorial-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:14px}
+.nl-editorial-items{display:flex;flex-direction:column;gap:10px}
+.nl-editorial-item{display:flex;align-items:flex-start;gap:10px}
+.nl-editorial-item span:first-child{color:var(--mauve);margin-top:2px;flex-shrink:0}
+.nl-editorial-item span:last-child{font-size:13px;color:var(--texte);line-height:1.6}
+
+/* ── SECTION HEADERS (country pages) ── */
+.sh-block{margin-bottom:32px}
+.sh-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.sh-kicker b{font-size:17px;color:var(--mauve)}
+.sh-h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0}
+.sh-sub{font-size:14px;color:var(--acier);margin-top:8px;max-width:580px;line-height:1.6}
+
+/* ── LANDSCAPE FILTER BUTTONS ── */
+.landscape-filters{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.landscape-filter-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:8px 20px;border-radius:50px;border:1.5px solid var(--border);background:var(--blanc);color:var(--acier);cursor:pointer;transition:all .15s}
+.landscape-filter-btn:hover{border-color:var(--mauve);color:var(--nuit)}
+.landscape-filter-btn.active[data-tier="elite"]{background:var(--tier-elite);color:#fff;border-color:var(--tier-elite)}
+.landscape-filter-btn.active[data-tier="growth"]{background:var(--tier-growth);color:#fff;border-color:var(--tier-growth)}
+.landscape-filter-btn.active[data-tier="emerging"]{background:var(--tier-emerging);color:#fff;border-color:var(--tier-emerging)}
+
+/* ── EUROPEAN LANDSCAPE (countries hub) ── */
+.landscape-section{padding:64px 0;background:var(--blanc)}
+.landscape-tier{margin-bottom:36px}
+.landscape-tier:last-child{margin-bottom:0}
+.landscape-tier-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.landscape-tier-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--nuit)}
+.landscape-tier-count{font-size:11px;color:var(--acier);font-weight:500}
+.landscape-tier-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.landscape-list{display:flex;flex-wrap:wrap;gap:8px}
+.landscape-item{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--border);border-radius:6px;font-size:12px;font-weight:500;color:var(--nuit);background:var(--blanc);transition:border-color .15s}
+.landscape-item:hover{border-color:var(--mauve)}
+.landscape-item-flag{font-size:16px}
+.landscape-item-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.landscape-item-fed{font-size:10px;color:var(--acier);margin-left:4px}
+.landscape-item-link{text-decoration:none;color:inherit}
+.landscape-item-planned{opacity:.6;border-style:dashed}
+.landscape-item-planned .landscape-item-name::after{content:' · FTL profile planned';font-weight:400;font-size:9px;color:var(--acier);letter-spacing:.02em;text-transform:none}
+
+/* ── D3 INTERACTIVE MAP (countries hub) ── */
+.ftl-map-section{background:var(--nuit);padding:56px 0 48px;position:relative;overflow:hidden}
+.ftl-map-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 40%,rgba(176,136,232,.07) 0%,transparent 65%)}
+.ftl-map-wrap{position:relative;max-width:900px;margin:0 auto;z-index:1}
+.ftl-map-svg{width:100%;height:auto;display:block}
+.ftl-map-svg path.country{transition:opacity .15s}
+.ftl-map-tooltip{position:absolute;background:var(--nuit);color:#fff;padding:8px 12px;border-radius:8px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .1s;z-index:10;max-width:180px;line-height:1.4;border:1px solid rgba(176,136,232,.3);box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.ftl-map-tooltip .tt-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase}
+.ftl-map-tooltip .tt-tier{font-size:10px;opacity:.6;margin-top:2px}
+.ftl-map-tooltip .tt-status{font-size:10px;color:var(--mauve);margin-top:3px}
+.ftl-map-legend{display:flex;gap:20px;padding:14px 0 0;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
+.ftl-map-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.5)}
+.ftl-map-legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.ftl-map-legend-label{font-size:11px;color:rgba(255,255,255,.35);margin-left:auto}
+
+/* ── RESPONSIVE — country-specific ── */
+@media(max-width:900px){
+  .country-stats{grid-template-columns:1fr 1fr}
+  .club-grid{grid-template-columns:1fr 1fr}
+  .related-grid{grid-template-columns:1fr}
+  .why-follow-grid{grid-template-columns:1fr 1fr}
+  .community-grid{grid-template-columns:1fr}
+  .dna-strip-inner{grid-template-columns:1fr 1fr;gap:16px}
+  .dna-brand{display:none}
+  .dna-col{border-right:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+  .dna-col:last-child{border-bottom:none}
+  .dna-fed{padding-left:0;border-left:none}
+  .nl-editorial{padding:32px 24px}
+  .nl-ed-title{font-size:24px}
+  .nl-ed-form input{width:200px}
+  .ftl-map-legend{gap:12px}
+}
+@media(max-width:600px){
+  .country-stats{grid-template-columns:1fr 1fr}
+  .club-grid{grid-template-columns:1fr}
+  .why-follow-grid{grid-template-columns:1fr}
+  .dna-strip-inner{grid-template-columns:1fr}
+  .nl-editorial{padding:28px 20px}
+  .nl-ed-title{font-size:22px}
+  .nl-ed-form input{width:100%}
+  .nl-ed-form{flex-direction:column}
+  .ftl-map-legend{flex-direction:column;align-items:flex-start;gap:8px}
+}
