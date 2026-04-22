@@ -1,7 +1,8 @@
-# REPORT — Mini-lot correctif Countries
+# REPORT — LOT COHÉRENCE HIÉRARCHIQUE
 
-**Date** : 2026-04-13  
-**Scope** : Carte D3 interactive, Landscape filtrable, newsletter + sections 05/06/07 unifiées, CSS partagé renforcé  
+**Date** : 2026-04-22  
+**Scope** : Recalibration tier sur 3 pages pays (NL → Tier 1 full, SE → Tier 2 label, CZ → sortie hybride)  
+**Commit** : `438abc3`  
 **Statut** : Livré
 
 ---
@@ -10,81 +11,132 @@
 
 | Fichier | Modifications |
 |---------|---------------|
-| `countries.html` | Carte D3 interactive (remplace ancienne map SVG+pins), Landscape filtrable, lien CSS corrigé, ancien CSS map nettoyé, JS D3+filter ajouté |
-| `countries/countries.css` | Variables tier, newsletter canonique `.nl-editorial`, filtres Landscape, D3 map styles, responsive |
-| `countries/country-england.html` | Newsletter et sections 05/06/07 vers composants canoniques, inline CSS dupliqué supprimé |
-| `countries/country-france.html` | Idem |
-| `countries/country-germany.html` | Idem |
-| `countries/country-italy.html` | Newsletter inline vers `.nl-editorial`, sections 05/06/07 vers `.sh-block` |
-| `countries/country-netherlands.html` | Idem Italy |
-| `countries/country-spain.html` | Idem Italy |
-| `countries/country-sweden.html` | Idem Italy |
-| `countries/country-czech-republic.html` | Idem Italy + `.nl-editorial` panel renommé `.nl-editorial-note` (collision) |
-| `countries/CLAUDE.md` | Mis à jour |
+| `countries/country-netherlands.html` | DNA label Tier 2 → Tier 1 · Section 01 key facts box → timeline 6 étapes · Section 03 grille 2 → 3 colonnes + carte mauve "Sixes Pioneer" |
+| `countries/country-sweden.html` | DNA label Tier 1 → Tier 2 (label uniquement — structure déjà conforme Tier 2) |
+| `countries/country-czech-republic.html` | Section 01 : bloc `nl-editorial-note` supprimé · container prose reformaté (max-width:680px) · timeline enrichi 4 → 6 étapes |
 
 ---
 
-## A. Carte interactive
+## A. Netherlands — Tier 1 / PREMIUM (upgrade complet)
 
-### Repris de `ftl_apps_coutries_V2.2.html`
-- D3.js + TopoJSON pour SVG carte Europe
-- Couleurs par tier : `{1:'#1A3A6B', 2:'#7A56C2', 3:'#B088E8'}`
-- Tooltip hover (nom + tier + statut)
-- Clic pays vers page FTL si live
-- CDN d3 7.8.5, topojson 3.0.2
-- ISO européens, légende tier
+### Ce qui a été fait
+- **DNA label** : `Tier 2 — Growth Nations / Competitive Powers` → `Tier 1 — Elite / Founding Nations`
+- **Section 01 droite** : key facts box inline supprimé → remplacé par `.timeline` 6 étapes (classe countries.css, aucun CSS ajouté)
+  - 2003 : NLB Founded
+  - 2008 : ELF Championship Silver
+  - 2010s : Sixes Infrastructure Built
+  - EuroLax Cup : Sixes Cup Won in Overtime
+  - 2024 : Olympic Sixes Cycle
+  - 2025–26 : NLB Active — Multi-City Scene
+- **Section 03** : `repeat(2,1fr)` → `repeat(3,1fr)` · carte mauve "Sixes Pioneer" ajoutée en 3e position
+- **Why Follow** : conservé (3 arguments déjà solides — Sixes Cup, reference scene, fédération 20 ans)
 
-### Non repris
-- Panel latéral liste nations (pas adapté au layout hub)
-- Vue détail (les pages pays existent)
-- Vue liste séparée (le Landscape filtre)
-- Onglets Map/List/Detail
-- Filtres tier sur la carte (la carte affiche tout, le Landscape filtre)
+### Placeholders structurels assumés
+- Étape "2010s" : approximation de période sans date exacte confirmée dans nations.json
+- Étape "EuroLax Cup" : sans année (date non confirmée dans nations.json) — **donnée non vérifiée pour l'année**
+- Étape "2024" : référence au cycle olympique LA28, pas à un événement spécifique NL
 
-## B. Newsletter + sections 05/06/07
+### Données confirmées utilisées
+- NLB fondé 2003 ✓
+- ELF Silver 2008 ✓
+- EuroLax Sixes Cup gagnée (OT) ✓
+- Villes actives : Amsterdam, Rotterdam, The Hague, Utrecht ✓
 
-### Newsletter
-- 8 pages utilisent `.nl-editorial` de countries.css (fond nuit gradient)
-- Zéro inline newsletter restant
-- Contraste et rendu identiques sur les 8 pages
+---
 
-### Section headers
-- 8 pages x 3 sections = 24 headers convertis en `.sh-block`
-- Titre 06 normalisé : "Explore Related Scenes"
-- Titre 07 normalisé : "Help FTL Cover {COUNTRY}"
+## B. Sweden — Tier 2 / STRONG (recalibration label)
 
-### CSS dupliqué supprimé
-- EN, FR, DE : ~25 lignes inline pour `.coverage-grid`, `.related-grid`, `.community-grid` etc.
+### Ce qui a été fait
+- **DNA label** : `Tier 1 — Elite / Founding Nations` → `Tier 2 — Growth Nations / Competitive Powers`
 
-## C. Tier colors
+### Ce qui a été conservé (conforme Tier 2)
+- Section 01 droite : key facts box (correct pour Tier 2)
+- Section 03 : `repeat(2,1fr)`, 2 cartes (correct pour Tier 2)
+- Pip Stage : `#FFD166` "Consistent" — laissé en l'état (cohérent avec la réalité suédoise)
+- Why Follow : 3 arguments (correct)
 
-```css
---tier-elite: #1A3A6B;
---tier-growth: #7A56C2;
---tier-emerging: #B088E8;
---tier-undocumented: #E0DACC;
-```
+### Note
+Sweden est un ELF founding member 1995. Le label Tier 2 peut sembler en tension avec ce statut historique. Cependant, la scène suédoise n'a pas de résultats de compétition comparables à England, France, Germany, Czech Republic — le Tier 2 est le positionnement produit juste. À signaler si révision de doctrine tier est envisagée.
 
-Utilisées dans : carte D3, légende, filtres Landscape, dots tier heads.
+---
+
+## C. Czech Republic — Tier 1 hybride → pure PREMIUM
+
+### Ce qui a été fait
+- **Section 01** : bloc `nl-editorial-note` ("Scene at a glance") entièrement supprimé
+- **Grid container** : `grid-template-columns:1fr 1fr` → `max-width:680px` (prose pleine largeur sans colonne fantôme)
+- **Timeline** : enrichi de 4 → 6 étapes
+  - Conservées : 1986, 1994, 1995·1997, 2004
+  - Ajoutées : "2000s–2010s AHM Goes International" (structurel assumé), "2025 AHM 32nd Edition — Record Scale" (confirmé : 24 équipes, 19 pays)
+- **Section 03** : conservée (3 cartes, grille `repeat(3,1fr)`, carte mauve "European Box Capital" — déjà en place)
+
+### Données confirmées utilisées
+- 1986 introduction ✓
+- 1994 premier AHM ✓
+- Aleš Hřebeský décédé 30 novembre 1993 ✓
+- 1995 ELF founding member + Silver (hôte) ✓
+- 1997 Silver ✓
+- 2004 CLU fondé 12 mai ✓
+- 2025 AHM 32e édition : 24 équipes, 19 pays ✓
+
+### Placeholders structurels assumés
+- "2000s–2010s" : période générale sans date précise confirmée — **placeholder structurel**
+
+---
+
+## Doctrine tier — État après ce lot
+
+| Page | Tier actuel | Structure Section 01 | Section 03 grille | DNA label |
+|------|-------------|---------------------|-------------------|-----------|
+| `country-england.html` | Tier 1 | Timeline | repeat(3,1fr) | Elite / Founding Nations |
+| `country-france.html` | Tier 1 | Timeline | repeat(3,1fr) | Elite / Founding Nations |
+| `country-germany.html` | Tier 1 | Timeline | repeat(3,1fr) | Elite / Founding Nations |
+| `country-italy.html` | Tier 1 | Timeline | repeat(3,1fr) | Elite / Founding Nations |
+| `country-czech-republic.html` | Tier 1 | Timeline seul (6 étapes) | repeat(3,1fr) | Elite / Founding Nations |
+| `country-netherlands.html` | **Tier 1** | **Timeline (6 étapes)** | **repeat(3,1fr)** | **Elite / Founding Nations** |
+| `country-switzerland.html` | Tier 1 | Timeline (6 étapes) | repeat(3,1fr) | Elite / Founding Nations |
+| `country-denmark.html` | Tier 1 | Timeline (6 étapes) | repeat(3,1fr) | Elite / Founding Nations |
+| `country-poland.html` | Tier 1 | Timeline (6 étapes) | repeat(3,1fr) | Elite / Founding Nations |
+| `country-spain.html` | Tier 2 | Key facts box | repeat(2,1fr) | Growth Nations / Competitive Powers |
+| `country-sweden.html` | **Tier 2** | Key facts box | repeat(2,1fr) | **Growth Nations / Competitive Powers** |
 
 ---
 
 ## Dettes restantes
 
-- ~300 lignes CSS inline identiques par page (header, nav, layout, responsive)
-- CZ variantes locales inline (intentionnel)
-- ~500 lignes CSS inline dans countries.html (hero, radar, cards)
-- 27 pages pays à générer
-- Tier colors non dans DNA strip badges
+| Dette | Nature | Priorité |
+|-------|--------|----------|
+| Année exacte EuroLax Sixes Cup (NL) | Donnée non vérifiée | À confirmer dans nations.json si disponible |
+| "2010s" NL Sixes investment | Placeholder structurel assumé | Acceptable |
+| "2000s–2010s" CZ AHM international | Placeholder structurel assumé | Acceptable |
+| Sweden Tier 2 vs founding nation 1995 | Tension potentielle doctrine | À surveiller |
+| ~300 lignes CSS inline par page | Dette technique non prioritaire | Hors périmètre |
+| 27 pages pays à générer | Hors lot | Hors périmètre |
 
 ---
 
-## Pages vérifiées visuellement
+## Vérifications finales effectuées
 
-| Page | Carte | Landscape | Newsletter | Sections 05/06/07 |
-|------|-------|-----------|-----------|-------------------|
-| `countries.html` | D3 interactive, couleurs tier, tooltip, clic | Filtrable, Elite par défaut | OK | N/A |
-| `country-england.html` | N/A | N/A | Canonique dark | sh-block |
-| `country-czech-republic.html` | N/A | N/A | Canonique dark | sh-block |
-| `country-netherlands.html` | N/A | N/A | Canonique dark | sh-block |
-| `country-spain.html` | N/A | N/A | Canonique dark | sh-block |
+- [x] DOM vérifié sur les 3 fichiers
+- [x] NL Section 01 : grid 2 colonnes (prose + timeline) correctement fermée
+- [x] NL Section 03 : grid `repeat(3,1fr)` avec 3 enfants, CTA hors grille
+- [x] CZ Section 01 : `nl-editorial-note` retiré, prose pleine largeur, timeline seul
+- [x] CZ Section 01 : grid fantôme corrigé (`max-width:680px`)
+- [x] SE DNA label : seul changement, aucune section altérée
+- [x] Terminologie homogène : "Tier 1 — Elite / Founding Nations" / "Tier 2 — Growth Nations / Competitive Powers"
+- [x] Aucun CTA accidentellement imbriqué dans une grille
+- [x] Aucun bloc mort, aucun commentaire obsolète
+- [x] `.timeline` utilisé sans nouveau CSS inline (classes existantes de countries.css)
+- [x] countries.css non modifié
+- [x] nations.json non modifié
+- [x] Données inventées : zéro — placeholders assumés signalés ci-dessus
+
+---
+
+## Historique des lots antérieurs
+
+| Lot | Commit | Date | Scope |
+|-----|--------|------|-------|
+| Mini-lot correctif (Carte D3, Landscape, newsletter) | — | 2026-04-13 | countries.html, CSS, 8 pages |
+| LOT PREMIUM (CH, DK, PL → Tier 1, NL/CZ light audit) | `7a460e1` | 2026-04-21 | 3 nouvelles PREMIUM pages |
+| LOT COHÉRENCE HIÉRARCHIQUE | `438abc3` | 2026-04-22 | NL Tier 1 full, SE Tier 2, CZ hybride fix |
