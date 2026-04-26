@@ -5,8 +5,8 @@
 <title>Countries — European Lacrosse by Nation &#8212; Follow The Lacrosse</title>
 <meta name="description" content="Explore lacrosse across Europe. Country profiles, national scenes, competitions and stories from every corner of the continent.">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
-
+<link rel="stylesheet" href="countries/countries.css">
+<style>
 :root {
   --nuit:     #0D2240;
   --marine:   #1A3A6B;
@@ -31,11 +31,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texte);li
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 
-/* ── SPONSOR BAR ── */
-.sponsor-bar{background:var(--mauve-dk);text-align:center;padding:7px;font-size:11px;font-weight:500;color:rgba(255,255,255,.8);letter-spacing:.02em}
-.sponsor-bar a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
-
-/* ── HEADER — sombre, simple, épuré ── */
+/* ── HEADER ── */
 .site-header{background:var(--nuit);position:sticky;top:0;z-index:1000;box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .header-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;gap:24px}
 .nav-logo img{height:34px;width:auto;flex-shrink:0}
@@ -69,212 +65,13 @@ a{text-decoration:none;color:inherit}
 .bg-ivoire{background:var(--ivoire)}
 .bg-dark{background:var(--nuit)}
 
-/* ── SECTION HEAD ── */
-.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:20px;flex-wrap:wrap}
-.sh-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.sh-label b{font-size:17px;font-weight:900;color:var(--mauve)}
-.sh-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);line-height:1;margin:0}
-.see-all{font-size:11px;font-weight:500;color:var(--mauve);text-transform:uppercase;letter-spacing:.06em;transition:opacity .15s}
-.see-all:hover{opacity:.7}
-
-/* ── HERO ── */
-.hero{background:var(--nuit);padding:88px 0 72px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;right:-100px;top:-100px;width:440px;height:440px;border-radius:50%;border:70px solid var(--mauve);opacity:.04;pointer-events:none}
-.hero-inner{position:relative;z-index:1;max-width:680px}
-.hero-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.hero-kicker::before{content:'';width:28px;height:2px;background:var(--mauve);border-radius:1px}
-.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,7vw,76px);text-transform:uppercase;color:#fff;line-height:.88;margin-bottom:22px}
-.hero-title em{color:var(--mauve);font-style:normal;display:block}
-.hero-sub{font-size:16px;color:var(--acier);line-height:1.65;max-width:540px;margin-bottom:36px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-
 /* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;padding:13px 28px;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:all .2s;line-height:1;text-decoration:none}
 .btn-pri{background:var(--mauve);color:var(--nuit);border-color:var(--mauve)}
 .btn-pri:hover{background:var(--mauve-dk);border-color:var(--mauve-dk);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(176,136,232,.35)}
 .btn-out{background:transparent;color:var(--mauve);border-color:var(--mauve)}
 .btn-out:hover{background:var(--mauve);color:var(--nuit)}
-.btn-out-white{background:transparent;color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.25)}
-.btn-out-white:hover{border-color:var(--mauve);color:var(--mauve)}
-.btn-dk{background:var(--nuit);color:#fff;border-color:var(--nuit)}
-.btn-dk:hover{background:var(--marine);border-color:var(--marine)}
 .btn-sm{padding:8px 18px;font-size:12px}
-.btn-lg{padding:16px 36px;font-size:15px}
-
-/* ── PILL FILTERS ── */
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
-.pill{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:7px 18px;border-radius:999px;border:1.5px solid var(--border);background:var(--blanc);color:var(--acier);cursor:pointer;transition:all .15s}
-.pill:hover{border-color:var(--mauve);color:var(--mauve-dk)}
-.pill.on{background:var(--nuit);color:#fff;border-color:var(--nuit)}
-
-/* ── FILTER BAR ── */
-.fbar{background:var(--blanc);border-bottom:1px solid var(--border);padding:14px 0}
-.fbar-inner{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.fsearch{display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:9px 14px;flex:1;min-width:180px;max-width:280px;transition:border-color .2s}
-.fsearch:focus-within{border-color:var(--mauve)}
-.fsearch input{background:none;border:none;outline:none;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);width:100%}
-.fsearch input::placeholder{color:var(--acier)}
-.fsel{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--r);padding:9px 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);outline:none;cursor:pointer;transition:border-color .2s}
-.fsel:focus{border-color:var(--mauve)}
-
-/* ── ARTICLE CARDS — photos visibles, aérées ── */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.grid-2-1{display:grid;grid-template-columns:2fr 1fr;gap:24px}
-
-.card{background:var(--blanc);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;cursor:pointer;text-decoration:none;color:inherit}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.card-photo{position:relative;height:220px;overflow:hidden;background:#C8D4E0}
-.card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
-.card:hover .card-photo img{transform:scale(1.05)}
-.card-photo-badge{position:absolute;top:14px;left:14px;z-index:2}
-.cat{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--mauve);color:var(--nuit);padding:3px 10px;border-radius:4px;display:inline-block}
-.cat-dk{background:var(--mauve-dk);color:#fff}
-.cat-box{background:var(--marine);color:#fff}
-.card-body{padding:20px 22px;flex:1;display:flex;flex-direction:column;gap:0}
-.ctags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.tc{font-size:10px;font-weight:500;padding:3px 9px;border-radius:999px;background:rgba(13,34,64,.06);color:var(--nuit);border:.5px solid var(--border)}
-.tf{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
-.tf-fi{background:rgba(176,136,232,.15);color:var(--mauve-dk)}
-.tf-si{background:rgba(122,86,194,.15);color:var(--mauve-dk)}
-.tf-bo{background:rgba(26,58,107,.12);color:var(--marine)}
-.card-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:21px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:10px}
-.card-exc{font-size:13px;color:var(--acier);line-height:1.55;margin-bottom:14px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border)}
-.card-meta{font-size:11px;color:var(--meta)}
-.card-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve)}
-.card:hover .card-cta{color:var(--mauve-dk)}
-
-/* Card featured */
-.card-feat .card-photo{height:320px}
-.card-feat .card-title{font-size:27px}
-
-/* Card small */
-.card-sm .card-photo{height:140px}
-.card-sm .card-title{font-size:14px}
-.card-sm .card-body{padding:12px 14px}
-.card-sm .card-exc{display:none}
-
-/* LIST ITEMS */
-.list-item{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:padding-left .15s}
-.list-item:last-child{border-bottom:none}
-.list-item:hover{padding-left:8px}
-.li-thumb{width:100px;height:68px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#C8D4E0}
-.li-thumb img{width:100%;height:100%;object-fit:cover}
-.li-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);line-height:1;margin-bottom:5px}
-.li-exc{font-size:12px;color:var(--acier);line-height:1.5}
-.li-meta{font-size:10px;color:var(--meta);margin-top:5px}
-
-/* ── PAGE HEADER ── */
-.ph{background:var(--nuit);padding:56px 0 48px;position:relative;overflow:hidden}
-.ph::before{content:'';position:absolute;right:-70px;top:-70px;width:300px;height:300px;border-radius:50%;border:55px solid var(--mauve);opacity:.04}
-.ph-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:10px}
-.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(38px,5vw,58px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:12px}
-.ph-title em{color:var(--mauve);font-style:normal}
-.ph-desc{font-size:14px;color:var(--acier);max-width:520px;line-height:1.6}
-
-/* ── TOURNAMENT CARDS ── */
-.tourn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tc-card{background:var(--nuit);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden;transition:transform .2s}
-.tc-card:hover{transform:translateY(-3px)}
-.tc-card::before{content:'';position:absolute;right:-28px;top:-28px;width:120px;height:120px;border-radius:50%;border:22px solid var(--mauve);opacity:.07}
-.tc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.tc-flag{font-size:24px}
-.tc-fmt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
-.tc-fmt-fi{background:var(--mauve);color:var(--nuit)}
-.tc-fmt-si{background:var(--mauve-dk);color:#fff}
-.tc-fmt-bo{background:var(--marine);color:#fff}
-.tc-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:21px;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:12px}
-.tc-det{font-size:12px;color:var(--acier);margin-bottom:4px}
-.tc-hr{border:none;border-top:1px solid rgba(255,255,255,.07);margin:14px 0}
-.tc-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--mauve)}
-.tc-btn{display:inline-block;margin-top:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);border:1px solid rgba(176,136,232,.3);padding:8px 16px;border-radius:6px;transition:background .15s,color .15s}
-.tc-btn:hover{background:var(--mauve);color:var(--nuit)}
-
-/* ── TOURNAMENT ACCORDION ── */
-.acc-list{display:flex;flex-direction:column;gap:10px}
-.acc-item{background:var(--blanc);border-radius:var(--r);border:1px solid var(--border);overflow:hidden}
-.acc-hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;transition:background .15s}
-.acc-hd:hover{background:rgba(176,136,232,.04)}
-.acc-left{display:flex;align-items:center;gap:16px;flex:1}
-.acc-flag{font-size:24px;flex-shrink:0}
-.acc-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:var(--nuit)}
-.acc-sub{font-size:12px;color:var(--acier);margin-top:3px}
-.acc-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.acc-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;color:var(--mauve);text-transform:uppercase}
-.acc-chev{color:var(--acier);font-size:11px;transition:transform .2s}
-.acc-item.open .acc-chev{transform:rotate(180deg)}
-.acc-bd{border-top:1px solid var(--border);padding:22px 24px;display:none}
-.acc-item.open .acc-bd{display:block}
-.acc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.acc-lbl{font-size:10px;color:var(--acier);text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin-bottom:4px}
-.acc-val{font-size:14px;font-weight:500;color:var(--nuit)}
-.chip{display:inline-block;font-size:10px;background:var(--bg);color:var(--acier);padding:2px 8px;border-radius:999px;border:1px solid var(--border);margin:2px 2px 0 0}
-
-.m-div{display:flex;align-items:center;gap:16px;margin:32px 0 18px}
-.m-div-label{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--acier);white-space:nowrap}
-.m-div-line{flex:1;height:1px;background:var(--border)}
-.m-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:4px;background:var(--mauve);color:var(--nuit)}
-
-.cal-strip{background:var(--blanc);border-radius:var(--r);padding:16px 20px;border:1px solid var(--border);margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.cal-months{display:flex;gap:4px;flex-wrap:wrap}
-.cal-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:6px;border:1px solid transparent;background:none;color:var(--acier);cursor:pointer;transition:all .15s}
-.cal-btn:hover{color:var(--nuit);border-color:var(--border)}
-.cal-btn.on{background:var(--nuit);color:#fff;border-color:var(--nuit)}
-
-/* ── NEWSLETTER ── */
-.nl-dark{background:var(--marine);padding:24px 0}
-.nl-dark-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.nl-dark-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;text-transform:uppercase;color:#fff;margin-bottom:3px}
-.nl-dark-sub{font-size:13px;color:var(--acier)}
-.nl-form{display:flex;gap:8px;flex-wrap:wrap}
-.nl-form input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 16px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;width:220px;outline:none}
-.nl-form input::placeholder{color:rgba(255,255,255,.3)}
-
-.nl-strip{background:var(--mauve);border-radius:var(--r-lg);padding:32px 36px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px}
-.nl-strip-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin-bottom:4px}
-.nl-strip-sub{font-size:13px;color:var(--mauve-dk)}
-.nl-strip input{background:rgba(255,255,255,.9);border:none;border-radius:6px;padding:11px 16px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--nuit);width:220px;outline:none}
-.nl-strip input::placeholder{color:var(--acier)}
-
-/* ── SERVICES ── */
-.srv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.srv-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
-.srv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--mauve);transform:scaleX(0);transition:transform .2s;transform-origin:left}
-.srv-card:hover::after{transform:scaleX(1)}
-.srv-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.srv-icon{width:50px;height:50px;border-radius:var(--r);background:rgba(176,136,232,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
-.srv-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;color:var(--nuit);margin-bottom:8px}
-.srv-desc{font-size:14px;color:var(--acier);line-height:1.65}
-
-/* ── ABOUT ── */
-.about-2col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.about-visual{background:var(--nuit);border-radius:var(--r-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.about-visual::before{content:'';position:absolute;inset:0;border:2px solid rgba(176,136,232,.25);border-radius:var(--r-lg)}
-.about-visual img{width:55%;opacity:.9}
-.about-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:20px}
-.about-title em{color:var(--mauve);font-style:normal}
-.about-p{font-size:14px;color:var(--texte);line-height:1.75;margin-bottom:14px}
-
-/* ── CONTACT ── */
-.contact-2col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
-.ci-icon{width:38px;height:38px;background:rgba(176,136,232,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.ci-label{font-size:10px;color:var(--acier);text-transform:uppercase;letter-spacing:.06em;font-weight:500;margin-bottom:3px}
-.ci-text{font-size:13px;color:var(--texte);line-height:1.5}
-.form-box{background:var(--blanc);border-radius:var(--r-lg);padding:32px;border:1px solid var(--border)}
-.fg{margin-bottom:16px}
-.fg label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--nuit);margin-bottom:6px}
-.fg input,.fg select,.fg textarea{width:100%;font-family:'DM Sans',sans-serif;font-size:13px;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--blanc);color:var(--nuit);outline:none;transition:border-color .2s}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--mauve)}
-.fg textarea{min-height:120px;resize:vertical}
-.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-/* ── SPONSOR SLOTS ── */
-.sponsor-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.s-slot{height:80px;display:flex;align-items:center;justify-content:center;background:var(--blanc);border-radius:10px;border:1.5px dashed var(--border);color:var(--acier);font-size:12px;transition:border-color .2s}
-.s-slot:hover{border-color:var(--mauve)}
 
 /* ── FOOTER ── */
 .site-footer{background:var(--nuit);padding:64px 0 28px;margin-top:80px}
@@ -294,88 +91,7 @@ a{text-decoration:none;color:inherit}
 .foot-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .15s}
 .foot-links a:hover{color:var(--mauve)}
 
-/* ── INLINE SPONSOR ── */
-.inline-sp{background:var(--ivoire);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;margin:32px 0;text-align:center}
-.inline-sp-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--acier);margin-bottom:8px}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){
-  .grid-3,.grid-4,.grid-2-1,.tourn-grid,.about-2col,.contact-2col,.foot-grid{grid-template-columns:1fr}
-  .nl-strip{grid-template-columns:1fr}
-  .main-nav{display:none}
-  .nav-right .nav-search-wrap{display:none}
-  .mobile-toggle{display:flex}
-  .acc-grid{grid-template-columns:1fr 1fr}
-  .hero-title{font-size:clamp(40px,8vw,56px)}
-  .container{padding:0 20px}
-}
-@media(max-width:600px){
-  .grid-6{grid-template-columns:repeat(2,1fr)}
-  .acc-grid{grid-template-columns:1fr}
-  .nl-form{flex-direction:column}
-  .nl-form input,.nl-strip input{width:100%}
-  .sponsor-row{grid-template-columns:1fr 1fr}
-}
-
-.hero-page{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 60%,var(--mauve-dk) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
-.hero-page::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;border-radius:50%;border:60px solid var(--mauve);opacity:.07;pointer-events:none}
-.hero-page::after{content:'';position:absolute;left:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;border:40px solid rgba(255,255,255,.05);pointer-events:none}
-.hero-page-inner{position:relative;z-index:1}
-.hero-page-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve);margin-bottom:14px}
-.hero-page h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(44px,6vw,72px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:16px}
-.hero-page h1 em{color:var(--mauve);font-style:normal}
-.hero-page p{font-size:16px;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto;line-height:1.65}
-
-/* Country hero — left-aligned with flag */
-.country-hero{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 100%);padding:64px 0 52px;position:relative;overflow:hidden}
-.country-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;border-radius:50%;border:60px solid var(--mauve);opacity:.06;pointer-events:none}
-.country-hero-inner{position:relative;z-index:1;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
-.country-hero-flag{font-size:72px;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
-.country-hero-text{}
-.country-hero-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve);margin-bottom:8px}
-.country-hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(40px,6vw,68px);text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:12px}
-.country-hero h1 em{color:var(--mauve);font-style:normal}
-.country-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:540px;line-height:1.6}
-
-/* Stat row */
-.country-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--blanc);border-bottom:1px solid var(--border)}
-.cstat{padding:24px 20px;text-align:center;border-right:1px solid var(--border)}
-.cstat:last-child{border-right:none}
-.cstat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:36px;color:var(--mauve);line-height:1;margin-bottom:4px}
-.cstat-label{font-size:11px;color:var(--acier);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
-
-/* Timeline */
-.timeline{position:relative;padding-left:32px}
-.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--mauve),var(--mauve-dk))}
-.tl-item{position:relative;margin-bottom:32px}
-.tl-item:last-child{margin-bottom:0}
-.tl-dot{position:absolute;left:-39px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--mauve);border:3px solid var(--blanc);box-shadow:0 0 0 2px var(--mauve)}
-.tl-year{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;color:var(--mauve);letter-spacing:.08em;margin-bottom:3px}
-.tl-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;text-transform:uppercase;color:var(--nuit);margin-bottom:5px}
-.tl-desc{font-size:13px;color:var(--acier);line-height:1.6}
-
-/* Club grid */
-.club-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.club-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px;transition:border-color .15s}
-.club-card:hover{border-color:var(--mauve)}
-.club-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;color:var(--nuit);margin-bottom:4px}
-.club-city{font-size:12px;color:var(--acier)}
-.club-fmt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;background:var(--mauve);color:var(--nuit);display:inline-block;margin-top:6px}
-
-/* Country chips in whats-lacrosse */
-.country-chip{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:14px 10px;text-align:center;transition:border-color .2s,transform .15s,box-shadow .15s;display:block;text-decoration:none;color:inherit}
-.country-chip:hover{border-color:var(--mauve);transform:translateY(-2px);box-shadow:var(--shadow)}
-.country-chip-flag{font-size:22px;margin-bottom:5px}
-.country-chip-name{font-size:11px;font-weight:500;color:var(--nuit);text-transform:uppercase;letter-spacing:.04em}
-.country-chip-status{font-size:9px;color:var(--acier);margin-top:2px}
-
-/* Coming soon */
-.coming-soon-box{background:var(--ivoire);border:2px dashed var(--border);border-radius:var(--r-lg);padding:64px 40px;text-align:center}
-
-@media(max-width:900px){.country-stats{grid-template-columns:1fr 1fr}.club-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.country-stats{grid-template-columns:1fr 1fr}.club-grid{grid-template-columns:1fr}.country-chip-grid{grid-template-columns:repeat(2,1fr) !important}}
-
+/* ── COUNTRIES HERO ── */
 .countries-hero{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 55%,var(--mauve-dk) 100%);padding:88px 0 72px;position:relative;overflow:hidden;text-align:center}
 .countries-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:380px;height:380px;border-radius:50%;border:64px solid var(--mauve);opacity:.06}
 .countries-hero::after{content:'';position:absolute;left:-60px;bottom:-60px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(255,255,255,.04)}
@@ -389,6 +105,8 @@ a{text-decoration:none;color:inherit}
 .ch-stat:last-child{border-right:none}
 .ch-stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:var(--mauve);line-height:1}
 .ch-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+
+/* ── COUNTRY CARD GRID ── */
 .country-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .country-card{background:var(--blanc);border-radius:var(--r-lg);overflow:hidden;border:1.5px solid var(--border);transition:transform .2s,box-shadow .2s,border-color .2s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
 .country-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--mauve)}
@@ -410,68 +128,6 @@ a{text-decoration:none;color:inherit}
 .cc-dot-emerging{background:var(--acier)}
 .cc-status-text{font-size:11px;color:var(--acier);font-weight:500}
 .cc-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
-.scene-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.scene-card{background:var(--nuit);border-radius:var(--r-lg);padding:28px;position:relative;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
-.scene-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.scene-card::before{content:'';position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;border:24px solid var(--mauve);opacity:.08}
-.scene-flag{font-size:32px;margin-bottom:12px;display:block;position:relative;z-index:1}
-.scene-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:6px}
-.scene-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:8px;position:relative;z-index:1}
-.scene-body{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;position:relative;z-index:1}
-.scene-tag{display:inline-block;margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.08em;border:1px solid rgba(176,136,232,.3);color:var(--mauve);padding:4px 10px;border-radius:4px;position:relative;z-index:1}
-.coverage-item{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:padding-left .15s}
-.coverage-item:last-child{border-bottom:none}
-.coverage-item:hover{padding-left:6px}
-.cov-flag{font-size:20px;flex-shrink:0;margin-top:2px}
-.cov-body{flex:1}
-.cov-type{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve);margin-bottom:3px}
-.cov-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit);line-height:1;margin-bottom:4px}
-.cov-meta{font-size:11px;color:var(--meta)}
-.dynamics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.dyn-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:18px 16px;transition:border-color .15s,transform .15s}
-.dyn-card:hover{border-color:var(--mauve);transform:translateY(-2px)}
-.dyn-flag{font-size:24px;margin-bottom:6px}
-.dyn-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;color:var(--nuit);margin-bottom:10px}
-.dyn-bar-wrap{height:5px;background:var(--border);border-radius:3px;margin-bottom:6px;overflow:hidden}
-.dyn-bar{height:100%;border-radius:3px}
-.dyn-label{font-size:10px;color:var(--acier);line-height:1.4}
-.community-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.comm-card{background:var(--blanc);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:24px;transition:border-color .2s,box-shadow .15s,transform .15s;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px}
-.comm-card:hover{border-color:var(--mauve);box-shadow:var(--shadow);transform:translateY(-2px)}
-.comm-icon{font-size:24px}
-.comm-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--nuit)}
-.comm-desc{font-size:13px;color:var(--acier);line-height:1.55;flex:1}
-.comm-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mauve);margin-top:auto}
-.nl-editorial{background:linear-gradient(135deg,var(--nuit) 0%,var(--marine) 100%);border-radius:var(--r-lg);padding:44px 40px;position:relative;overflow:hidden}
-.nl-editorial::before{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;border:40px solid var(--mauve);opacity:.07}
-.nl-ed-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--mauve);margin-bottom:10px}
-.nl-ed-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#fff;line-height:.95;margin-bottom:10px}
-.nl-ed-sub{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:24px;max-width:520px;line-height:1.65}
-.nl-ed-form{display:flex;gap:10px;flex-wrap:wrap}
-.nl-ed-form input{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:12px 16px;color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;width:260px;outline:none;transition:border-color .2s}
-.nl-ed-form input:focus{border-color:rgba(176,136,232,.5)}
-.nl-ed-form input::placeholder{color:rgba(255,255,255,.3)}
-.nl-ed-promise{margin-top:12px;font-size:11px;color:rgba(255,255,255,.25);font-style:italic}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.related-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:18px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s;display:flex;flex-direction:column;gap:8px}
-.related-card:hover{border-color:var(--mauve);transform:translateY(-2px)}
-.rc-type{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--mauve)}
-.rc-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;text-transform:uppercase;color:var(--nuit);line-height:1.05}
-.rc-meta{font-size:11px;color:var(--meta);margin-top:auto;padding-top:8px;border-top:1px solid var(--border)}
-.why-follow-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-.wf-card{background:var(--blanc);border:1px solid var(--border);border-radius:var(--r);padding:22px;border-top:3px solid var(--mauve)}
-.wf-icon{font-size:24px;margin-bottom:10px}
-.wf-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;color:var(--nuit);margin-bottom:6px}
-.wf-desc{font-size:13px;color:var(--acier);line-height:1.6}
-.sh-block{margin-bottom:36px}
-.sh-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acier);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.sh-kicker b{font-size:17px;color:var(--mauve)}
-.sh-h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);margin:0}
-.sh-sub{font-size:14px;color:var(--acier);margin-top:8px;max-width:580px;line-height:1.6}
-.divider-pull{background:var(--mauve);height:3px;width:48px;border-radius:2px;margin:16px 0}
-@media(max-width:1024px){.country-card-grid{grid-template-columns:1fr 1fr}.dynamics-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){.country-card-grid,.scene-grid,.community-grid,.why-follow-grid,.related-grid{grid-template-columns:1fr}.ch-stat{padding:10px 16px}}
-@media(max-width:600px){.dynamics-grid{grid-template-columns:1fr 1fr}.ch-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}}
 
 /* ═══════════════════════════════════════════════
    FTL SCENE RADAR
@@ -499,6 +155,7 @@ a{text-decoration:none;color:inherit}
 .radar-fmt-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
 .radar-fmt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:3px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
 .radar-cta{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--mauve);margin-top:auto}
+.radar-disclaimer{font-size:11px;color:rgba(255,255,255,.2);margin-top:24px;font-style:italic;position:relative;z-index:1}
 /* Signal colors */
 .sig-hot .radar-signal-dot{background:#FF6B35}
 .sig-hot .radar-signal-label{color:#FF6B35}
@@ -512,136 +169,51 @@ a{text-decoration:none;color:inherit}
 .sig-box .radar-signal-label{color:#FFD166}
 .sig-grassroots .radar-signal-dot{background:var(--acier)}
 .sig-grassroots .radar-signal-label{color:var(--acier)}
-.radar-disclaimer{font-size:11px;color:rgba(255,255,255,.2);margin-top:24px;font-style:italic;position:relative;z-index:1}
-@media(max-width:900px){.radar-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.radar-grid{grid-template-columns:1fr}}
 
-
-.map-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%, rgba(176,136,232,.08) 0%, transparent 65%)}
-.map-eyebrow::before{content:'';width:16px;height:2px;background:var(--mauve)}
-.map-title em{color:var(--mauve);font-style:normal}
-.map-svg-wrap svg{width:100%;height:auto;display:block}
-/* Country dots on map */
+/* ── Map interactions (D3 SVG elements) ── */
 .map-dot circle{transition:r .2s, opacity .2s}
 .map-dot:hover circle{r:10}
-.map-dot:hover .map-dot:hover @keyframes map-pulse{0%{r:8;opacity:.6}100%{r:18;opacity:0}}
-/* Country list sidebar */
 .map-list-item:hover{border-color:rgba(176,136,232,.35);background:rgba(176,136,232,.05);transform:translateX(3px)}
 .map-list-item.active{border-color:rgba(176,136,232,.4);background:rgba(176,136,232,.08)}
-.map-list-item:hover @media(max-width:900px){}
-@media(max-width:500px){}
 
-/* ── WHY WE'RE WATCHING THIS ── */
-.wwwt-section{padding:56px 0;background:var(--blanc)}
-.wwwt-head{margin-bottom:32px}
-.wwwt-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.wwwt-eyebrow::before{content:'';width:14px;height:2px;background:var(--mauve)}
-.wwwt-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--nuit);line-height:.95;margin-bottom:8px}
-.wwwt-title em{color:var(--mauve);font-style:normal}
-.wwwt-intro{font-size:14px;color:var(--acier);max-width:540px;line-height:1.65}
-.wwwt-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.wwwt-card{border:1.5px solid var(--border);border-radius:var(--r-lg);padding:28px;background:var(--blanc);transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
-.wwwt-card:hover{border-color:var(--mauve);transform:translateY(-2px)}
-.wwwt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.wwwt-card.watching::before{background:var(--mauve)}
-.wwwt-card.rising::before{background:#FF6B35}
-.wwwt-card.moment::before{background:#9CFF82}
-.wwwt-card.angle::before{background:#64C8FF}
-.wwwt-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:12px}
-.wwwt-card.watching .wwwt-tag{background:rgba(176,136,232,.12);color:var(--mauve-dk)}
-.wwwt-card.rising .wwwt-tag{background:rgba(255,107,53,.1);color:#CC4400}
-.wwwt-card.moment .wwwt-tag{background:rgba(156,255,130,.1);color:#2A7A1A}
-.wwwt-card.angle .wwwt-tag{background:rgba(100,200,255,.1);color:#0066AA}
-.wwwt-flag{font-size:28px;margin-bottom:10px;display:block}
-.wwwt-card-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;text-transform:uppercase;color:var(--nuit);line-height:1;margin-bottom:10px}
-.wwwt-body{font-size:14px;color:var(--texte);line-height:1.7;margin-bottom:14px}
-.wwwt-why{font-size:12px;color:var(--acier);font-style:italic;padding-top:12px;border-top:1px solid var(--border);line-height:1.55}
-.wwwt-why strong{color:var(--mauve-dk);font-style:normal;font-weight:600}
-@media(max-width:600px){.wwwt-grid{grid-template-columns:1fr}}
-
-@media(max-width:900px){}
-@media(max-width:500px){}
-
-
-.map-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 40%,rgba(176,136,232,.07) 0%,transparent 65%)}
-.map-eyebrow::before{content:'';width:16px;height:2px;background:var(--mauve)}
-.map-title em{color:var(--mauve);font-style:normal}
-.map-svg-container img,.map-svg-container object{width:100%;height:auto;display:block}
-/* Fed logo chips row */
-.fed-chip:hover{border-color:rgba(176,136,232,.4);background:rgba(176,136,232,.06)}
-/* Mobile list */
-.mml-item:hover{border-color:rgba(176,136,232,.4)}
-@media(max-width:900px){}
-@media(max-width:500px){}
-
-/* ── FTL MAP MODE — reliable image + overlay ── */
-.map-section{background:var(--nuit);padding:56px 0 48px;position:relative;overflow:hidden}
-.map-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 40%,rgba(176,136,232,.07) 0%,transparent 65%)}
-.map-head{margin-bottom:24px;position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.map-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mauve);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.map-eyebrow::before{content:'';width:16px;height:2px;background:var(--mauve)}
-.map-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:#fff;line-height:.95}
-.map-title em{color:var(--mauve);font-style:normal}
-.map-wrap{position:relative;max-width:840px;margin:0 auto;z-index:1}
-.map-wrap img{width:100%;height:auto;display:block;border-radius:var(--r)}
-.map-overlay-pin{position:absolute;transform:translate(-50%,-50%);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:4px;transition:transform .2s;z-index:2}
-.map-overlay-pin:hover{transform:translate(-50%,-50%) scale(1.15)}
-.mop-dot{width:18px;height:18px;border-radius:50%;display:block;border:2px solid rgba(255,255,255,.6);cursor:pointer;transition:box-shadow .2s}
-.map-overlay-pin:hover .mop-dot{border-color:#fff}
-.mop-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;text-transform:uppercase;color:#fff;white-space:nowrap;opacity:0;transition:opacity .2s;background:rgba(13,34,64,.8);padding:2px 6px;border-radius:3px}
-.map-overlay-pin:hover .mop-label{opacity:1}
-.map-note{font-size:10px;color:rgba(255,255,255,.18);text-align:center;margin-top:10px;font-style:italic}
-/* Federation chips */
-.fed-logos{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px;position:relative;z-index:1}
-.fed-chip{display:flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,.1);border-radius:6px;text-decoration:none;color:inherit;transition:border-color .2s,background .15s;background:rgba(255,255,255,.02)}
-.fed-chip:hover{border-color:rgba(176,136,232,.4);background:rgba(176,136,232,.06)}
-.fed-chip-abbr{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;color:var(--mauve)}
-.fed-chip-name{font-size:10px;color:rgba(255,255,255,.45)}
-/* Mobile fallback */
+/* ── Mobile fallback list ── */
 .map-mobile-list{display:none;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
 .mml-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.08);border-radius:var(--r);text-decoration:none;color:inherit;transition:border-color .15s}
 .mml-item:hover{border-color:rgba(176,136,232,.4)}
 .mml-flag{font-size:18px}
 .mml-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;color:#fff}
-.mml-stage{font-size:10px;color:var(--acier);display:flex;align-items:center;gap:3px}
-.mml-dot{width:5px;height:5px;border-radius:50%;display:inline-block}
-@media(max-width:900px){.map-mobile-list{display:grid}.map-overlay-pin{display:none}}
-@media(max-width:500px){.map-mobile-list{grid-template-columns:1fr}}
+.mml-stage{font-size:10px;color:var(--acier)}
 
-/* ══ COUNTRY DNA — redesigned visual component ══ */
-.dna-strip{padding:28px 0 24px;background:var(--nuit);border-bottom:1px solid rgba(176,136,232,.15)}
-.dna-strip-inner{display:grid;grid-template-columns:auto 1fr 1fr 1fr 2fr;gap:0;align-items:stretch}
-.dna-brand{display:flex;align-items:center;gap:10px;padding-right:28px;border-right:1px solid rgba(255,255,255,.08);margin-right:0}
-.dna-brand-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mauve);white-space:nowrap;writing-mode:vertical-lr;transform:rotate(180deg)}
-.dna-brand-line{width:2px;height:32px;background:var(--mauve);border-radius:1px}
-.dna-col{padding:0 24px;border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;justify-content:center;gap:4px}
-.dna-col:last-child{border-right:none}
-.dna-col-key{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35)}
-.dna-col-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;color:#fff;line-height:1;display:flex;align-items:center;gap:7px}
-.dna-stage-pip{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.dna-fmt-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:2px}
-.dna-fmt-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6)}
-.dna-why-text{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;font-style:italic;max-width:360px}
-/* Fed logo slot */
-.dna-fed{display:flex;align-items:center;gap:10px;padding-left:24px;border-left:1px solid rgba(255,255,255,.07)}
-.dna-fed-logo{width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
-.dna-fed-logo img{width:100%;height:100%;object-fit:contain}
-.dna-fed-abbr{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;color:var(--mauve)}
-.dna-fed-name{font-size:10px;color:rgba(255,255,255,.3);margin-top:1px}
+/* ── Newsletter form layout ── */
+.nl-form{display:flex;gap:8px;flex-wrap:wrap}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .country-card-grid{grid-template-columns:1fr 1fr}
+}
 @media(max-width:900px){
-  .dna-strip-inner{grid-template-columns:1fr 1fr;gap:16px}
-  .dna-brand{display:none}
-  .dna-col{border-right:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
-  .dna-col:last-child{border-bottom:none}
-  .dna-fed{padding-left:0;border-left:none}
+  .main-nav{display:none}
+  .nav-right .nav-search-wrap{display:none}
+  .mobile-toggle{display:flex}
+  .container{padding:0 20px}
+  .foot-grid{grid-template-columns:1fr}
+  .country-card-grid{grid-template-columns:1fr}
+  .community-grid{grid-template-columns:1fr}
+  .radar-grid{grid-template-columns:1fr 1fr}
+  .ch-stat{padding:10px 16px}
+  .map-mobile-list{display:grid}
 }
-@media(max-width:500px){
-  .dna-strip-inner{grid-template-columns:1fr}
+@media(max-width:600px){
+  .nl-form{flex-direction:column}
+  .nl-form input{width:100%}
+  .radar-grid{grid-template-columns:1fr}
+  .ch-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
 }
+@media(max-width:500px){.map-mobile-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="sponsor-bar">Presented by <a href="services.html">Your Brand Here</a> &#8212; <a href="services.html">Become a Sponsor</a></div>
 <header class="site-header"><div class="header-inner">
   <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Follow The Lacrosse"></a>
   <nav class="main-nav"><a href="index.html">Home</a><a href="articles.html">Articles</a><a href="tournaments.html">Tournaments</a><a href="interviews.html">Interviews</a><a href="countries.html" class="active">Countries</a><a href="whats-lacrosse.html">What&#8217;s Lacrosse?</a><a href="about.html">About</a><a href="follow.html">Follow Us</a></nav>
@@ -672,13 +244,12 @@ a{text-decoration:none;color:inherit}
     <div class="radar-head">
       <p class="radar-eyebrow">Editorial Intelligence</p>
       <h2 class="radar-title">FTL Scene <em>Radar</em></h2>
-        <p class="radar-subtitle">Our editorial read of where each scene stands right now — not a ranking, a conversation. Updated when the momentum shifts.</p>
       <p class="radar-subtitle">European lacrosse is not one scene — it is thirty different stories at thirty different speeds. Here is how we read the momentum right now.</p>
     </div>
     <div class="radar-grid">
 
       <!-- HOT RIGHT NOW -->
-      <a href="country-england.html" class="radar-card">
+      <a href="countries/country-england.html" class="radar-card">
         <div class="radar-signal sig-hot">
           <span class="radar-signal-dot"></span>
           <span class="radar-signal-label">Hot Right Now</span>
@@ -693,7 +264,7 @@ a{text-decoration:none;color:inherit}
       </a>
 
       <!-- BUILDING QUIETLY -->
-      <a href="country-france.html" class="radar-card">
+      <a href="countries/country-france.html" class="radar-card">
         <div class="radar-signal sig-building">
           <span class="radar-signal-dot"></span>
           <span class="radar-signal-label">Building Quietly</span>
@@ -708,7 +279,7 @@ a{text-decoration:none;color:inherit}
       </a>
 
       <!-- SIXES MOMENTUM -->
-      <a href="country-netherlands.html" class="radar-card">
+      <a href="countries/country-netherlands.html" class="radar-card">
         <div class="radar-signal sig-sixes">
           <span class="radar-signal-dot"></span>
           <span class="radar-signal-label">Sixes Momentum</span>
@@ -723,7 +294,7 @@ a{text-decoration:none;color:inherit}
       </a>
 
       <!-- BOX STRONGHOLD -->
-      <a href="country-czech-republic.html" class="radar-card">
+      <a href="countries/country-czech-republic.html" class="radar-card">
         <div class="radar-signal sig-box">
           <span class="radar-signal-dot"></span>
           <span class="radar-signal-label">Box Stronghold</span>
@@ -738,7 +309,7 @@ a{text-decoration:none;color:inherit}
       </a>
 
       <!-- CHAMPIONS PEDIGREE -->
-      <a href="country-germany.html" class="radar-card">
+      <a href="countries/country-germany.html" class="radar-card">
         <div class="radar-signal sig-building">
           <span class="radar-signal-dot"></span>
           <span class="radar-signal-label">Champions Pedigree</span>
@@ -753,7 +324,7 @@ a{text-decoration:none;color:inherit}
       </a>
 
       <!-- WORTH WATCHING -->
-      <a href="country-spain.html" class="radar-card">
+      <a href="countries/country-spain.html" class="radar-card">
         <div class="radar-signal sig-watch">
           <span class="radar-signal-dot"></span>
           <span class="radar-signal-label">Worth Watching</span>
@@ -768,7 +339,7 @@ a{text-decoration:none;color:inherit}
       </a>
 
       <!-- ELF FINALIST -->
-      <a href="country-italy.html" class="radar-card">
+      <a href="countries/country-italy.html" class="radar-card">
         <div class="radar-signal sig-hot">
           <span class="radar-signal-dot"></span>
           <span class="radar-signal-label">ELF Finalist</span>
@@ -780,6 +351,21 @@ a{text-decoration:none;color:inherit}
         <p class="radar-body">ELF Championship Silver in 2025 — lost 9-8 to Israel in the final. 8 active clubs. A structured youth pathway. FIGL has been building quietly since 2007 and the results are starting to show.</p>
         <div class="radar-fmt-row"><span class="radar-fmt">Field</span><span class="radar-fmt">Sixes</span></div>
         <span class="radar-cta">Explore Italy &#8594;</span>
+      </a>
+
+      <!-- FOUNDING DEPTH -->
+      <a href="countries/country-sweden.html" class="radar-card">
+        <div class="radar-signal sig-building">
+          <span class="radar-signal-dot"></span>
+          <span class="radar-signal-label">Founding Depth</span>
+        </div>
+        <div class="radar-country-row">
+          <span class="radar-flag">&#127480;&#127466;</span>
+          <span class="radar-country">Sweden</span>
+        </div>
+        <p class="radar-body">ELF founding member since 1995. Thirty years of consistent national participation, university-rooted, now aligning a Sixes programme with the Olympic cycle. Quiet consistency is its own kind of power.</p>
+        <div class="radar-fmt-row"><span class="radar-fmt">Field</span><span class="radar-fmt">Sixes</span></div>
+        <span class="radar-cta">Explore Sweden &#8594;</span>
       </a>
 
     </div>
@@ -800,74 +386,64 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<!-- ═══ FTL MAP MODE ═══ -->
-<section class="map-section" id="map-mode">
+<!-- ═══ FTL INTERACTIVE MAP — D3 / TopoJSON ═══ -->
+<section class="ftl-map-section" id="map-mode">
   <div class="container">
-    <div class="map-head">
+    <div style="margin-bottom:24px;position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <div>
-        <p class="map-eyebrow">Explore the Continent</p>
-        <h2 class="map-title">European Lacrosse <em>at a Glance</em></h2>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mauve);margin-bottom:8px;display:flex;align-items:center;gap:8px;"><span style="width:16px;height:2px;background:var(--mauve);display:inline-block;"></span>Explore the Continent</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:#fff;line-height:.95;">European Lacrosse <em style="color:var(--mauve);font-style:normal;">at a Glance</em></h2>
       </div>
       <a href="whats-lacrosse.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--mauve)'" onmouseout="this.style.color='rgba(255,255,255,.3)'">What is lacrosse? &#8594;</a>
     </div>
-    <div class="map-wrap">
-      <img src="assets/europe_map_ftl.svg" alt="European lacrosse nations map" loading="lazy">
-      <!-- Clickable pin overlays — positioned by % of image dimensions -->
-  <a href="country-england.html" class="map-overlay-pin" style="left:21.09%;top:47.37%;" title="England">
-    <span class="mop-dot" style="background:#6be36b;box-shadow:0 0 8px #6be36b80;"></span>
-    <span class="mop-label">England</span>
-  </a>
-  <a href="country-france.html" class="map-overlay-pin" style="left:29.38%;top:62.92%;" title="France">
-    <span class="mop-dot" style="background:#b088e8;box-shadow:0 0 8px #b088e880;"></span>
-    <span class="mop-label">France</span>
-  </a>
-  <a href="country-germany.html" class="map-overlay-pin" style="left:45.78%;top:51.25%;" title="Germany">
-    <span class="mop-dot" style="background:#69c3ff;box-shadow:0 0 8px #69c3ff80;"></span>
-    <span class="mop-label">Germany</span>
-  </a>
-  <a href="country-italy.html" class="map-overlay-pin" style="left:50.24%;top:72.51%;" title="Italy">
-    <span class="mop-dot" style="background:#69c3ff;box-shadow:0 0 8px #69c3ff80;"></span>
-    <span class="mop-label">Italy</span>
-  </a>
-  <a href="country-netherlands.html" class="map-overlay-pin" style="left:35.32%;top:47.90%;" title="Netherlands">
-    <span class="mop-dot" style="background:#98ff80;box-shadow:0 0 8px #98ff8080;"></span>
-    <span class="mop-label">Netherlands</span>
-  </a>
-  <a href="country-spain.html" class="map-overlay-pin" style="left:17.06%;top:79.23%;" title="Spain">
-    <span class="mop-dot" style="background:#ff7a3d;box-shadow:0 0 8px #ff7a3d80;"></span>
-    <span class="mop-label">Spain</span>
-  </a>
-  <a href="country-czech-republic.html" class="map-overlay-pin" style="left:56.11%;top:54.11%;" title="Czech Republic">
-    <span class="mop-dot" style="background:#f2c94c;box-shadow:0 0 8px #f2c94c80;"></span>
-    <span class="mop-label">Czech Republic</span>
-  </a>
-  <a href="country-sweden.html" class="map-overlay-pin" style="left:58.21%;top:24.07%;" title="Sweden">
-    <span class="mop-dot" style="background:#f2c94c;box-shadow:0 0 8px #f2c94c80;"></span>
-    <span class="mop-label">Sweden</span>
-  </a>
+    <div class="ftl-map-wrap">
+      <div id="ftl-euromap" style="width:100%;height:420px;"></div>
+      <div class="ftl-map-tooltip" id="ftl-tooltip"></div>
     </div>
-    <!-- Mobile fallback list (hidden on desktop) -->
+    <div class="ftl-map-legend">
+      <div class="ftl-map-legend-item"><div class="ftl-map-legend-dot" style="background:var(--tier-elite);"></div>Tier 1 &#8212; Elite</div>
+      <div class="ftl-map-legend-item"><div class="ftl-map-legend-dot" style="background:var(--tier-growth);"></div>Tier 2 &#8212; Growth</div>
+      <div class="ftl-map-legend-item"><div class="ftl-map-legend-dot" style="background:var(--tier-emerging);"></div>Tier 3 &#8212; Emerging</div>
+      <div class="ftl-map-legend-item"><div class="ftl-map-legend-dot" style="background:var(--tier-undocumented);"></div>Not documented</div>
+      <span class="ftl-map-legend-label">Click a country to explore</span>
+    </div>
+    <!-- Mobile fallback list — all live country pages -->
     <div class="map-mobile-list">
-      <a href="country-england.html" class="mml-item"><span class="mml-flag">&#127988;</span><div><p class="mml-name">England</p><p class="mml-stage"><span class="mml-dot" style="background:#4CAF50;"></span>Established</p></div></a>
-      <a href="country-france.html" class="mml-item"><span class="mml-flag">&#127467;&#127479;</span><div><p class="mml-name">France</p><p class="mml-stage"><span class="mml-dot" style="background:#B088E8;"></span>Growing</p></div></a>
-      <a href="country-germany.html" class="mml-item"><span class="mml-flag">&#127465;&#127466;</span><div><p class="mml-name">Germany</p><p class="mml-stage"><span class="mml-dot" style="background:#64C8FF;"></span>Active</p></div></a>
-      <a href="country-italy.html" class="mml-item"><span class="mml-flag">&#127470;&#127481;</span><div><p class="mml-name">Italy</p><p class="mml-stage"><span class="mml-dot" style="background:#64C8FF;"></span>Active</p></div></a>
-      <a href="country-netherlands.html" class="mml-item"><span class="mml-flag">&#127475;&#127473;</span><div><p class="mml-name">Netherlands</p><p class="mml-stage"><span class="mml-dot" style="background:#9CFF82;"></span>Emerging</p></div></a>
-      <a href="country-spain.html" class="mml-item"><span class="mml-flag">&#127466;&#127480;</span><div><p class="mml-name">Spain</p><p class="mml-stage"><span class="mml-dot" style="background:#FF6B35;"></span>Growing Fast</p></div></a>
-      <a href="country-czech-republic.html" class="mml-item"><span class="mml-flag">&#127464;&#127487;</span><div><p class="mml-name">Czech Republic</p><p class="mml-stage"><span class="mml-dot" style="background:#FFD166;"></span>Box Capital</p></div></a>
-      <a href="country-sweden.html" class="mml-item"><span class="mml-flag">&#127480;&#127466;</span><div><p class="mml-name">Sweden</p><p class="mml-stage"><span class="mml-dot" style="background:#FFD166;"></span>Consistent</p></div></a>
-    </div>
-    <p class="map-note">Hover a pin to see the country. Click to explore the scene. 30+ ELF nations covered by FTL.</p>
-    <!-- Federation identifiers — prepared for logo assets -->
-    <div class="fed-logos">
-      <a href="country-england.html" class="fed-chip" title="England Lacrosse"><span class="fed-chip-abbr">EL</span><span class="fed-chip-name">England Lacrosse</span></a>
-      <a href="country-france.html" class="fed-chip" title="Association Française de Lacrosse"><span class="fed-chip-abbr">AFL</span><span class="fed-chip-name">France</span></a>
-      <a href="country-germany.html" class="fed-chip" title="Deutsche Lacrosse Verband"><span class="fed-chip-abbr">DLaxV</span><span class="fed-chip-name">Germany</span></a>
-      <a href="country-italy.html" class="fed-chip" title="Federazione Italiana Giuoco Lacrosse"><span class="fed-chip-abbr">FIGL</span><span class="fed-chip-name">Italy</span></a>
-      <a href="country-netherlands.html" class="fed-chip" title="Nederlandse Lacrosse Bond"><span class="fed-chip-abbr">NLB</span><span class="fed-chip-name">Netherlands</span></a>
-      <a href="country-spain.html" class="fed-chip" title="Asociación Española de Lacrosse"><span class="fed-chip-abbr">AEL</span><span class="fed-chip-name">Spain</span></a>
-      <a href="country-czech-republic.html" class="fed-chip" title="Czech Lacrosse Union"><span class="fed-chip-abbr">CLU</span><span class="fed-chip-name">Czech Rep.</span></a>
-      <a href="country-sweden.html" class="fed-chip" title="Svenska Bandy, Salibandy- och Lacrosseförbundet"><span class="fed-chip-abbr">SBSLF</span><span class="fed-chip-name">Sweden</span></a>
+      <a href="countries/country-england.html" class="mml-item"><span class="mml-flag">&#127988;</span><div><p class="mml-name">England</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-france.html" class="mml-item"><span class="mml-flag">&#127467;&#127479;</span><div><p class="mml-name">France</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-germany.html" class="mml-item"><span class="mml-flag">&#127465;&#127466;</span><div><p class="mml-name">Germany</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-italy.html" class="mml-item"><span class="mml-flag">&#127470;&#127481;</span><div><p class="mml-name">Italy</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-czech-republic.html" class="mml-item"><span class="mml-flag">&#127464;&#127487;</span><div><p class="mml-name">Czech Republic</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-netherlands.html" class="mml-item"><span class="mml-flag">&#127475;&#127473;</span><div><p class="mml-name">Netherlands</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-denmark.html" class="mml-item"><span class="mml-flag">&#127465;&#127472;</span><div><p class="mml-name">Denmark</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-poland.html" class="mml-item"><span class="mml-flag">&#127477;&#127473;</span><div><p class="mml-name">Poland</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-switzerland.html" class="mml-item"><span class="mml-flag">&#127464;&#127469;</span><div><p class="mml-name">Switzerland</p><p class="mml-stage">Tier 1 &#8212; Elite</p></div></a>
+      <a href="countries/country-spain.html" class="mml-item"><span class="mml-flag">&#127466;&#127480;</span><div><p class="mml-name">Spain</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-sweden.html" class="mml-item"><span class="mml-flag">&#127480;&#127466;</span><div><p class="mml-name">Sweden</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-ireland.html" class="mml-item"><span class="mml-flag">&#127470;&#127466;</span><div><p class="mml-name">Ireland</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-finland.html" class="mml-item"><span class="mml-flag">&#127467;&#127470;</span><div><p class="mml-name">Finland</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-belgium.html" class="mml-item"><span class="mml-flag">&#127463;&#127466;</span><div><p class="mml-name">Belgium</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-croatia.html" class="mml-item"><span class="mml-flag">&#127469;&#127479;</span><div><p class="mml-name">Croatia</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-hungary.html" class="mml-item"><span class="mml-flag">&#127469;&#127482;</span><div><p class="mml-name">Hungary</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-norway.html" class="mml-item"><span class="mml-flag">&#127475;&#127476;</span><div><p class="mml-name">Norway</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-slovakia.html" class="mml-item"><span class="mml-flag">&#127480;&#127472;</span><div><p class="mml-name">Slovakia</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-slovenia.html" class="mml-item"><span class="mml-flag">&#127480;&#127470;</span><div><p class="mml-name">Slovenia</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-israel.html" class="mml-item"><span class="mml-flag">&#127470;&#127473;</span><div><p class="mml-name">Israel</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-scotland.html" class="mml-item"><span class="mml-flag">&#127988;&#917607;&#917602;&#917619;&#917603;&#917620;&#917631;</span><div><p class="mml-name">Scotland</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-wales.html" class="mml-item"><span class="mml-flag">&#127988;&#917607;&#917602;&#917623;&#917612;&#917619;&#917631;</span><div><p class="mml-name">Wales</p><p class="mml-stage">Tier 2 &#8212; Growth</p></div></a>
+      <a href="countries/country-greece.html" class="mml-item"><span class="mml-flag">&#127468;&#127479;</span><div><p class="mml-name">Greece</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-portugal.html" class="mml-item"><span class="mml-flag">&#127477;&#127481;</span><div><p class="mml-name">Portugal</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-austria.html" class="mml-item"><span class="mml-flag">&#127462;&#127481;</span><div><p class="mml-name">Austria</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-turkey.html" class="mml-item"><span class="mml-flag">&#127481;&#127479;</span><div><p class="mml-name">T&#252;rkiye</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-bulgaria.html" class="mml-item"><span class="mml-flag">&#127463;&#127468;</span><div><p class="mml-name">Bulgaria</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-estonia.html" class="mml-item"><span class="mml-flag">&#127466;&#127466;</span><div><p class="mml-name">Estonia</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-latvia.html" class="mml-item"><span class="mml-flag">&#127473;&#127483;</span><div><p class="mml-name">Latvia</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-lithuania.html" class="mml-item"><span class="mml-flag">&#127473;&#127481;</span><div><p class="mml-name">Lithuania</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-luxembourg.html" class="mml-item"><span class="mml-flag">&#127473;&#127482;</span><div><p class="mml-name">Luxembourg</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-malta.html" class="mml-item"><span class="mml-flag">&#127474;&#127481;</span><div><p class="mml-name">Malta</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-serbia.html" class="mml-item"><span class="mml-flag">&#127479;&#127480;</span><div><p class="mml-name">Serbia</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-armenia.html" class="mml-item"><span class="mml-flag">&#127462;&#127474;</span><div><p class="mml-name">Armenia</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
+      <a href="countries/country-ukraine.html" class="mml-item"><span class="mml-flag">&#127482;&#127462;</span><div><p class="mml-name">Ukraine</p><p class="mml-stage">Tier 3 &#8212; Emerging</p></div></a>
     </div>
   </div>
 </section>
@@ -876,16 +452,10 @@ a{text-decoration:none;color:inherit}
 
 
 
-
-
-
-<!-- ═══ WHY WE'RE WATCHING THIS ═══ -->
-
-
 <section class="s"><div class="container">
   <div class="sh-block"><p class="sh-kicker"><b>01</b> National Scenes</p><h2 class="sh-h2">Explore by Country</h2><p class="sh-sub">Each country has its own lacrosse story. Some scenes are decades old. Others are years old. All of them are worth following.</p></div>
   <div class="country-card-grid">
-<a href="country-england.html" class="country-card">
+<a href="countries/country-england.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127988;</span>
     <p class="cc-country-name">England</p>
@@ -893,12 +463,12 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="cc-body">
     <div class="cc-formats"><span class="cc-fmt cc-fmt-fi">Field</span><span class="cc-fmt cc-fmt-bo">Box</span><span class="cc-fmt cc-fmt-si">Sixes</span></div>
-    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:2px 8px;border-radius:3px;align-self:flex-start;" title="England Lacrosse">EL</span>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:2px 8px;border-radius:3px;align-self:flex-start;" title="England Lacrosse">England Lacrosse</span>
 <div class="cc-status"><span class="cc-dot cc-dot-active"></span><span class="cc-status-text">Active · Full profile</span></div>
     <span class="cc-cta">Explore England &#8594;</span>
   </div>
 </a>
-<a href="country-france.html" class="country-card">
+<a href="countries/country-france.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127467;&#127479;</span>
     <p class="cc-country-name">France</p>
@@ -911,7 +481,7 @@ a{text-decoration:none;color:inherit}
     <span class="cc-cta">Explore France &#8594;</span>
   </div>
 </a>
-<a href="country-germany.html" class="country-card">
+<a href="countries/country-germany.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127465;&#127466;</span>
     <p class="cc-country-name">Germany</p>
@@ -924,7 +494,7 @@ a{text-decoration:none;color:inherit}
     <span class="cc-cta">Explore Germany &#8594;</span>
   </div>
 </a>
-<a href="country-italy.html" class="country-card">
+<a href="countries/country-italy.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127470;&#127481;</span>
     <p class="cc-country-name">Italy</p>
@@ -937,7 +507,7 @@ a{text-decoration:none;color:inherit}
     <span class="cc-cta">Explore Italy &#8594;</span>
   </div>
 </a>
-<a href="country-netherlands.html" class="country-card">
+<a href="countries/country-netherlands.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127475;&#127473;</span>
     <p class="cc-country-name">Netherlands</p>
@@ -950,7 +520,7 @@ a{text-decoration:none;color:inherit}
     <span class="cc-cta">Explore Netherlands &#8594;</span>
   </div>
 </a>
-<a href="country-spain.html" class="country-card">
+<a href="countries/country-spain.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127466;&#127480;</span>
     <p class="cc-country-name">Spain</p>
@@ -963,7 +533,7 @@ a{text-decoration:none;color:inherit}
     <span class="cc-cta">Explore Spain &#8594;</span>
   </div>
 </a>
-<a href="country-czech-republic.html" class="country-card">
+<a href="countries/country-czech-republic.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127464;&#127487;</span>
     <p class="cc-country-name">Czech Republic</p>
@@ -976,7 +546,7 @@ a{text-decoration:none;color:inherit}
     <span class="cc-cta">Explore Czech Republic &#8594;</span>
   </div>
 </a>
-<a href="country-sweden.html" class="country-card">
+<a href="countries/country-sweden.html" class="country-card">
   <div class="cc-header">
     <span class="cc-flag">&#127480;&#127466;</span>
     <p class="cc-country-name">Sweden</p>
@@ -989,23 +559,124 @@ a{text-decoration:none;color:inherit}
     <span class="cc-cta">Explore Sweden &#8594;</span>
   </div>
 </a>
-    <a href="about.html#contact" class="country-card" style="border-style:dashed;background:var(--ivoire);">
-      <div class="cc-header" style="background:linear-gradient(135deg,var(--acier),var(--marine));opacity:.7;">
-        <span class="cc-flag">&#43;</span>
-        <p class="cc-country-name" style="color:rgba(255,255,255,.7);">Your Country</p>
-        <p class="cc-hook" style="color:rgba(255,255,255,.45);">Is your national scene missing? Help us cover it.</p>
-      </div>
-      <div class="cc-body">
-        <p style="font-size:13px;color:var(--acier);line-height:1.6;">We&#8217;re actively expanding our country coverage. If you have information about a national lacrosse scene, we want to hear from you.</p>
-        <span class="cc-cta">Submit Info &#8594;</span>
-      </div>
-    </a>
+<a href="countries/country-denmark.html" class="country-card">
+  <div class="cc-header">
+    <span class="cc-flag">&#127465;&#127472;</span>
+    <p class="cc-country-name">Denmark</p>
+    <p class="cc-hook">ELF founding member since 1995. A scene built on survival and resilience — and the first national programme in Europe with a New Zealand-born coach.</p>
+  </div>
+  <div class="cc-body">
+    <div class="cc-formats"><span class="cc-fmt cc-fmt-fi">Field</span><span class="cc-fmt cc-fmt-si">Sixes</span></div>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:2px 8px;border-radius:3px;align-self:flex-start;" title="Danish Lacrosse Federation">DLF</span>
+<div class="cc-status"><span class="cc-dot cc-dot-active"></span><span class="cc-status-text">Active · Full profile</span></div>
+    <span class="cc-cta">Explore Denmark &#8594;</span>
+  </div>
+</a>
+<a href="countries/country-poland.html" class="country-card">
+  <div class="cc-header">
+    <span class="cc-flag">&#127477;&#127473;</span>
+    <p class="cc-country-name">Poland</p>
+    <p class="cc-hook">Host of the 2022 European Championship and the 2025 World Championship (24 nations). Poland is building the infrastructure of a future top-tier scene.</p>
+  </div>
+  <div class="cc-body">
+    <div class="cc-formats"><span class="cc-fmt cc-fmt-fi">Field</span><span class="cc-fmt cc-fmt-si">Sixes</span></div>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:2px 8px;border-radius:3px;align-self:flex-start;" title="Polish Field Lacrosse">PFL</span>
+<div class="cc-status"><span class="cc-dot cc-dot-active"></span><span class="cc-status-text">Active · Full profile</span></div>
+    <span class="cc-cta">Explore Poland &#8594;</span>
+  </div>
+</a>
+<a href="countries/country-switzerland.html" class="country-card">
+  <div class="cc-header">
+    <span class="cc-flag">&#127464;&#127469;</span>
+    <p class="cc-country-name">Switzerland</p>
+    <p class="cc-hook">13 clubs across Zurich, Geneva and beyond. Swisslax has built a rare multi-format scene — Field, Sixes, Box — backed by RSI TV and an Olympic-track ambition.</p>
+  </div>
+  <div class="cc-body">
+    <div class="cc-formats"><span class="cc-fmt cc-fmt-fi">Field</span><span class="cc-fmt cc-fmt-si">Sixes</span><span class="cc-fmt cc-fmt-bo">Box</span></div>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:2px 8px;border-radius:3px;align-self:flex-start;" title="Swisslax">Swisslax</span>
+<div class="cc-status"><span class="cc-dot cc-dot-active"></span><span class="cc-status-text">Active · Full profile</span></div>
+    <span class="cc-cta">Explore Switzerland &#8594;</span>
+  </div>
+</a>
+  </div>
+  <!-- Your Country CTA — outside the grid -->
+  <div style="margin-top:32px;text-align:center;padding:28px;border:2px dashed var(--border);border-radius:var(--r-lg);background:var(--ivoire);">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;text-transform:uppercase;color:var(--nuit);margin-bottom:6px;">Your country not here yet?</p>
+    <p style="font-size:13px;color:var(--acier);margin-bottom:16px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.6;">We&#8217;re actively expanding. If you have information about a national lacrosse scene, we want to hear from you.</p>
+    <a href="about.html#contact" class="btn btn-out btn-sm">Submit Info &#8594;</a>
   </div>
 </div></section>
 
 
 
 
+
+<!-- ═══ EUROPEAN LANDSCAPE — 35 nations by tier, filterable ═══ -->
+<section class="landscape-section"><div class="container">
+  <div class="sh-block"><p class="sh-kicker"><b>02</b> European Landscape</p><h2 class="sh-h2">35 Nations. Three Tiers.</h2><p class="sh-sub">Every ELF-affiliated nation, classified by FTL according to competitive history, institutional depth and format maturity.</p></div>
+
+  <div class="landscape-filters" id="landscape-filters">
+    <button class="landscape-filter-btn active" data-tier="elite" onclick="filterLandscape('elite',this)">Elite</button>
+    <button class="landscape-filter-btn" data-tier="growth" onclick="filterLandscape('growth',this)">Growth</button>
+    <button class="landscape-filter-btn" data-tier="emerging" onclick="filterLandscape('emerging',this)">Emerging</button>
+  </div>
+
+  <!-- Tier 1 — Netherlands remonte, Sweden descend, DK/PL/CH live -->
+  <div class="landscape-tier" data-landscape-tier="elite">
+    <div class="landscape-tier-head"><span class="landscape-tier-label">Tier 1 &#8212; Elite / Founding Nations</span><span class="landscape-tier-count">9</span><span class="landscape-tier-dot" style="background:var(--tier-elite);"></span></div>
+    <div class="landscape-list">
+      <a href="countries/country-czech-republic.html" class="landscape-item"><span class="landscape-item-flag">&#127464;&#127487;</span><span class="landscape-item-name">Czech Republic</span><span class="landscape-item-fed">CLU</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-germany.html" class="landscape-item"><span class="landscape-item-flag">&#127465;&#127466;</span><span class="landscape-item-name">Germany</span><span class="landscape-item-fed">DLaxV</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-netherlands.html" class="landscape-item"><span class="landscape-item-flag">&#127475;&#127473;</span><span class="landscape-item-name">Netherlands</span><span class="landscape-item-fed">NLB</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-denmark.html" class="landscape-item"><span class="landscape-item-flag">&#127465;&#127472;</span><span class="landscape-item-name">Denmark</span><span class="landscape-item-fed">DLF</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-poland.html" class="landscape-item"><span class="landscape-item-flag">&#127477;&#127473;</span><span class="landscape-item-name">Poland</span><span class="landscape-item-fed">PFL</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-switzerland.html" class="landscape-item"><span class="landscape-item-flag">&#127464;&#127469;</span><span class="landscape-item-name">Switzerland</span><span class="landscape-item-fed">Swisslax</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-france.html" class="landscape-item"><span class="landscape-item-flag">&#127467;&#127479;</span><span class="landscape-item-name">France</span><span class="landscape-item-fed">AFL</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-italy.html" class="landscape-item"><span class="landscape-item-flag">&#127470;&#127481;</span><span class="landscape-item-name">Italy</span><span class="landscape-item-fed">FIGL</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-england.html" class="landscape-item"><span class="landscape-item-flag">&#127988;</span><span class="landscape-item-name">England</span><span class="landscape-item-fed">England Lacrosse</span><span class="landscape-item-link">&#8594;</span></a>
+    </div>
+  </div>
+
+  <!-- Tier 2 — Sweden descend ici, NL remonte, tous les pays avec page = live -->
+  <div class="landscape-tier" data-landscape-tier="growth" style="display:none;">
+    <div class="landscape-tier-head"><span class="landscape-tier-label">Tier 2 &#8212; Growth Nations / Competitive Powers</span><span class="landscape-tier-count">13</span><span class="landscape-tier-dot" style="background:var(--tier-growth);"></span></div>
+    <div class="landscape-list">
+      <a href="countries/country-ireland.html" class="landscape-item"><span class="landscape-item-flag">&#127470;&#127466;</span><span class="landscape-item-name">Ireland</span><span class="landscape-item-fed">LI</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-finland.html" class="landscape-item"><span class="landscape-item-flag">&#127467;&#127470;</span><span class="landscape-item-name">Finland</span><span class="landscape-item-fed">FLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-belgium.html" class="landscape-item"><span class="landscape-item-flag">&#127463;&#127466;</span><span class="landscape-item-name">Belgium</span><span class="landscape-item-fed">BLF</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-croatia.html" class="landscape-item"><span class="landscape-item-flag">&#127469;&#127479;</span><span class="landscape-item-name">Croatia</span><span class="landscape-item-fed">CLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-hungary.html" class="landscape-item"><span class="landscape-item-flag">&#127469;&#127482;</span><span class="landscape-item-name">Hungary</span><span class="landscape-item-fed">HLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-spain.html" class="landscape-item"><span class="landscape-item-flag">&#127466;&#127480;</span><span class="landscape-item-name">Spain</span><span class="landscape-item-fed">AEL</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-sweden.html" class="landscape-item"><span class="landscape-item-flag">&#127480;&#127466;</span><span class="landscape-item-name">Sweden</span><span class="landscape-item-fed">SBSLF</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-scotland.html" class="landscape-item"><span class="landscape-item-flag">&#127988;&#917607;&#917602;&#917619;&#917603;&#917620;&#917631;</span><span class="landscape-item-name">Scotland</span><span class="landscape-item-fed">LS</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-wales.html" class="landscape-item"><span class="landscape-item-flag">&#127988;&#917607;&#917602;&#917623;&#917612;&#917619;&#917631;</span><span class="landscape-item-name">Wales</span><span class="landscape-item-fed">WL</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-norway.html" class="landscape-item"><span class="landscape-item-flag">&#127475;&#127476;</span><span class="landscape-item-name">Norway</span><span class="landscape-item-fed">NLF</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-slovakia.html" class="landscape-item"><span class="landscape-item-flag">&#127480;&#127472;</span><span class="landscape-item-name">Slovakia</span><span class="landscape-item-fed">SLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-slovenia.html" class="landscape-item"><span class="landscape-item-flag">&#127480;&#127470;</span><span class="landscape-item-name">Slovenia</span><span class="landscape-item-fed">SiLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-israel.html" class="landscape-item"><span class="landscape-item-flag">&#127470;&#127473;</span><span class="landscape-item-name">Israel</span><span class="landscape-item-fed">ILA</span><span class="landscape-item-link">&#8594;</span></a>
+    </div>
+  </div>
+
+  <!-- Tier 3 — tous live (pages existantes) -->
+  <div class="landscape-tier" data-landscape-tier="emerging" style="display:none;">
+    <div class="landscape-tier-head"><span class="landscape-tier-label">Tier 3 &#8212; Emerging Nations</span><span class="landscape-tier-count">13</span><span class="landscape-tier-dot" style="background:var(--tier-emerging);"></span></div>
+    <div class="landscape-list">
+      <a href="countries/country-greece.html" class="landscape-item"><span class="landscape-item-flag">&#127468;&#127479;</span><span class="landscape-item-name">Greece</span><span class="landscape-item-fed">GLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-portugal.html" class="landscape-item"><span class="landscape-item-flag">&#127477;&#127481;</span><span class="landscape-item-name">Portugal</span><span class="landscape-item-fed">APL</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-austria.html" class="landscape-item"><span class="landscape-item-flag">&#127462;&#127481;</span><span class="landscape-item-name">Austria</span><span class="landscape-item-fed">&#214;LV</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-turkey.html" class="landscape-item"><span class="landscape-item-flag">&#127481;&#127479;</span><span class="landscape-item-name">T&#252;rkiye</span><span class="landscape-item-fed">TLF</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-bulgaria.html" class="landscape-item"><span class="landscape-item-flag">&#127463;&#127468;</span><span class="landscape-item-name">Bulgaria</span><span class="landscape-item-fed">BuLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-estonia.html" class="landscape-item"><span class="landscape-item-flag">&#127466;&#127466;</span><span class="landscape-item-name">Estonia</span><span class="landscape-item-fed">ELA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-latvia.html" class="landscape-item"><span class="landscape-item-flag">&#127473;&#127483;</span><span class="landscape-item-name">Latvia</span><span class="landscape-item-fed">LVL</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-lithuania.html" class="landscape-item"><span class="landscape-item-flag">&#127473;&#127481;</span><span class="landscape-item-name">Lithuania</span><span class="landscape-item-fed">LtLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-luxembourg.html" class="landscape-item"><span class="landscape-item-flag">&#127473;&#127482;</span><span class="landscape-item-name">Luxembourg</span><span class="landscape-item-fed">LuLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-malta.html" class="landscape-item"><span class="landscape-item-flag">&#127474;&#127481;</span><span class="landscape-item-name">Malta</span><span class="landscape-item-fed">MLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-serbia.html" class="landscape-item"><span class="landscape-item-flag">&#127479;&#127480;</span><span class="landscape-item-name">Serbia</span><span class="landscape-item-fed">SrLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-armenia.html" class="landscape-item"><span class="landscape-item-flag">&#127462;&#127474;</span><span class="landscape-item-name">Armenia</span><span class="landscape-item-fed">ArmLA</span><span class="landscape-item-link">&#8594;</span></a>
+      <a href="countries/country-ukraine.html" class="landscape-item"><span class="landscape-item-flag">&#127482;&#127462;</span><span class="landscape-item-name">Ukraine</span><span class="landscape-item-fed">ULA</span><span class="landscape-item-link">&#8594;</span></a>
+    </div>
+  </div>
+</div></section>
 
 <section class="s bg-white"><div class="container">
   <div class="sh-block"><p class="sh-kicker"><b>04</b> Community</p><h2 class="sh-h2">Help Us Cover Europe</h2><p class="sh-sub">FTL is one editorial voice covering dozens of national scenes. We rely on people inside those scenes to keep us sharp.</p></div>
@@ -1035,17 +706,176 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="foot-bottom"><span class="foot-copy">&#169; 2026 Follow The Lacrosse. All rights reserved.</span><div class="foot-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
 </div></footer>
-<script>// Accordion
-document.querySelectorAll('.acc-hd').forEach(h=>{h.addEventListener('click',function(){const i=this.closest('.acc-item'),o=i.classList.contains('open');document.querySelectorAll('.acc-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')})});
-// Pills
-document.querySelectorAll('.pills .pill').forEach(b=>{b.addEventListener('click',function(){this.closest('.pills').querySelectorAll('.pill').forEach(x=>x.classList.remove('on'));this.classList.add('on')})});
-// Cal months
-document.querySelectorAll('.cal-btn').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.cal-btn').forEach(x=>x.classList.remove('on'));this.classList.add('on')})});
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+// ═══ FTL INTERACTIVE MAP — adapted from ftl_apps_coutries_V2.2.html ═══
+(function(){
+  const TIER_COLORS={1:'#1A3A6B',2:'#7A56C2',3:'#B088E8'};
+  const TIER_LABEL={1:'Tier 1 — Elite',2:'Tier 2 — Growth',3:'Tier 3 — Emerging'};
+
+  // Live pages — nations that have a published FTL profile
+  const LIVE_PAGES={
+    // Tier 1 — Elite / Founding Nations
+    en:'countries/country-england.html',
+    fr:'countries/country-france.html',
+    de:'countries/country-germany.html',
+    it:'countries/country-italy.html',
+    cz:'countries/country-czech-republic.html',
+    nl:'countries/country-netherlands.html',
+    dk:'countries/country-denmark.html',
+    pl:'countries/country-poland.html',
+    ch:'countries/country-switzerland.html',
+    // Tier 2 — Growth Nations
+    es:'countries/country-spain.html',
+    se:'countries/country-sweden.html',
+    ie:'countries/country-ireland.html',
+    fi:'countries/country-finland.html',
+    be:'countries/country-belgium.html',
+    hr:'countries/country-croatia.html',
+    hu:'countries/country-hungary.html',
+    no:'countries/country-norway.html',
+    sk:'countries/country-slovakia.html',
+    si:'countries/country-slovenia.html',
+    il:'countries/country-israel.html',
+    sc:'countries/country-scotland.html',
+    wa:'countries/country-wales.html',
+    // Tier 3 — Emerging Nations
+    gr:'countries/country-greece.html',
+    pt:'countries/country-portugal.html',
+    at:'countries/country-austria.html',
+    tr:'countries/country-turkey.html',
+    bg:'countries/country-bulgaria.html',
+    ee:'countries/country-estonia.html',
+    lv:'countries/country-latvia.html',
+    lt:'countries/country-lithuania.html',
+    lu:'countries/country-luxembourg.html',
+    mt:'countries/country-malta.html',
+    rs:'countries/country-serbia.html',
+    am:'countries/country-armenia.html',
+    ua:'countries/country-ukraine.html'
+  };
+
+  // Nation data — from nations.json / ftl_apps_coutries_V2.2.html
+  const NATIONS=[
+    {id:'cz',name:'Czech Republic',tier:1,iso:203,flag:'🇨🇿',fed:'CLU'},
+    {id:'de',name:'Germany',tier:1,iso:276,flag:'🇩🇪',fed:'DLaxV'},
+    {id:'se',name:'Sweden',tier:2,iso:752,flag:'🇸🇪',fed:'SBSLF'},
+    {id:'dk',name:'Denmark',tier:1,iso:208,flag:'🇩🇰',fed:'DLF'},
+    {id:'pl',name:'Poland',tier:1,iso:616,flag:'🇵🇱',fed:'PFL'},
+    {id:'ch',name:'Switzerland',tier:1,iso:756,flag:'🇨🇭',fed:'Swisslax'},
+    {id:'fr',name:'France',tier:1,iso:250,flag:'🇫🇷',fed:'AFL'},
+    {id:'it',name:'Italy',tier:1,iso:380,flag:'🇮🇹',fed:'FIGL'},
+    {id:'en',name:'England',tier:1,iso:826,flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',fed:'England Lacrosse'},
+    {id:'ie',name:'Ireland',tier:2,iso:372,flag:'🇮🇪',fed:'Ireland Lacrosse'},
+    {id:'nl',name:'Netherlands',tier:1,iso:528,flag:'🇳🇱',fed:'NLB'},
+    {id:'fi',name:'Finland',tier:2,iso:246,flag:'🇫🇮',fed:'FLA'},
+    {id:'be',name:'Belgium',tier:2,iso:56,flag:'🇧🇪',fed:'BLF'},
+    {id:'hr',name:'Croatia',tier:2,iso:191,flag:'🇭🇷',fed:'CLA'},
+    {id:'hu',name:'Hungary',tier:2,iso:348,flag:'🇭🇺',fed:'HLA'},
+    {id:'es',name:'Spain',tier:2,iso:724,flag:'🇪🇸',fed:'AEL'},
+    {id:'no',name:'Norway',tier:2,iso:578,flag:'🇳🇴',fed:'NLF'},
+    {id:'sk',name:'Slovakia',tier:2,iso:703,flag:'🇸🇰',fed:'SLF'},
+    {id:'si',name:'Slovenia',tier:2,iso:705,flag:'🇸🇮',fed:'SiLA'},
+    {id:'il',name:'Israel',tier:2,iso:376,flag:'🇮🇱',fed:'ILA'},
+    {id:'sc',name:'Scotland',tier:2,flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',fed:'LS'},
+    {id:'wa',name:'Wales',tier:2,flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',fed:'WL'},
+    {id:'gr',name:'Greece',tier:3,iso:300,flag:'🇬🇷',fed:'GLA'},
+    {id:'pt',name:'Portugal',tier:3,iso:620,flag:'🇵🇹',fed:'PLB'},
+    {id:'at',name:'Austria',tier:3,iso:40,flag:'🇦🇹',fed:'ÖLV'},
+    {id:'tr',name:'Türkiye',tier:3,iso:792,flag:'🇹🇷',fed:'TLF'},
+    {id:'bg',name:'Bulgaria',tier:3,iso:100,flag:'🇧🇬',fed:'BuLF'},
+    {id:'ee',name:'Estonia',tier:3,iso:233,flag:'🇪🇪',fed:'ELF'},
+    {id:'lv',name:'Latvia',tier:3,iso:428,flag:'🇱🇻',fed:'LVL'},
+    {id:'lt',name:'Lithuania',tier:3,iso:440,flag:'🇱🇹',fed:'LtLF'},
+    {id:'lu',name:'Luxembourg',tier:3,iso:442,flag:'🇱🇺',fed:'LuLF'},
+    {id:'mt',name:'Malta',tier:3,iso:470,flag:'🇲🇹',fed:'MLF'},
+    {id:'rs',name:'Serbia',tier:3,iso:688,flag:'🇷🇸',fed:'SrLF'},
+    {id:'am',name:'Armenia',tier:3,iso:51,flag:'🇦🇲',fed:'ArmLF'},
+    {id:'ua',name:'Ukraine',tier:3,iso:804,flag:'🇺🇦',fed:'ULF'}
+  ];
+
+  const BY_ISO=Object.fromEntries(NATIONS.filter(n=>n.iso).map(n=>[n.iso,n]));
+  const europeanIDs=new Set([8,20,40,51,56,70,100,112,191,203,208,233,246,250,276,300,348,352,372,376,380,428,438,440,442,470,492,499,528,578,616,620,642,688,703,705,724,752,756,792,804,807,826]);
+
+  function nationColor(n){
+    if(!n) return '#E0DACC';
+    return TIER_COLORS[n.tier]||'#E0DACC';
+  }
+
+  function buildMap(){
+    const wrap=document.getElementById('ftl-euromap');
+    if(!wrap) return;
+    const W=wrap.clientWidth||800,H=420;
+    const tt=document.getElementById('ftl-tooltip');
+
+    const svg=d3.select('#ftl-euromap').append('svg')
+      .attr('width','100%').attr('height','100%')
+      .attr('viewBox','0 0 '+W+' '+H)
+      .attr('class','ftl-map-svg');
+
+    const proj=d3.geoMercator()
+      .center([15,54]).scale(Math.min(W,H)*1.1)
+      .translate([W/2,H/2]);
+
+    const pathGen=d3.geoPath(proj);
+
+    d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(world){
+      const countries=topojson.feature(world,world.objects.countries);
+
+      svg.selectAll('path.country')
+        .data(countries.features.filter(function(f){return europeanIDs.has(+f.id)}))
+        .join('path')
+        .attr('class','country')
+        .attr('d',pathGen)
+        .attr('fill',function(d){return nationColor(BY_ISO[+d.id])})
+        .attr('stroke','rgba(255,255,255,0.4)')
+        .attr('stroke-width',0.5)
+        .style('cursor',function(d){return BY_ISO[+d.id]?'pointer':'default'})
+        .on('mouseover',function(evt,d){
+          var n=BY_ISO[+d.id];
+          if(!n) return;
+          d3.select(this).attr('opacity',0.75);
+          var live=LIVE_PAGES[n.id];
+          tt.style.opacity='1';
+          tt.innerHTML='<div class="tt-name">'+n.flag+' '+n.name+'</div><div class="tt-tier">'+TIER_LABEL[n.tier]+'</div>'+(live?'<div class="tt-status">View FTL profile →</div>':'<div class="tt-status" style="opacity:.4">FTL profile planned</div>');
+        })
+        .on('mousemove',function(evt){
+          var rect=document.getElementById('ftl-euromap').getBoundingClientRect();
+          var x=evt.clientX-rect.left,y=evt.clientY-rect.top;
+          tt.style.left=(x+14)+'px';tt.style.top=(y-10)+'px';
+        })
+        .on('mouseout',function(){
+          d3.select(this).attr('opacity',1);
+          tt.style.opacity='0';
+        })
+        .on('click',function(evt,d){
+          var n=BY_ISO[+d.id];
+          if(!n) return;
+          var url=LIVE_PAGES[n.id];
+          if(url) window.location.href=url;
+        });
+    }).catch(function(){
+      // Fallback: map won't render, mobile list is visible on small screens
+    });
+  }
+
+  setTimeout(buildMap,100);
+})();
+
+// ═══ LANDSCAPE FILTER ═══
+function filterLandscape(tier,btn){
+  document.querySelectorAll('.landscape-filter-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.querySelectorAll('.landscape-tier').forEach(function(t){
+    t.style.display=t.dataset.landscapeTier===tier?'':'none';
+  });
+}
+
+// ═══ EXISTING INTERACTIONS ═══
 // Newsletter
-document.querySelectorAll('.nl-form').forEach(f=>{const b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',()=>{if(i.value&&i.value.includes('@')){const t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(()=>{b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(()=>i.style.borderColor='',2000)}})});
-// Contact form
-const cf=document.getElementById('cform');if(cf){cf.addEventListener('submit',e=>{e.preventDefault();const b=cf.querySelector('[type=submit]');b.textContent='✓ Message sent!';b.style.background='#3B6D11';setTimeout(()=>{b.textContent='Send message →';b.style.background='';cf.reset()},3000)})}
+document.querySelectorAll('.nl-form').forEach(function(f){var b=f.querySelector('button'),i=f.querySelector('input[type=email]');if(!b||!i)return;b.addEventListener('click',function(){if(i.value&&i.value.includes('@')){var t=b.textContent;b.textContent='✓ Subscribed!';b.style.background='#3B6D11';b.style.color='#fff';i.value='';setTimeout(function(){b.textContent=t;b.style.background='';b.style.color=''},3000)}else{i.style.borderColor='#A32D2D';i.focus();setTimeout(function(){i.style.borderColor=''},2000)}})});
 // Mobile menu
-const mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',()=>{const open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
+var mt=document.querySelector('.mobile-toggle'),mn=document.querySelector('.main-nav');if(mt&&mn){mt.addEventListener('click',function(){var open=mn.style.display==='flex';mn.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--nuit);padding:32px;gap:16px;z-index:999;overflow-y:auto'})}
 </script>
 </body></html>
