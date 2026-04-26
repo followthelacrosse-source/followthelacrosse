@@ -27,7 +27,15 @@
       "Bash(cp article-england-box-goalie-duel.html articles/article-england-box-goalie-duel.html)",
       "Bash(cp article-olympic-lacrosse-2028-europe.html articles/article-olympic-lacrosse-2028-europe.html)",
       "Bash(grep:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(mv country-england.html country-france.html country-germany.html country-italy.html country-czech-republic.html country-netherlands.html country-spain.html country-sweden.html countries/)",
+      "Bash(mv countries.css countries/)",
+      "Bash(mkdir -p countries/_archive)",
+      "Bash(mv _archive/country-england-old.html _archive/country-france-old.html _archive/country-germany-old.html countries/_archive/)",
+      "Bash(rmdir _archive)",
+      "Bash(ls D:\\\\GitHub\\\\followthelacrosse\\\\.claude\\\\worktrees\\\\romantic-driscoll\\\\countries\\\\country-*.html)",
+      "Bash(ls \"D:/GitHub/followthelacrosse/.claude/worktrees/romantic-driscoll/countries/country-\"*.html)",
+      "Bash(dir \"D:\\\\GitHub\\\\followthelacrosse\\\\.claude\\\\worktrees\\\\romantic-driscoll\\\\countries\\\\\" /b 2>&1 | grep country)"
     ]
   }
 }

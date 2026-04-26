@@ -1,9 +1,128 @@
-# REPORT — LOT COHÉRENCE HIÉRARCHIQUE
+# REPORT — MINI-LOT NETTOYAGE TECHNIQUE countries.html
 
-**Date** : 2026-04-22  
-**Scope** : Recalibration tier sur 3 pages pays (NL → Tier 1 full, SE → Tier 2 label, CZ → sortie hybride)  
-**Commit** : `438abc3`  
+**Date** : 2026-04-23  
+**Scope** : Nettoyage CSS inline de `countries.html` — suppression des classes mortes sans changement visuel  
+**Commit** : —  
 **Statut** : Livré
+
+---
+
+## Fichiers modifiés
+
+| Fichier | Modifications |
+|---------|---------------|
+| `countries.html` | Bloc `<style>` inline : ~340 lignes mortes supprimées · `@import` dupliqué retiré · media queries consolidées · aucune modification HTML ni JS |
+
+---
+
+## Ce qui a été supprimé
+
+Classes retirées car absentes du HTML de `countries.html` et/ou déjà couvertes par `countries.css` :
+
+- `@import` Google Fonts dupliqué (déjà chargé via `<link>` ligne 7)
+- `.sh`, `.sh-label`, `.sh-title`, `.see-all` (section headers non utilisés — remplacés par `.sh-block` de countries.css)
+- `.hero`, `.hero-inner`, `.hero-kicker`, `.hero-title`, `.hero-sub`, `.hero-btns` (hero homepage, absent ici)
+- `.btn-out-white`, `.btn-dk`, `.btn-lg` (variantes non utilisées)
+- `.pills`, `.pill`, `.fbar`, `.fbar-inner`, `.fsearch`, `.fsel` (filtres non utilisés)
+- `.grid-3`, `.grid-4`, `.grid-6`, `.grid-2-1` (grilles articles non utilisées)
+- `.card`, `.card-photo`, `.card-body`, `.ctags`, `.card-title`, `.card-exc`, `.card-foot`, `.card-feat`, `.card-sm`, `.list-item`, `.li-*` (cards articles)
+- `.ph`, `.ph-kicker`, `.ph-title`, `.ph-desc` (page header)
+- `.tourn-grid`, `.tc-card`, `.tc-*` (tournament cards)
+- `.acc-list`, `.acc-item`, `.acc-hd`, `.acc-bd`, `.acc-grid`, `.acc-lbl`, `.acc-val`, `.chip` (accordéon)
+- `.m-div`, `.m-badge`, `.cal-strip`, `.cal-months`, `.cal-btn` (calendrier)
+- `.nl-dark`, `.nl-strip` (newsletter non utilisée ici — `countries.html` utilise `.nl-editorial` de countries.css)
+- `.srv-grid`, `.srv-card`, `.srv-icon`, `.srv-title`, `.srv-desc` (services)
+- `.about-2col`, `.about-visual`, `.about-p` (about)
+- `.contact-2col`, `.ci`, `.form-box`, `.fg`, `.form-2col` (contact)
+- `.sponsor-row`, `.s-slot`, `.inline-sp` (sponsors)
+- `.hero-page`, `.hero-page-inner`, `.hero-page-kicker` (page hero alternatif)
+- `.country-hero`, `.country-stats`, `.cstat` (hero pages pays — dans countries.css)
+- `.timeline`, `.tl-item`, `.tl-dot`, `.tl-year`, `.tl-title`, `.tl-desc` (pages pays — dans countries.css)
+- `.club-grid`, `.club-card`, `.club-name`, `.club-city`, `.club-fmt` (pages pays)
+- `.country-chip`, `.country-chip-flag`, `.country-chip-name`, `.country-chip-status` (whats-lacrosse)
+- `.coming-soon-box` (non utilisé)
+- `.scene-grid`, `.scene-card`, `.scene-flag`, `.scene-label`, `.scene-title`, `.scene-body`, `.scene-tag`
+- `.coverage-item`, `.cov-*` (pages pays)
+- `.dynamics-grid`, `.dyn-*` (non utilisé)
+- `.community-grid`, `.comm-*` (dans countries.css — dupliqué retiré)
+- `.nl-editorial`, `.nl-ed-*` (dans countries.css — dupliqué retiré)
+- `.related-grid`, `.related-card`, `.rc-*` (dans countries.css)
+- `.why-follow-grid`, `.wf-*` (dans countries.css)
+- `.sh-block`, `.sh-kicker b`, `.sh-h2`, `.sh-sub`, `.divider-pull` (dans countries.css)
+- `.wwwt-section`, `.wwwt-*` (non utilisé dans countries.html)
+- Media queries nettoyées : sélecteurs morts retirés des blocs 900px et 600px, blocs identiques fusionnés
+
+## Ce qui a été conservé
+
+- `:root` (variables CSS)
+- Reset et base (`body`, `html`, `img`, `a`)
+- Header / nav complet
+- Layout (`.container`, `.s`, `.s-sm`, `.bg-*`)
+- Buttons : `.btn`, `.btn-pri`, `.btn-out`, `.btn-sm`
+- Footer complet
+- `.countries-hero` et stats (`.ch-stat`, `.ch-stat-num`, `.ch-stat-label`)
+- Country card grid (`.country-card-grid`, `.country-card`, `.cc-*`)
+- Scene Radar complet (`.radar-*`, `@keyframes pulse-dot`)
+- Signal colors (`.sig-hot`, `.sig-building`, `.sig-watch`, `.sig-sixes`, `.sig-box`, `.sig-grassroots`)
+- Interactions D3 (`.map-dot circle`, `.map-list-item`) — conservées par précaution
+- Mobile fallback list (`.map-mobile-list`, `.mml-*`)
+- `.nl-form{display:flex;gap:8px;flex-wrap:wrap}` + responsive mobile
+- Media queries nettoyées et consolidées (1024px, 900px, 600px, 500px)
+
+## Résultat chiffré
+
+| | Avant | Après |
+|--|-------|-------|
+| Lignes bloc `<style>` | ~555 lignes | ~214 lignes |
+| Classes définies | ~130 | ~55 |
+| Changement visuel | — | Aucun |
+| Changement HTML / JS | — | Aucun |
+
+---
+
+## Dettes restantes (cumul)
+
+| Dette | Nature | Priorité |
+|-------|--------|----------|
+| Année exacte EuroLax Sixes Cup (NL) | Donnée non vérifiée | À confirmer dans nations.json si disponible |
+| "2010s" NL Sixes investment | Placeholder structurel assumé | Acceptable |
+| "2000s–2010s" CZ AHM international | Placeholder structurel assumé | Acceptable |
+| Sweden Tier 2 vs founding nation 1995 | Tension potentielle doctrine | À surveiller |
+| ~300 lignes CSS inline par page pays | Dette technique non prioritaire | Hors périmètre |
+
+---
+
+## Vérifications finales effectuées
+
+- [x] DOM vérifié — `<style>` fermé proprement avant `</head>` (ligne 214)
+- [x] HTML et JS non modifiés — aucun bloc déplacé, aucun ID altéré
+- [x] `@import` dupliqué supprimé — fonts chargées via `<link>` uniquement
+- [x] Grep zéro résultat sur 20 classes mortes vérifiées
+- [x] Grep positif sur 9 classes vivantes vérifiées (`.radar-section`, `.countries-hero`, `.country-card-grid`, `.map-mobile-list`, `.nl-form`, `.foot-grid`, `.btn-pri`, `.sig-hot`, `.mml-item`)
+- [x] Responsive : blocs 1024px / 900px / 600px / 500px consolidés sans perte
+- [x] `community-grid` conservée dans media query 900px (responsive mobile intact)
+- [x] `countries.css` non modifié
+- [x] `nations.json` non modifié
+- [x] Aucune classe retirée qui était réellement utilisée dans le HTML de `countries.html`
+
+---
+
+## Historique des lots
+
+| Lot | Commit | Date | Scope |
+|-----|--------|------|-------|
+| Mini-lot correctif (Carte D3, Landscape, newsletter) | — | 2026-04-13 | countries.html, CSS, 8 pages |
+| LOT PREMIUM (CH, DK, PL → Tier 1, NL/CZ light audit) | `7a460e1` | 2026-04-21 | 3 nouvelles PREMIUM pages |
+| LOT COHÉRENCE HIÉRARCHIQUE | `438abc3` | 2026-04-22 | NL Tier 1 full, SE Tier 2, CZ hybride fix |
+| Mini-lot synchronisation countries.html | `4098a1b` | 2026-04-22 | 35 pays live, LIVE_PAGES, Landscape, fallback mobile |
+| Mini-lot nettoyage technique countries.html | — | 2026-04-23 | CSS inline : ~340 lignes mortes supprimées |
+
+---
+
+## Archive lot précédent — LOT COHÉRENCE HIÉRARCHIQUE (2026-04-22)
+
+**Scope** : Recalibration tier sur 3 pages pays (NL → Tier 1 full, SE → Tier 2 label, CZ → sortie hybride)  
+**Commit** : `438abc3`
 
 ---
 
@@ -133,10 +252,3 @@ Sweden est un ELF founding member 1995. Le label Tier 2 peut sembler en tension 
 
 ---
 
-## Historique des lots antérieurs
-
-| Lot | Commit | Date | Scope |
-|-----|--------|------|-------|
-| Mini-lot correctif (Carte D3, Landscape, newsletter) | — | 2026-04-13 | countries.html, CSS, 8 pages |
-| LOT PREMIUM (CH, DK, PL → Tier 1, NL/CZ light audit) | `7a460e1` | 2026-04-21 | 3 nouvelles PREMIUM pages |
-| LOT COHÉRENCE HIÉRARCHIQUE | `438abc3` | 2026-04-22 | NL Tier 1 full, SE Tier 2, CZ hybride fix |

@@ -1,0 +1,466 @@
+<h2 class="sr-only">FTL European Lacrosse Survey — interactive explorer with map and nation profiles for 34 ELF member nations</h2>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',-apple-system,sans-serif;color:#0D2240;background:#F0EEE8}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+.app{display:flex;flex-direction:column;min-height:100vh}
+
+nav{background:#0D2240;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.logo{font-weight:500;font-size:1em;letter-spacing:2px;text-transform:uppercase}
+.nav-stats{display:flex;gap:20px}
+.ns{text-align:center}
+.ns .n{font-size:1.1em;font-weight:500;color:#B088E8}
+.ns .l{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:.5px}
+
+.view-tabs{display:flex;gap:0;background:#1A3A6B;flex-shrink:0}
+.vtab{padding:10px 20px;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.5);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
+.vtab.active{color:#fff;border-bottom-color:#B088E8}
+
+.body{display:flex;flex:1;overflow:hidden;min-height:600px}
+
+.panel-left{width:280px;min-width:280px;background:#fff;border-right:.5px solid #E0DACC;display:flex;flex-direction:column;overflow:hidden}
+.filter-zone{padding:12px 14px;border-bottom:.5px solid #E0DACC;flex-shrink:0}
+.fz-label{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:#7A90A8;margin-bottom:8px}
+.tier-btns{display:flex;gap:4px;flex-wrap:wrap}
+.tbtn{padding:4px 10px;border-radius:50px;border:.5px solid #ddd;font-size:11px;cursor:pointer;background:#fff;color:#0D2240;transition:all .15s}
+.tbtn.active{background:#7A56C2;color:#fff;border-color:#7A56C2}
+.clist{flex:1;overflow-y:auto}
+.ci{padding:9px 14px;cursor:pointer;border-bottom:.5px solid #F5F3EE;display:flex;align-items:center;gap:9px;transition:background .1s}
+.ci:hover{background:#F5F3EE}
+.ci.sel{background:#EDE8FF}
+.ci .flag{font-size:1.2em;line-height:1;flex-shrink:0}
+.ci .info{flex:1;min-width:0}
+.ci .nm{font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#0D2240}
+.ci .sub{font-size:10px;color:#7A90A8}
+.ci .pct{font-size:11px;font-weight:500;color:#7A56C2;white-space:nowrap;flex-shrink:0}
+
+.main-area{flex:1;overflow:hidden;display:flex;flex-direction:column}
+
+.map-view{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.map-wrap{flex:1;position:relative;overflow:hidden}
+#euromap{width:100%;height:100%}
+.map-legend{display:flex;gap:16px;padding:10px 16px;background:#fff;border-top:.5px solid #E0DACC;flex-shrink:0;align-items:center}
+.ml-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#7A90A8}
+.ml-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+
+.detail-view{flex:1;overflow-y:auto;padding:20px;display:none}
+.detail-view.active{display:block}
+
+.d-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid #B088E8}
+.d-flag{font-size:2.2em;line-height:1;flex-shrink:0}
+.d-meta{flex:1}
+.d-name{font-size:1.3em;font-weight:500;color:#0D2240;text-transform:uppercase;letter-spacing:1px;line-height:1.2}
+.d-tier{display:inline-block;background:#7A56C2;color:#EEEDFE;font-size:10px;padding:3px 9px;border-radius:50px;text-transform:uppercase;letter-spacing:.5px;margin-top:5px}
+.d-fed{font-size:12px;color:#7A90A8;margin-top:5px}
+.d-bar-wrap{margin-top:6px;display:flex;align-items:center;gap:8px}
+.d-bar{height:4px;background:#E0DACC;border-radius:2px;overflow:hidden;flex:1}
+.d-bar-fill{height:100%;background:#7A56C2;border-radius:2px}
+.d-pct{font-size:11px;font-weight:500;color:#7A56C2}
+
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin-bottom:16px}
+.stat-c{background:#F5F3EE;border-radius:8px;padding:10px 12px}
+.stat-c .sv{font-size:1.1em;font-weight:500;color:#0D2240}
+.stat-c .sl{font-size:10px;color:#7A90A8;text-transform:uppercase;letter-spacing:.3px;margin-top:2px}
+
+.sec{margin-bottom:14px}
+.sec-title{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:#7A56C2;margin-bottom:7px;padding-bottom:5px;border-bottom:.5px solid #D8CCFF}
+.hi{background:#E8F5E9;border-left:2px solid #4CAF50;padding:7px 10px;border-radius:0;font-size:12px;color:#2E7D32;margin-bottom:5px;line-height:1.5}
+.todo{background:#FFF8DC;border-left:2px solid #FF9800;padding:6px 10px;border-radius:0;font-size:11px;color:#B8860B;margin-bottom:4px}
+.chip{display:inline-block;background:#EDE8FF;color:#3C3489;font-size:10px;padding:3px 7px;border-radius:4px;margin:2px 2px 2px 0}
+.note-box{background:#F5F3EE;border-left:2px solid #B088E8;padding:8px 10px;font-size:11px;color:#7A90A8;font-style:italic;line-height:1.5}
+
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:8px;opacity:.35;font-size:13px}
+
+.map-tooltip{position:absolute;background:#0D2240;color:#fff;padding:6px 10px;border-radius:6px;font-size:12px;pointer-events:none;opacity:0;transition:opacity .1s;z-index:10;max-width:160px;line-height:1.4}
+.map-tooltip .tt-name{font-weight:500}
+.map-tooltip .tt-tier{font-size:10px;opacity:.7;margin-top:2px}
+</style>
+
+<div class="app">
+<nav>
+  <div class="logo">Follow The Lacrosse</div>
+  <div class="nav-stats">
+    <div class="ns"><div class="n">34</div><div class="l">Nations</div></div>
+    <div class="ns"><div class="n">94%</div><div class="l">Coverage</div></div>
+    <div class="ns"><div class="n">3</div><div class="l">Tiers</div></div>
+  </div>
+</nav>
+
+<div class="view-tabs">
+  <div class="vtab active" id="tab-map" onclick="switchTab('map')">Map view</div>
+  <div class="vtab" id="tab-list" onclick="switchTab('list')">List view</div>
+  <div class="vtab" id="tab-detail" onclick="switchTab('detail')" style="display:none">Nation detail</div>
+</div>
+
+<div class="body">
+  <div class="panel-left">
+    <div class="filter-zone">
+      <div class="fz-label">Filter by tier</div>
+      <div class="tier-btns">
+        <button class="tbtn active" onclick="filterTier('all',this)">All</button>
+        <button class="tbtn" onclick="filterTier('1',this)">Tier 1</button>
+        <button class="tbtn" onclick="filterTier('2',this)">Tier 2</button>
+        <button class="tbtn" onclick="filterTier('3',this)">Tier 3</button>
+      </div>
+    </div>
+    <div class="clist" id="clist"></div>
+  </div>
+
+  <div class="main-area">
+    <div class="map-view" id="view-map">
+      <div class="map-wrap">
+        <div id="euromap"></div>
+        <div class="map-tooltip" id="tooltip"></div>
+      </div>
+      <div class="map-legend">
+        <span style="font-size:11px;color:#7A90A8;margin-right:4px">Tier:</span>
+        <div class="ml-item"><div class="ml-dot" style="background:#1A3A6B"></div>1 — Elite</div>
+        <div class="ml-item"><div class="ml-dot" style="background:#7A56C2"></div>2 — Growth</div>
+        <div class="ml-item"><div class="ml-dot" style="background:#B088E8"></div>3 — Emerging</div>
+        <div class="ml-item"><div class="ml-dot" style="background:#E0DACC"></div>Not documented</div>
+        <span style="font-size:11px;color:#7A90A8;margin-left:auto">Click a country to explore</span>
+      </div>
+    </div>
+
+    <div class="detail-view" id="view-detail">
+      <div class="empty-state" id="detail-empty">
+        <div style="font-size:2em">&#127760;</div>
+        <div>Select a nation to explore</div>
+      </div>
+      <div id="detail-content" style="display:none"></div>
+    </div>
+
+    <div class="detail-view" id="view-list" style="display:none">
+      <div id="list-content" style="columns:2;gap:12px"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+const TIER_COLORS={1:'#1A3A6B',2:'#7A56C2',3:'#B088E8'};
+const TIER_LABEL={1:'Tier 1 — Elite',2:'Tier 2 — Growth',3:'Tier 3 — Emerging'};
+
+const NATIONS=[
+{id:'cz',flag:'🇨🇿',name:'Czechia',tier:1,pct:85,elf:1995,formats:['Field','Box'],clubs:8,instagram:'@nbll_cz',ig:2696,fed:'Czech Lacrosse Union',website:'lacrosse.cz',coach:'Petr Poupě',iso:203,
+ hi:['1986: First box lacrosse game in Prague — players had handmade fibreglass sticks','1967: Neskenon Scout tournament — oldest European continental lacrosse event','NBLL: multi-country league (CZ, AT, DE, SK, PL), 28 games live-streamed 2024','Aleš Hřebeský Memorial 2026 (31st ed.): most prestigious European club box tournament','Pavel Dosly: 13th World Championship at age 44, 7 field + 6 box titles'],
+ todo:['2025 NBLL champion & standings','Czech Lacrosse Union board members','Licensed player total 2025-26'],
+ note:'Box lacrosse powerhouse. Historic depth since 1967. First field league 1992.'},
+{id:'de',flag:'🇩🇪',name:'Germany',tier:1,pct:85,elf:1995,formats:['Field','Box','Sixes'],clubs:60,instagram:'@germany_lacrosse',ig:null,fed:'DLaxV — Deutscher Lacrosse Verband e.V.',website:'dlaxv.de',coach:null,iso:276,
+ hi:['2025: more German players in sixes than field + box combined','Die Finals 2025 (Dresden): first ever lacrosse on ARD public TV — 1M+ viewers','DLaxV admitted to DOSB (German Olympic Committee) Dec 2023 — LA28 pathway','Sixes 2025: Schwarz-Weiss Köln (men), HTHC Hamburg (women)','Field 2025: HTHC Hamburg (men), Schwarz-Weiss Köln (women)','HLC Rot-Weiß München: oldest club (1992), 10 titles in 10 years'],
+ todo:['Field/box 2024-25 verification','Interview: new federal sports director'],
+ note:'Growth story of 2025. TV debut, sixes dominance, DOSB recognition, federal funding.'},
+{id:'se',flag:'🇸🇪',name:'Sweden',tier:1,pct:87,elf:1994,formats:['Field','Box','Sixes'],clubs:11,instagram:'@swedenlacrosse',ig:2202,fed:'Svenska Baseboll-Softboll och Lacrosseförbundet',website:'lacrosse.se',coach:'New sixes coaches (May 2025)',iso:752,
+ hi:['Lacrosse introduced 1988 by American Jim Johnson; first championship 1992','Swedish Lacrosse League (SLL): sixes format, men & women + U21','Nordia Lacrosse Stockholm: 3× field champions (2015, 2018, 2025)','SNTDP: structured U16–U20 pathway; first U16 nationals 2018','Government economic support announced January 2025'],
+ todo:['Swedish TV/broadcast coverage','Box lacrosse development status'],
+ note:'Founding ELF member, solid SNTDP youth programme. Nordia is benchmark club.'},
+{id:'dk',flag:'🇩🇰',name:'Denmark',tier:1,pct:87,elf:1995,formats:['Field'],clubs:3,instagram:'@danishlacrosse',ig:null,fed:'Dansk Lacrosse Forbund',website:'danishlacrosse.org',coach:'Nick Ravenhall',iso:208,
+ hi:['Founded 2002 by Kristian Gotsch after seeing lacrosse in Canada','Arc: growth (2003-09) → crisis (2010-15) → recovery (2014+) → 2025 Euros','Copenhagen Lacrosse Cup 2015: 9 men\'s + 5 women\'s international teams','Hired Nick Ravenhall (NZ 2014 World Games captain) in 2016 to rebuild','2025 Euros: France beat Denmark 14-4; goalkeeper David Gudman represented'],
+ todo:['Current federation leadership','Youth pipeline expansion'],
+ note:'Founded by one enthusiast. Commitment over dominance.'},
+{id:'pl',flag:'🇵🇱',name:'Poland',tier:1,pct:87,elf:2010,formats:['Field','Sixes'],clubs:6,instagram:'@polandlacrosse',ig:2795,fed:'Polska Federacja Lacrosse',website:'lacrossepolska.com',coach:null,iso:616,
+ hi:['Host of 2025 European Men\'s Championship (Wrocław, Jul 9-19, 24 nations)','Also hosted 2022 EC + 2024 U20 EC — Wrocław is premier European venue','Awarded 2026-27 WL Men\'s & Women\'s Championship Division II (Wrocław)','Poznań Hussars (Dec 2007): first Polish lacrosse club','Poland Lacrosse Foundation: North American diaspora fundraising & recruitment'],
+ todo:['2025 EC final standing','Men\'s national team head coach'],
+ note:'Infrastructure-focused growth. Hosting before dominance. Wrocław = world-class.'},
+{id:'ch',flag:'🇨🇭',name:'Switzerland',tier:1,pct:85,elf:null,formats:['Field','Box','Sixes'],clubs:13,instagram:'@swisslax',ig:2260,fed:'Swiss Lacrosse Federation (Swisslax)',website:'swisslax.ch',coach:'Colleen Niklaus (women, Jan 2026)',iso:756,
+ hi:['Founded 2006; World Lacrosse full member 2008','13 member clubs 2025-26, including new Lugano Falcons (Ticino)','Sixes championship final: Chur, Nov 8, 2025','Swiss national TV (RSI, Sep 2025) featured lacrosse as emerging sport','Pursuing recognition with Swiss Olympic Committee'],
+ todo:['Field/box league details & history'],
+ note:'Multi-format pioneer. Sixes data solid. Field/box history still needed.'},
+{id:'fr',flag:'🇫🇷',name:'France',tier:1,pct:85,elf:null,formats:['Field','Box','Sixes'],clubs:13,instagram:'@francelacrosse',ig:4009,fed:'Association Française de Lacrosse (AFL)',website:'francelacrosse.org',coach:null,iso:250,
+ hi:['AFL NOT yet officially recognised by CNOSF — working toward federation status','Paul Maître president since March 2024 (founder François Labbé 2008-2024)','Boxmania (since 2009): annual Western European box tournament — 10+ nations','She-Boxmania 2025: first women\'s edition; Team Edin-Bru won inaugural','Alps Sixes Open: May 23-24, Grenoble (mixed sixes, 2026 calendar)','Heritage team 2024: 50%+ French players live abroad — diaspora pool'],
+ todo:['French TV coverage','Sixes & field champions 2025-26'],
+ note:'No official federation status yet. Strengths: Boxmania & Olympic buzz.'},
+{id:'it',flag:'🇮🇹',name:'Italy',tier:1,pct:87,elf:2003,formats:['Field','Sixes'],clubs:6,instagram:'@italia_lacrosse_official',ig:null,fed:'Federazione Italiana Giuoco Lacrosse (FIGL)',website:'italialacrosse.us',coach:'Brian Vona',iso:380,
+ hi:['2025 EUROPEAN CHAMPIONSHIP SILVER MEDAL — first ever final appearance','Path: 4-0 pool → QF Czech Rep 18-9 → SF Ireland 10-8 → Final Israel 9-8','World ranking #9 (2025). Qualified for 2027 World Championship in Japan','Ryan Bell: 6G+4A vs Czech Republic | John Piatelli: 7 pts in QF','Under Federazione Italiana Hockey governance since 2023'],
+ todo:['2024-25 domestic club champions','FIGL membership numbers'],
+ note:'2025 breakthrough. Arc: underdog to European finalist.'},
+{id:'en',flag:'🇬🇧',name:'England',tier:1,pct:85,elf:1995,formats:['Field','Box','Sixes'],clubs:50,instagram:null,ig:null,fed:'England Lacrosse',website:'englandlacrosse.co.uk',coach:null,iso:826,
+ hi:['9 men\'s European Championship gold medals | 7 women\'s golds','2025: Women\'s EC CHAMPIONS + Men\'s Box EC CHAMPIONS','Men\'s 2025 SF: lost to Israel 8-6 (was defending champion)','Men\'s 2025 National Final: Spencer 13-10 Poynton','Greater Manchester hub: 18 of 22 U20 World Champ players from 17-mile radius','Pop Lacrosse programme reaches 1,000+ coaches outside UK'],
+ todo:['National TV coverage specifics','Licensed player total 2025'],
+ note:'Historical dominant force. CEO: Mark Coups.'},
+{id:'ie',flag:'🇮🇪',name:'Ireland',tier:2,pct:90,elf:2002,formats:['Field','Box','Sixes'],clubs:6,instagram:null,ig:null,fed:'Ireland Lacrosse',website:'irelandlacrosse.ie',coach:null,iso:372,
+ hi:['Men\'s U20 European Championship 2024: GOLD (defeated England 10-7)','2025 EC: qualified for 2027 World Championship (QF win vs Germany)','Irish Lacrosse League (ILL) + Women\'s WILL + National Indoor NILL','Women\'s Box inaugural 2024 | Women\'s Sixes debut 2025 | Men\'s Sixes 2026','Heritage Cup 2025: Team Éire Green runners-up (32-team field)'],
+ todo:['National team head coaches','Club player numbers'],
+ note:'Strong trajectory. U20 gold 2024 + senior 2027 qualifier. Full multi-format.'},
+{id:'nl',flag:'🇳🇱',name:'Netherlands',tier:2,pct:90,elf:2004,formats:['Field','Sixes'],clubs:12,instagram:null,ig:null,fed:'Nederlandse Lacrosse Bond (NLB)',website:'nederlandlacrosse.nl',coach:'Neal Powless (asst.)',iso:528,
+ hi:['2010 World Championship 8th place — best field result ever','DNLL (men): 12 teams | WDNLL (women): 6 teams','NLL pros: Sam Haines (Toronto Rock) | Joshua Toguri (Rochester Knighthawks)','Neal Powless: 9× World Champ, former Haudenosaunee player, coach since 2017','2025 Euros: qualified for 2027 World Championship Division II'],
+ todo:['Head coach name','Club founding history'],
+ note:'12-team domestic league. Two NLL professionals. Consistent international.'},
+{id:'fi',flag:'🇫🇮',name:'Finland',tier:2,pct:90,elf:2004,formats:['Field','Box'],clubs:null,instagram:null,ig:null,fed:'Suomen Lacrosseliitto',website:'lacrosse.fi',coach:'Tracey Kelusky (box)',iso:246,
+ hi:['Hosted inaugural European Box Lacrosse Championship 2017 (Turku, 14 nations)','2025 EC pool: Finland 19 - Bulgaria 0','Qualified for 2027 World Championship Division II','Praha26 box project: European Box Champ Jun 24-Jul 4, 2026 Prague','Tryouts Sep 26-28 2025 (Turku); monthly training from Oct 2025'],
+ todo:['Domestic club count & structure','Field league details'],
+ note:'EBLC 2017 host. Growing box programme targeting Prague 2026.'},
+{id:'be',flag:'🇧🇪',name:'Belgium',tier:2,pct:90,elf:2009,formats:['Field','Box'],clubs:12,instagram:null,ig:null,fed:'Belgium Lacrosse',website:'belgiumlacrosse.be',coach:null,iso:56,
+ hi:['ELF Easter Tournament (Westerlo): flagship annual event (Apr 2024)','Ken Galluccio Cup: ELF official club championship, held annually 5+ years','12 active clubs across Flanders & Wallonia','2025 European Championship participation confirmed'],
+ todo:['National team coaching staff','League standings 2025'],
+ note:'Easter Tournament host. 12 active clubs. Benelux regional hub.'},
+{id:'hr',flag:'🇭🇷',name:'Croatia',tier:2,pct:90,elf:2016,formats:['Field'],clubs:3,instagram:null,ig:null,fed:'Croatian Lacrosse Association',website:'croatia-lacrosse.com',coach:'Mike Knezevich',iso:191,
+ hi:['Lacrosse founded 2011 Zagreb; first national team 2016','Dalmatia Lacrosse Cup (Split): since 2021, 24+ teams from 9 countries','2025 EC: qualified for 2027 World Championship Division II','Policy: 85% passport holders minimum, 15% heritage max'],
+ todo:['Club player numbers','Women\'s programme status'],
+ note:'Adriatic destination tournament. Young program, strong 2025 result.'},
+{id:'hu',flag:'🇭🇺',name:'Hungary',tier:2,pct:90,elf:2011,formats:['Field','Box'],clubs:null,instagram:null,ig:null,fed:'Hungarian Lacrosse Association',website:'hungarylacrosse.com',coach:null,iso:348,
+ hi:['Budapest Blax Lacrosse: founded March 2008 via NLL TV broadcasts','2009: entered Austrian Lacrosse League — first international competition','Hosted 2016 European Championships (Gödöllő, 24+ nations)','Heritage Cup 2025: Men\'s Open 20th (32-team field)'],
+ todo:['Current club count','Women\'s programme details'],
+ note:'Founded by one enthusiast via TV. EC 2016 host.'},
+{id:'es',flag:'🇪🇸',name:'Spain',tier:2,pct:90,elf:2004,formats:['Field','Sixes'],clubs:8,instagram:null,ig:null,fed:'Asociación Española de Lacrosse',website:'spainlacrosse.org',coach:'Mike Bartlett',iso:724,
+ hi:['Liga Española de Lacrosse: 9th edition+, 8 men\'s clubs','2025 EC: Spain 16-4 Sweden; qualified for 2027 World Champ Division II','HOST of 2026 European Sixes Championship (Salou): Nov 2-18','2026 ESC is 2027 World Lacrosse Sixes qualifier — Olympic pathway'],
+ todo:['Liga Española 2025 champion','Women\'s league standings'],
+ note:'2026 European Sixes host — key Olympic pathway event.'},
+{id:'sc',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Scotland',tier:2,pct:90,elf:1995,formats:['Field','Sixes'],clubs:8,instagram:null,ig:null,fed:'Lacrosse Scotland',website:'lacrossescotland.com',coach:null,iso:null,
+ hi:['Origin: Lockerbie disaster 1988 — Syracuse challenged Scotland to form national team','Annual Scotland vs Syracuse memorial match in Lockerbie','2025 Home Internationals host (Apr 4-6) — 16 squads, 6 nations','Women\'s 2024 EC (Braga): bronze medal, ranked #10 globally'],
+ todo:['Men\'s 2025 EC result','Licensed player total'],
+ note:'Unique founding story (Lockerbie). Strong university system.'},
+{id:'wa',flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Wales',tier:2,pct:90,elf:1995,formats:['Field'],clubs:null,instagram:null,ig:null,fed:'Lacrosse Wales',website:'lacrossewales.co.uk',coach:null,iso:null,
+ hi:['Women\'s medal streak: every EC since 1996 (except 2003)','Women\'s 2026 World Championship: qualified','Heritage Cup 2025 Women\'s: runners-up (Argentina 8-4 Wales)'],
+ todo:['Domestic club structure','Men\'s national team coach'],
+ note:'Women\'s programme excellence since 1996.'},
+{id:'no',flag:'🇳🇴',name:'Norway',tier:2,pct:90,elf:2008,formats:['Field','Sixes'],clubs:16,instagram:null,ig:null,fed:'Norwegian Lacrosse Federation',website:null,coach:'Dan Scolaro',iso:578,
+ hi:['~1,000 registered players, 16 active clubs nationwide','NHH Vikings (Bergen, 2004) + BI-Lions (Oslo, 2005): founding university clubs','Oslo Legends: 8× national champions','2025 EC: narrow win vs Portugal; qualified for 2027 Div II'],
+ todo:['Licensed player count','Women\'s 2025 EC result'],
+ note:'University-based model. 16 clubs, solid domestic league.'},
+{id:'sk',flag:'🇸🇰',name:'Slovakia',tier:2,pct:90,elf:2004,formats:['Field','Box'],clubs:6,instagram:'@slovak_lacrosse',ig:null,fed:'Slovak Lacrosse Federation',website:'lacrosse.sk',coach:'Dave Bremner',iso:703,
+ hi:['Bratislava Tricksters (2003): 9× Slovak Lacrosse League champions','2022 European Box Champ (Hannover): 5th place — historic best','Canadian Lacrosse League partnership 2023: heritage recruitment + coaching','2025 EC: dramatic comeback vs Greece; qualified for 2027 Div II'],
+ todo:['2025 SLL champion','Women\'s league details'],
+ note:'CLL partnership is unique asset. Central European box hub.'},
+{id:'si',flag:'🇸🇮',name:'Slovenia',tier:2,pct:90,elf:2005,formats:['Field'],clubs:2,instagram:null,ig:null,fed:'Lacrosse Zveza Slovenije',website:'lacrosse.si',coach:null,iso:705,
+ hi:['Lacrosse Olimpija & LK Ljubljana: both founded 2018','LK Ljubljana: 2× State Champion (2023)','First youth lacrosse programme in Slovenia at LK Ljubljana','Donau Lacrosse League: regional competition (AT, HU, surrounds)'],
+ todo:['National team head coach','Player count total'],
+ note:'2 active clubs, both Ljubljana. Youth outreach focus.'},
+{id:'il',flag:'🇮🇱',name:'Israel',tier:2,pct:90,elf:2011,formats:['Field','Box','Sixes'],clubs:6,instagram:'@israellacrosse',ig:20000,fed:'Israel Lacrosse Association',website:'lacrosse.co.il',coach:null,iso:376,
+ hi:['2025 EUROPEAN CHAMPIONSHIP GOLD — defeated Italy 9-8 (Jul 19, Wrocław)','Path: 4-0 pool → QF Czech Rep 8-7 → SF England 8-6 → Final Italy 9-8','World ranking #7 globally, #1 Europe (2025)','Daniel Kraft Family National Lacrosse Center (Netanya): only dedicated facility outside North America','Box: #5 world — won inaugural EBLC 2017 (defeated Czech 8-7)','Women\'s: #6 world, #2 Europe'],
+ todo:['National team head coach','IPPL 2025 champions'],
+ note:'2025 European Champions. Diaspora + grassroots model.'},
+{id:'gr',flag:'🇬🇷',name:'Greece',tier:3,pct:80,elf:null,formats:['Field','Sixes'],clubs:null,instagram:null,ig:null,fed:'Greece Lacrosse Association',website:'lacrosse.gr',coach:'Andrew Athens',iso:300,
+ hi:['Founded July 2014 during 2014 World Championship (Denver)','President: Anthony Katagas (Oscar-winning producer, "12 Years a Slave")','Boots on the Ground (2017+): 400+ students, Anatolia College Thessaloniki','YMCA Lacrosse Academy: first dedicated lacrosse academy in Greece','Greece Lacrosse Sixes Tourney: 3rd annual Oct 18-19, 2025 (Thessaloniki)'],
+ todo:['2025 EC result','Club count in Greece'],
+ note:'Oscar-winner as president. Diaspora + grassroots model.'},
+{id:'pt',flag:'🇵🇹',name:'Portugal',tier:3,pct:80,elf:2016,formats:['Field','Sixes'],clubs:null,instagram:null,ig:null,fed:'Portugal Lacrosse Board',website:'portugallacrosse.com',coach:null,iso:620,
+ hi:['Lisboa Gladiators: first club Sep 2015','EuroLax Sixes Cup (Monte Gordo, Algarve): annual flagship, 350+ players','2025 Women\'s Sixes Qualifier (Mar 4-9): 12 teams for World Games qualification','Lisboa Lacrosse Cup: 9th edition 2025, 16 teams from 6+ countries','Women\'s national team debut 2024'],
+ todo:['Men\'s head coach','Club total across Portugal'],
+ note:'EuroLax Sixes Cup host. Rapid expansion post-2022.'},
+{id:'at',flag:'🇦🇹',name:'Austria',tier:3,pct:82,elf:2005,formats:['Field','Box'],clubs:null,instagram:null,ig:null,fed:'Österreichischer Lacrosse Verband',website:null,coach:null,iso:40,
+ hi:['Vienna Monarchs (2007): flagship club, 20th anniversary 2025','NBLL 2025: first Austrian NBLL team — historic inaugural participation','Twin Stick Bavaria: partnership with VER Selb ice hockey for summer training','Multi-league model: Czech NBLL + Slovak SLL + Donau regional'],
+ todo:['ÖLaxV club count','National team coaching staff'],
+ note:'Vienna Monarchs driving box growth. Cross-border model.'},
+{id:'tr',flag:'🇹🇷',name:'Turkey',tier:3,pct:80,elf:null,formats:['Field','Sixes'],clubs:null,instagram:null,ig:null,fed:'Turkish Lacrosse Association',website:'turkeylacrosse.com',coach:null,iso:792,
+ hi:['Founded 2009 by Patrick Dougherty — "Father of Turkish Lacrosse"','First predominantly Muslim-majority nation in FIL + ELF','2014 World Championship debut (22nd place)','Women\'s national team formation underway 2024-2025','Balkans League planning with Bulgaria, Serbia'],
+ todo:['Current men\'s coach','Women\'s team roster status'],
+ note:'Historic milestone: first Muslim-majority nation in international lacrosse.'},
+{id:'bg',flag:'🇧🇬',name:'Bulgaria',tier:3,pct:80,elf:null,formats:['Field'],clubs:4,instagram:null,ig:null,fed:'Bulgarian Lacrosse Federation',website:null,coach:'Tucker LaBelle',iso:100,
+ hi:['Founded 2007 by Nikolay Cholakov','Bulgarian Olympic Committee recognition 2024-2025','Head coach Tucker LaBelle (2024): homegrown talent only — no heritage players','2025 EC pool: Finland 19 - Bulgaria 0 (group stage)','Balkans League development with Serbia, Turkey, Croatia'],
+ todo:['Women\'s team formation status','Olympic Committee funding timeline'],
+ note:'Pure homegrown model. Olympic recognition 2024-25.'},
+{id:'ee',flag:'🇪🇪',name:'Estonia',tier:3,pct:76,elf:null,formats:['Field'],clubs:null,instagram:null,ig:null,fed:'Estonian Lacrosse Federation',website:null,coach:null,iso:233,
+ hi:['ELF member','Baltic Council of Ministers Presidency 2026','Nordic-Baltic Eight (NB8) cooperation','2025 EC participation (Wrocław) confirmed'],
+ todo:['Club count & names','Federation leadership'],
+ note:'Baltic regional coordination role.'},
+{id:'lv',flag:'🇱🇻',name:'Latvia',tier:3,pct:76,elf:null,formats:['Field'],clubs:null,instagram:null,ig:null,fed:'Latvian Lacrosse Federation',website:null,coach:null,iso:428,
+ hi:['ELF member','Baltic Council of Ministers Presidency 2025 (Riga)','NB8 Coordinator','2025 EC participation confirmed'],
+ todo:['Club count','Domestic competition structure'],
+ note:'Baltic regional hub.'},
+{id:'lt',flag:'🇱🇹',name:'Lithuania',tier:3,pct:76,elf:null,formats:['Field'],clubs:null,instagram:null,ig:null,fed:'Lithuanian Lacrosse Federation',website:null,coach:null,iso:440,
+ hi:['ELF member','Baltic Council of Ministers Presidency 2027','NB8 leadership 2023-2024','2025 EC participation confirmed'],
+ todo:['Club count','Federation leadership'],
+ note:'Third Baltic state. BCM 2027 presidency.'},
+{id:'lu',flag:'🇱🇺',name:'Luxembourg',tier:3,pct:75,elf:null,formats:['Field'],clubs:null,instagram:null,ig:null,fed:'Luxembourg Lacrosse Federation',website:null,coach:null,iso:442,
+ hi:['ELF member | Population ~630K','Cross-border model: players compete in Belgian DNLL + French regional','Ken Galluccio Cup participation','2025 EC participation confirmed'],
+ todo:['Federation leadership','Domestic club count'],
+ note:'Micro-nation cross-border model.'},
+{id:'mt',flag:'🇲🇹',name:'Malta',tier:3,pct:75,elf:null,formats:['Field'],clubs:null,instagram:null,ig:null,fed:'Malta Lacrosse Federation',website:null,coach:null,iso:470,
+ hi:['ELF member | Island nation, population ~535K','Youth-first strategy: school integration priority','PE class integration across Maltese education','Summer youth camps (ages 6-18)'],
+ todo:['Club count','Federation leadership'],
+ note:'Island nation. Youth-first model. Mediterranean expansion potential.'},
+{id:'rs',flag:'🇷🇸',name:'Serbia',tier:3,pct:77,elf:null,formats:['Field','Box'],clubs:null,instagram:null,ig:null,fed:'Serbian Lacrosse Federation',website:null,coach:null,iso:688,
+ hi:['ELF member','NBLL box lacrosse participation','Belgrade-based primary clubs','Balkans League coordination with Bulgaria, Turkey, Croatia'],
+ todo:['Club names & count','Federation leadership'],
+ note:'Central European box hub. Balkans growth catalyst.'},
+{id:'am',flag:'🇦🇲',name:'Armenia',tier:3,pct:76,elf:null,formats:['Field'],clubs:null,instagram:null,ig:null,fed:'Armenian Lacrosse Federation',website:null,coach:null,iso:51,
+ hi:['ELF member | Diaspora-driven model','Armenian-American diaspora from Boston primary player source','Yerevan-based headquarters','Heritage Cup (Boston) flagship participation'],
+ todo:['Club count in Armenia','Federation leadership'],
+ note:'Diaspora-first model. Boston Armenian community drives programme.'},
+{id:'ua',flag:'🇺🇦',name:'Ukraine',tier:3,pct:82,elf:2018,formats:['Field','Sixes'],clubs:null,instagram:null,ig:null,fed:'Ukrainian Lacrosse Federation',website:null,coach:null,iso:804,
+ hi:['War impact Feb 2022+: training suspended, players displaced across Europe','2025 recovery: national team rebuilding, youth programme restarting','UNDP adaptive sports training Mar 2025 Kyiv: lacrosse for war-affected youth','Athletes for Ukraine coalition: solidarity & peace platform','2025 EC: both national teams competing in Wrocław'],
+ todo:['Current national team coach','Domestic club restart status'],
+ note:'Resilience narrative. Sport as nation-building during recovery.'},
+];
+
+const BY_ID=Object.fromEntries(NATIONS.map(n=>[n.id,n]));
+const BY_ISO=Object.fromEntries(NATIONS.filter(n=>n.iso).map(n=>[n.iso,n]));
+
+let activeTier='all';
+let selected=null;
+let currentTab='map';
+let svg=null, pathGen=null;
+
+function filterTier(t,btn){
+  activeTier=t;
+  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderList();
+  if(svg) updateMapColors();
+}
+
+function switchTab(t){
+  currentTab=t;
+  document.querySelectorAll('.vtab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  document.getElementById('view-map').style.display=t==='map'?'flex':'none';
+  document.getElementById('view-detail').style.display=t==='detail'?'block':'none';
+  document.getElementById('view-list').style.display=t==='list'?'block':'none';
+  if(t==='list') renderListCards();
+}
+
+function selectNation(n){
+  selected=n;
+  renderList();
+  renderDetail(n);
+  document.getElementById('tab-detail').style.display='';
+  switchTab('detail');
+}
+
+function renderList(){
+  const el=document.getElementById('clist');
+  const ns=NATIONS.filter(n=>activeTier==='all'||String(n.tier)===activeTier);
+  el.innerHTML=ns.map(n=>`
+    <div class="ci${selected&&selected.id===n.id?' sel':''}" onclick="selectNation(BY_ID['${n.id}'])">
+      <div class="flag">${n.flag}</div>
+      <div class="info"><div class="nm">${n.name}</div><div class="sub">Tier ${n.tier}</div></div>
+      <div class="pct">${n.pct}%</div>
+    </div>`).join('');
+}
+
+function renderDetail(n){
+  const de=document.getElementById('detail-empty');
+  const dc=document.getElementById('detail-content');
+  de.style.display='none';
+  dc.style.display='block';
+  const fmts=n.formats.map(f=>`<span class="chip">${f}</span>`).join('');
+  const his=n.hi.map(h=>`<div class="hi">${h}</div>`).join('');
+  const todos=n.todo.map(t=>`<div class="todo">To research: ${t}</div>`).join('');
+  dc.innerHTML=`
+    <div class="d-header">
+      <div class="d-flag">${n.flag}</div>
+      <div class="d-meta">
+        <div class="d-name">${n.name}</div>
+        <span class="d-tier">${TIER_LABEL[n.tier]}</span>
+        <div class="d-fed">${n.fed}${n.website?' · '+n.website:''}</div>
+        <div class="d-bar-wrap"><div class="d-bar"><div class="d-bar-fill" style="width:${n.pct}%"></div></div><div class="d-pct">${n.pct}%</div></div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-c"><div class="sv">${n.pct}%</div><div class="sl">Completion</div></div>
+      <div class="stat-c"><div class="sv">${n.formats.length}</div><div class="sl">Formats</div></div>
+      ${n.clubs?`<div class="stat-c"><div class="sv">${n.clubs}</div><div class="sl">Clubs</div></div>`:''}
+      ${n.ig?`<div class="stat-c"><div class="sv">${(n.ig/1000).toFixed(1)}K</div><div class="sl">IG</div></div>`:''}
+      ${n.elf?`<div class="stat-c"><div class="sv">${n.elf}</div><div class="sl">ELF since</div></div>`:''}
+    </div>
+    <div class="sec"><div class="sec-title">Formats</div>${fmts}</div>
+    ${n.coach?`<div class="sec"><div class="sec-title">Head coach</div><div style="font-size:13px;color:#0D2240">${n.coach}</div></div>`:''}
+    <div class="sec"><div class="sec-title">Key highlights</div>${his}</div>
+    ${todos?`<div class="sec"><div class="sec-title">Still to research</div>${todos}</div>`:''}
+    ${n.note?`<div class="sec"><div class="sec-title">Editor note</div><div class="note-box">${n.note}</div></div>`:''}
+    <div style="margin-top:16px">
+      <button onclick="switchTab('map')" style="font-size:12px">← Back to map</button>
+    </div>`;
+}
+
+function renderListCards(){
+  const lc=document.getElementById('list-content');
+  const ns=NATIONS.filter(n=>activeTier==='all'||String(n.tier)===activeTier);
+  lc.innerHTML=ns.map(n=>`
+    <div onclick="selectNation(BY_ID['${n.id}'])" style="background:#fff;border:.5px solid #E0DACC;border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;break-inside:avoid">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <span style="font-size:1.2em">${n.flag}</span>
+        <span style="font-weight:500;font-size:13px">${n.name}</span>
+        <span style="margin-left:auto;font-size:11px;color:#7A56C2;font-weight:500">${n.pct}%</span>
+      </div>
+      <div style="font-size:11px;color:#7A90A8">${TIER_LABEL[n.tier]} · ${n.formats.join(', ')}</div>
+    </div>`).join('');
+}
+
+function nationColor(n,faded){
+  if(!n) return faded?'#E0DACC':'#E8E5DF';
+  if(activeTier!=='all'&&String(n.tier)!==activeTier) return '#E8E5DF';
+  const base=TIER_COLORS[n.tier];
+  return faded?base+'99':base;
+}
+
+function updateMapColors(){
+  if(!svg) return;
+  svg.selectAll('path.country')
+    .attr('fill',d=>{
+      const n=BY_ISO[+d.id];
+      return nationColor(n,false);
+    })
+    .attr('stroke-width',d=>{
+      const n=BY_ISO[+d.id];
+      return selected&&n&&n.id===selected.id?2.5:0.5;
+    })
+    .attr('stroke',d=>{
+      const n=BY_ISO[+d.id];
+      return selected&&n&&n.id===selected.id?'#fff':'rgba(255,255,255,0.4)';
+    });
+}
+
+function buildMap(){
+  const wrap=document.getElementById('euromap');
+  const W=wrap.clientWidth||700, H=wrap.clientHeight||420;
+  const tt=document.getElementById('tooltip');
+
+  svg=d3.select('#euromap').append('svg')
+    .attr('width','100%').attr('height','100%')
+    .attr('viewBox',`0 0 ${W} ${H}`);
+
+  const proj=d3.geoMercator()
+    .center([15,54]).scale(Math.min(W,H)*1.1)
+    .translate([W/2,H/2]);
+
+  pathGen=d3.geoPath(proj);
+
+  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world=>{
+    const countries=topojson.feature(world,world.objects.countries);
+    const europeanIDs=new Set([8,20,40,56,70,100,112,191,203,208,218,233,246,250,276,300,348,352,372,380,382,428,438,440,442,470,492,499,528,578,616,620,642,688,703,705,724,752,756,792,804,807,826]);
+
+    svg.selectAll('path.country')
+      .data(countries.features.filter(f=>europeanIDs.has(+f.id)))
+      .join('path')
+      .attr('class','country')
+      .attr('d',pathGen)
+      .attr('fill',d=>{
+        const n=BY_ISO[+d.id];
+        return nationColor(n,false);
+      })
+      .attr('stroke','rgba(255,255,255,0.4)')
+      .attr('stroke-width',0.5)
+      .style('cursor',d=>BY_ISO[+d.id]?'pointer':'default')
+      .on('mouseover',function(evt,d){
+        const n=BY_ISO[+d.id];
+        if(!n) return;
+        d3.select(this).attr('opacity',0.75);
+        tt.style.opacity='1';
+        tt.innerHTML=`<div class="tt-name">${n.flag} ${n.name}</div><div class="tt-tier">${TIER_LABEL[n.tier]} · ${n.pct}% documented</div>`;
+      })
+      .on('mousemove',function(evt){
+        const rect=document.getElementById('euromap').getBoundingClientRect();
+        const x=evt.clientX-rect.left, y=evt.clientY-rect.top;
+        tt.style.left=(x+12)+'px'; tt.style.top=(y-10)+'px';
+      })
+      .on('mouseout',function(evt,d){
+        d3.select(this).attr('opacity',1);
+        tt.style.opacity='0';
+      })
+      .on('click',function(evt,d){
+        const n=BY_ISO[+d.id];
+        if(!n) return;
+        selectNation(n);
+        updateMapColors();
+      });
+  }).catch(()=>{});
+}
+
+renderList();
+setTimeout(buildMap,100);
+</script>
