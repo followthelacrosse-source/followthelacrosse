@@ -1,166 +1,241 @@
-# REPORT — tournaments.html · État final consolidé
-**Follow The Lacrosse · 2026-04-09**
-**Lots : initial · verrouillage éditorial · correctif CTA/layout/archives**
+# REPORT — tournaments.html · État courant
+
+**Date** : 2026-04-27  
+**Lots couverts** : LOT 0 (initial) · LOT 1 V1/V2 (restructuration stratifiée) · LOT 2 (classification réelle)  
+**Statut** : Livré — 6 sections, données réelles, placeholders signalés
 
 ---
 
-## A. Hiérarchie finale réelle de tournaments.html
+## A. Architecture finale — 6 sections stratifiées
 
 ```
-1. <header> — nav sombre, logo, Countries, newsletter CTA
-2. <section class="hero-page"> — promesse calendrier européen curé
-3. <div class="subnav"> — navigation sections (ancres), sticky top:60px
-4. <section id="continental" class="s bg-dark"> — calendrier continental (3 cartes)
-5. <section id="national" class="s bg-white"> — événements nationaux (5 cartes + bouton bas)
-6. <section id="league-watch" class="s"> — watchlist éditoriale (3 cartes + bouton bas)
-7. <section id="country-gateways" class="s-sm bg-ivoire"> — passerelles pays (6 cartes + bouton bas)
-8. <section id="archives" class="s-sm bg-white"> — Previously in Europe + org-cta
-9. <div class="nl-dark"> — newsletter
-10. <footer> — footer avec Countries
+1. <header>           — nav sombre sticky, logo, liens principaux
+2. <section class="hero-page">  — kicker + titre + promesse éditoriale
+3. <div class="subnav">         — navigation ancres sticky top:60px
+4. S01 #european-competitive-layer  bg-dark  — couche continentale officielle
+5. S02 #key-tournaments             bg-white — tournois clés éditoriaux
+6. S03 #editorial-watchlist         bg-      — signaux FTL en observation
+7. S04 #domestic-league-tracking    bg-ivoire — structures nationales
+8. S05 #results-data               bg-white  — appendice externe (s-sm)
+9. S06 #country-gateways           bg-ivoire  — navigation pays (s-sm)
+10. <div class="nl-dark">           — newsletter
+11. <footer>                        — footer complet
 ```
 
 ---
 
-## B. Rôle de chaque section
+## B. Rôle éditorial par section
 
-| Section | Rôle éditorial | Identité visuelle |
-|---------|---------------|-------------------|
-| S01 Continental | Sommet hiérarchique — ELF + continental | Fond nuit, cartes semi-transparentes |
-| S02 National Events | Championnats et coupes nationaux | Fond blanc, tc-new, bouton bas de fermeture |
-| S03 League Watch | Watchlist éditoriale — scènes domestiques | Fond bg, match-card accent gauche, bouton bas |
-| S04 Country Gateways | Passerelle vers les 6 scènes concernées | Fond ivoire, grille 3 col, bouton bas |
-| Previously in Europe | Ressources externes saison 2025 + contexte pays | Fond blanc, liste compacte, lien pays repli |
-
----
-
-## C. Décisions structurelles — lot initial
-
-| Élément | Décision |
-|---------|----------|
-| `.sponsor-bar` | Supprimé HTML + CSS |
-| Subnav filtres → ancres | Convertis — JS filter était factice |
-| Selects redondants | Supprimés |
-| nl-strip → nl-dark | Harmonisation |
-| CSS orphelins (~120 lignes) | Supprimés |
-| Countries dans nav + footer | Ajouté |
+| Section | Rôle | Composant cartes | Nb cartes |
+|---------|------|-----------------|-----------|
+| S01 European Competitive Layer | Sommet hiérarchique : championnats continentaux officiels | `.cont-card` bg-dark | 3 |
+| S02 Key Tournaments | Tournois qui révèlent un momentum national ou méritent attention | `.tc-new` bg-white | 7 |
+| S03 Editorial Watchlist | Signaux FTL — observation, pas couverture confirmée | `.match-card` | 2 |
+| S04 Domestic League Tracking | Structures nationales récurrentes + coupes nationales | `.match-card` | 8 |
+| S05 Results & Data Sources | Appendice externe — références passées, non-couverture FTL | `.past-item` | 3 |
+| S06 Country Gateways | Navigation vers les scènes nationales | `.gw-card` | 6 |
 
 ---
 
-## D. Décisions — lot verrouillage éditorial
+## C. LOT 1 — Restructuration stratifiée (2026-04-[antérieur])
 
-### D1. S03 League Watch — requalification watchlist
+### Ce qui a changé vs l'état initial
 
-**Avant :** fixtures inventées avec clubs fictifs, rounds précis, dates fixes.
-**Après :** watchlist éditoriale — nom de ligue réel, label éditorial (Weekend Watch / Domestic Watch / Matchday Watch), pas de clubs ni de dates fictives.
+| Avant | Après |
+|-------|-------|
+| 4 sections sans logique de strates | 6 sections stratifiées par niveau hiérarchique |
+| Section "League & Match Watch" à plat | Split S03 (watchlist éditoriale) + S04 (structures nationales) |
+| Country Gateways en milieu de page | Country Gateways en dernière position (lecture séquentielle) |
+| "Season Archives" = faux archives FTL | "Results & Data Sources" = appendice externe honnête |
+| Vocabulaire mélangé (watchlist / league / match) | Doctrine lexicale claire par section |
 
-**Logique :** S03 signale ce que FTL surveille dans les scènes domestiques, pas ce qu'il certifie comme calendrier officiel. La différence est éditoriale et fondamentale pour la crédibilité du hub.
+### Doctrine lexicale établie en LOT 1
 
-### D2. Country Gateways — règle data-driven
-
-**Règle appliquée :** seuls les pays référencés dans S01/S02/S03 sont affichés.
-
-| Pays | Présent dans |
-|------|-------------|
-| England | S01 (London), S03 (Box League) |
-| France | S02 (French Nationals), S03 (Ligue Nationale) |
-| Germany | S02 (Berlin Box), S03 (Bundesliga) |
-| Netherlands | S02 (Amsterdam Sixes) |
-| Italy | S02 (Italian Cup) |
-| Czech Republic | S02 (Prague Sixes) |
-| Sweden | ✗ absent — retiré |
-| Spain | ✗ absent — retiré |
-
-### D3. Previously in Europe — ressources externes
-
-**Avant :** "Season Archives" + lien "Browse coverage →" vers `articles.html`.
-**Problème :** impliquait une archive FTL interne inexistante.
-**Après :** "Previously in Europe" + microcopie explicite ("Not internal FTL coverage") + liens supprimés.
+| Section | `.match-vs` autorisés | `.match-signal` autorisés |
+|---------|----------------------|--------------------------|
+| S03 Watchlist | "Under Observation" | "FTL Watchlist" |
+| S04 Domestic | "National Competition", "National Championship" | "League Structure", "Cup Competition" |
 
 ---
 
-## E. Décisions — mini-lot correctif CTA/layout/archives
+## D. LOT 2 — Classification réelle avec données (2026-04-27)
 
-### E1. CTA — correction de la logique de fermeture de section
+### D1. S01 — European Competitive Layer
 
-**Mauvaise interprétation dans le lot précédent :** les boutons de fin de section de S02 et S03 avaient été supprimés au motif de "doublon". C'était incorrect.
+**Avant :** ELF Spring 2026 (London, confirmé) + 2 placeholders ("European Sixes Invitational", "European Box Cup").
 
-**La logique correcte :**
-- Les cartes individuelles servent de liens *spécifiques* (événement précis, ligue précise, pays précis).
-- Le bouton bas de section sert de *sortie générique* — fermeture de section et navigation large.
-- Ce ne sont pas deux commandes identiques : elles opèrent à des niveaux différents.
+**Après :**
 
-**État final :**
+| Carte | Statut | Source |
+|-------|--------|--------|
+| ELF Spring Championship 2026 — London, April 5–6 | ✓ Confirmé — **Completed** (marker ajouté) | ELF officiel |
+| European Box Lacrosse Championships 2026 — Prague, June 25–Jul 4 | ✓ Confirmé | Source briefe LOT 2 |
+| European Sixes Lacrosse Championships 2026 — Salou, Spain, Nov 2–18 | ✓ Confirmé — World Champs 2027 Qualification | Source briefe LOT 2 |
 
-| Section | CTA header | Bouton bas | Justification |
-|---------|-----------|-----------|---------------|
-| S02 National Events | ~~"Explore by country →"~~ — **supprimé** | "Explore by country →" → countries.html — **ajouté** | Un seul point de commande, placé en fermeture naturelle de section |
-| S03 League Watch | Aucun (jamais eu) | "Explore all scenes →" → countries.html — **ajouté** | Fermeture + sortie générique |
-| S04 Country Gateways | Aucun | "All countries & scenes →" — **conservé** | Déjà présent et juste |
+**Placeholders supprimés :** "European Sixes Invitational 2026", "European Box Cup 2026" — entièrement retirés du HTML.
 
-**Note :** le CTA header de S02 ("Explore by country →") a été retiré car sa position à droite du titre créait une ambiguïté : est-ce la commande principale de la section ou un raccourci optionnel ? Le bouton bas est plus lisible comme fermeture de section.
+**Note ELF Spring :** événement passé (April 5–6, aujourd'hui April 27). Conservé avec marker "Completed · April 5–6" dans `.cont-row`. Justification : événement réel continental visible cette saison.
 
-### E2. Country Gateways — correction layout
+### D2. S02 — Key Tournaments
 
-**Problème :** `grid-template-columns: repeat(4, 1fr)` avec 6 items = 4 cartes ligne 1 + 2 cartes ligne 2 (trou de 2 colonnes). Rendu visuellement déséquilibré.
+**Avant :** 5 cartes — Amsterdam Sixes Open, French Nationals Div 1, Berlin Box Invitational, Prague Sixes Classic, Italian Cup Round 2.
 
-**Correction :** `repeat(3, 1fr)` → 2 rangées de 3 cartes, grille propre, aucun trou.
+**Après :** 7 cartes.
 
-| Breakpoint | Avant | Après |
-|-----------|-------|-------|
-| Desktop (>900px) | 4 colonnes — trou | 3 colonnes — 2 rangées pleines |
-| Tablet (≤900px) | 2 colonnes | 2 colonnes — inchangé |
-| Mobile (≤600px) | 2 colonnes | 2 colonnes — inchangé |
+| Carte | Action | Données |
+|-------|--------|---------|
+| Amsterdam Sixes Open | Conservé + marqué "Completed · April 19" | Réel · date initiale confirmée |
+| Aleš Hřebeský Memorial | Remplace "Prague Sixes Classic" | Réel · Box · Prague · 2026 Date TBC |
+| EuroLax Sixes Cup | Ajouté | Réel · Sixes · Portugal · Date TBC |
+| Berlin Open | Remplace "Berlin Box Invitational" | Réel · Box · Berlin · Date TBC |
+| Frank Menschner Cup | Ajouté | Réel · Box · Prague · Date TBC |
+| G6 Groningen | Ajouté | Réel · Sixes · Groningen · Date TBC |
+| Alps Sixes Open | Ajouté | Réel · Sixes · Alps Region · Date TBC |
+| French Nationals Div 1 | **Déplacé → S04** | — |
+| Italian Cup Round 2 | **Déplacé → S04** | — |
 
-La logique data-driven (6 pays réels) est conservée. Seul le layout est corrigé.
+**Placeholders structurels assumés (S02) :** 5 cartes sur 7 affichent "2026 · Date TBC" — dates 2026 non publiées au moment du lot. Les noms d'événements sont réels et annuels.
 
-### E3. Previously in Europe — lien de repli vers les pages pays
+### D3. S03 — Editorial Watchlist
 
-**Problème :** la section était sémantiquement honnête mais passive — aucun lien actif, donc aucune navigation possible depuis ces items.
+**Avant :** England Box League (Weekend Watch) + Ligue Nationale Field (Under Observation) — deux structures leagues clairement identifiées, mal placées en "watchlist".
 
-**Logique de repli :**
-- Aucune source externe vérifiée disponible → pas de lien externe inventé.
-- Mais les pays de chaque événement ont une page pays existante.
-- Ces pages offrent du *contexte de scène*, pas des résultats — c'est honnête et utile.
+**Après :** 2 signaux réellement éditoriaux.
 
-**État final par item :**
+| Carte | Statut | Nature |
+|-------|--------|--------|
+| Boxmania 2026 — Belgium · Box | Réel · date non publiée | Placeholder de date assumé |
+| Dalmatia Lacrosse Cup — Croatia · Sixes | Réel · édition 2026 non confirmée | Événement non confirmé assumé |
 
-| Item | Lien ajouté | Destination | Wording |
-|------|------------|-------------|---------|
-| European Championship Qualifiers | ✓ | `country-czech-republic.html` | "Country scene →" |
-| Paris Sixes Invitational | ✓ | `country-france.html` | "Country scene →" |
-| Milan Indoor Classic | ✓ | `country-italy.html` | "Country scene →" |
+**England Box League + Ligue Nationale Field déplacés → S04** (structures nationales, pas signaux watchlist).
 
-**Ce qui n'a PAS été fait :** lien vers articles.html, lien fictif Pointbench, texte "Browse coverage", toute formulation suggérant que FTL héberge des résultats.
+### D4. S04 — Domestic League Tracking
+
+**Avant :** 1 carte (Bundesliga Field).
+
+**Après :** 8 structures, 2 types.
+
+| Carte | Type | Pays | Lien |
+|-------|------|------|------|
+| England Box League | League Structure | England | country-england.html ✓ |
+| Ligue Nationale Field | League Structure | France | country-france.html ✓ |
+| Bundesliga Field | League Structure | Germany | country-germany.html ✓ |
+| DNLL — Dutch National Lacrosse League | League Structure | Netherlands | country-netherlands.html ✓ |
+| Liga Española de Lacrosse | League Structure | Spain | country-spain.html ✓ |
+| Campionato Field | League Structure | Italy | country-italy.html ✓ |
+| French Nationals Div 1 | Cup Competition | France | country-france.html ✓ |
+| Italian Cup Round 2 | Cup Competition | Italy | country-italy.html ✓ |
+
+**Note :** French Nationals (April 26–27) et Italian Cup (May 24) conservent leur date d'origine. Le Nationals est contemporain (April 26–27, aujourd'hui April 27). Aucune date inventée.
+
+### D5. S05 — Results & Data Sources
+
+Aucune modification de fond. Section conservée telle quelle (appendice externe honnête, 3 items 2025, org-cta).
+
+### D6. S06 — Country Gateways
+
+Aucune modification. 6 pays confirmés (England, France, Germany, Netherlands, Italy, Czech Republic).
 
 ---
 
-## F. Vérifications finales
+## E. CSS — Ajout minimal LOT 2
 
-- [x] S02 : CTA header supprimé — 0 occurrence `see-all` dans S02
-- [x] S02 : bouton bas "Explore by country →" présent en `.section-cta`
-- [x] S03 : bouton bas "Explore all scenes →" présent en `.section-cta`
-- [x] S04 : bouton bas "All countries & scenes →" conservé
-- [x] `gw-grid` = `repeat(3,1fr)` — 2 rangées de 3, aucun trou
-- [x] Responsive gw-grid : 2 col ≤900px, 2 col ≤600px — inchangé
-- [x] 6 pays dans S04 : England, France, Germany, Netherlands, Italy, Czech Republic
-- [x] Sweden et Spain absents — non référencés dans S01/S02/S03
-- [x] Previously in Europe : 3 liens "Country scene →" vers les pages pays correspondantes
-- [x] 0 lien vers articles.html dans Previously in Europe
-- [x] 0 lien Pointbench inventé
-- [x] "External source TBC" maintenu sur les 3 items
-- [x] S03 watchlist : 0 club fictif, 0 round fictif, 0 date fictive
-- [x] DOM vérifié — fermetures balises correctes sur S02, S03, S04, archives
-- [x] Aucun lien cassé vers des pages existantes
+| Règle ajoutée | Justification |
+|---------------|---------------|
+| `.match-badge-si{background:rgba(122,86,194,.15);color:var(--mauve-dk)}` | Sixes badge dans `.match-card` — utilisé en S03 (Dalmatia Lacrosse Cup) |
 
 ---
 
-## G. Dettes résiduelles
+## F. Dettes restantes
 
-| Dette | Type | Priorité |
-|-------|------|----------|
-| `tournament-detail.html` placeholder — S01 et S02 y pointent | Lien fictif | Lot tournaments détail |
-| C2 / C3 (Sixes Invitational, Box Cup) — noms non vérifiés | Placeholder structurel visible | Lot calendrier ELF |
-| ELF Spring Championship "Men & Women" — non vérifié | Donnée à confirmer | Vérification ELF |
-| Previously in Europe — sources externes non injectées | TBC | Lot sources (Pointbench, fédérations) |
-| Formats par pays dans S04 — estimés | Non vérifiés | Lot pays |
-| England flag = UK (🇬🇧) et non England (🏴󠁧󠁢󠁥󠁮󠁧󠁿) | Simplification assumée | Cohérence globale |
+| Dette | Nature | Priorité |
+|-------|--------|----------|
+| `tournament-detail.html` placeholder | Lien fictif — S01, S02 y pointent | Lot pages détail |
+| S02 — 5 cartes "2026 · Date TBC" | Placeholder de date structurel assumé | À mettre à jour dès publication des dates |
+| S03 — Dalmatia Lacrosse Cup | Événement non confirmé assumé | À vérifier avant couverture |
+| S03 — Boxmania 2026 | Date non publiée | À mettre à jour dès annonce |
+| ELF Spring "Men & Women" | Non vérifié formellement | Confirmation ELF |
+| S05 — "External source TBC" | Sources externes non encore identifiées | Lot sources Pointbench/fédérations |
+| S06 — Spain non dans Country Gateways | country-spain.html existe mais non référencé en S06 | Cohérence à évaluer si LEL devient éditoriale |
+| England flag 🇬🇧 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 | Simplification assumée | Cohérence globale |
+| S05 — Paris Sixes Invitational (2025) | Nom non vérifiable formellement | Placeholder assumé |
+| S05 — Milan Indoor Classic (2025) | Nom non vérifiable formellement | Placeholder assumé |
+
+---
+
+## G. Vérifications finales
+
+- [x] DOM vérifié — 6 sections dans l'ordre : S01 → S02 → S03 → S04 → S05 → S06
+- [x] Subnav : 6 ancres alignées avec les 6 `id` de section
+- [x] S01 : 0 placeholder — 3 événements continentaux réels confirmés
+- [x] S01 : C2/C3 anciens placeholders entièrement supprimés du HTML
+- [x] S01 : ELF Spring marqué "Completed · April 5–6" via `.cont-row`
+- [x] S02 : 7 cartes — "French Nationals" et "Italian Cup" supprimés de S02
+- [x] S02 : "Berlin Box Invitational" → "Berlin Open", "Prague Sixes Classic" → "Aleš Hřebeský Memorial"
+- [x] S02 : Amsterdam Sixes Open marqué "Completed · April 19"
+- [x] S03 : England Box League + Ligue Nationale retirés — remplacement par Boxmania + Dalmatia
+- [x] S03 : `.match-badge-si` défini en CSS et utilisé (Dalmatia Lacrosse Cup · Sixes)
+- [x] S04 : 8 cartes — Bundesliga + 5 nouvelles leagues + 2 coupes nationales
+- [x] S04 : intro mise à jour ("league structures, domestic rounds **and national cups**")
+- [x] S04 : tous les liens vers country pages vérifiés (`country-*.html` existants)
+- [x] S04 : "Cup Competition" / "National Championship" utilisés uniquement pour les cartes cups
+- [x] S04 : "League Structure" / "National Competition" utilisés uniquement pour les cartes leagues
+- [x] S05 : aucune modification — appendice conservé intact
+- [x] S06 : aucune modification — 6 passerelles intactes
+- [x] Vocabulaire doctrinal : 0 occurrence "Weekend Watch" / "Matchday Watch" / "Domestic Watch"
+- [x] Vocabulaire doctrinal : "FTL Watchlist" uniquement en S03, "League Structure" uniquement en S04
+- [x] CSS inline : `.match-badge-si` ajouté, aucun style orphelin créé
+- [x] Aucune donnée inventée — dates inconnues → "Date TBC" assumé explicite
+- [x] Mobile responsive : grilles existantes couvrent les nouveaux blocs (match-grid, tc-grid déjà responsive)
+
+---
+
+## H. DATA QUALITY corrective pass (2026-04-27)
+
+### Données corrigées
+
+| Événement | Champ | Avant | Après |
+|-----------|-------|-------|-------|
+| Aleš Hřebeský Memorial | Date | "2026 · Date TBC" | "Completed · April 22–25, 2026" |
+| EuroLax Sixes Cup | Date + statut | "2026 · Date TBC" | "Completed · Feb 27 – Mar 1, 2026" |
+| Berlin Open | Date | "2026 · Date TBC" | "July 18–19, 2026" |
+| G6 Groningen | Date | "2026 · Date TBC" | "August 28–30, 2026" |
+| Alps Sixes Open | Lieu | "Alps Region" | "Grenoble, France" |
+| Alps Sixes Open | Date | "2026 · Date TBC" | "May 23–24, 2026" |
+| Ligue Nationale Field | Nom | "Ligue Nationale Field" | "Championnat AFL Field" |
+
+### Données supprimées (S05)
+
+| Élément supprimé | Raison |
+|-----------------|--------|
+| Paris Sixes Invitational (Oct 2–4, 2025) | Événement non vérifiable |
+| Milan Indoor Classic (Nov 8, 2025) | Événement non vérifiable |
+| Toutes les mentions "External source TBC" | Label non informatif et non sourcé |
+
+### Reste non corrigé (donnée inconnue — assumé honnête)
+
+| Événement | Donnée | Statut |
+|-----------|--------|--------|
+| Frank Menschner Cup | Date 2026 | "Date TBC" — aucune date fournie, conservé |
+
+### Sections touchées
+
+- S02 Key Tournaments — 5 cartes corrigées (AHM, EuroLax, Berlin Open, G6 Groningen, Alps Sixes Open)
+- S04 Domestic League Tracking — 1 renommage (D2 : Championnat AFL Field)
+- S05 Results & Data Sources — 2 items supprimés, "External source TBC" retiré du dernier item
+
+### CSS
+
+Aucune modification.
+
+---
+
+## I. Historique des lots
+
+| Lot | Date | Scope |
+|-----|------|-------|
+| LOT 0 — Initial | 2026-04-09 | Structure initiale, watchlist, nav, footer |
+| LOT 1 V1 — Restructuration stratifiée | 2026-04-[antérieur] | 6 sections, doctrine lexicale, Country Gateways last |
+| LOT 1 V2 — Purification vocabulaire | 2026-04-[antérieur] | Titres, intros, section-note appendice |
+| **LOT 2 — Classification réelle** | **2026-04-27** | **S01 : 3 réels · S02 : 7 réels · S03 : 2 signaux · S04 : 8 structures** |
+| **DATA QUALITY pass** | **2026-04-27** | **5 dates injectées · 1 lieu corrigé · 1 renommage · 2 faux items S05 supprimés** |
